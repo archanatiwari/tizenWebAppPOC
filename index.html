@@ -9,23 +9,21 @@
     <title>Tizen Mobile Web Basic Application</title>
 
     <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <!--  <script type="text/javascript" src="js/libs/jquery.min.js"></script>
+     <script type="text/javascript" src="js/libs/jquery.min.js"></script>
     <script type="text/javascript" src="js/libs/angular.min.js"></script>
-    <script type="text/javascript" src="js/libs/angular-ui-router.min.js"></script> -->
+    <script type="text/javascript" src="js/libs/angular-ui-router.min.js"></script>
     <script src="js/main.js"></script>
-    <script type="text/javascript" src="js/apps/page1Controller.js"></script>
-    <script type="text/javascript" src="js/apps/page2Controller.js"></script>
+    <script type="text/javascript" src="js/apps/landingController.js"></script>
+    <script type="text/javascript" src="js/apps/loginController.js"></script>
     
 </head>
 
 <body ng-app="myApp">
-    <div>
-    <h1>Tizen Demo</h1>
-        <div ui-view >
-        </div>
-    <!--     <a href="#/page1">Page 1</a>
-        <a href="#/page2">Page 2</a> -->
+    <div class="header">
+        <h1>Navbar</h1>
     </div>
+    <div ui-view ></div>
+
    
 </body>
 

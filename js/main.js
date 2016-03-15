@@ -1,18 +1,18 @@
-var app=angular.module('myApp', ['ui.router']);
+var app = angular.module('myApp', ['ui.router']);
 
-app.config(function($stateProvider,$urlRouterProvider){
-    $urlRouterProvider.otherwise('/page1');
-        $stateProvider
-             .state('page1',{
-              url:'/page1',
-              templateUrl: 'partials/page1.html',
-                controller: 'page1Controller'      
-              })
-              .state('page2',{
-              url:'/page2',
-              templateUrl: 'partials/page2.html',
-              controller: 'page2Controller'
-              })
+app.config(function($stateProvider, $urlRouterProvider) {
+    $urlRouterProvider.otherwise('landing');
+    $stateProvider
+        .state('landing', {
+            url: '/landing',
+            templateUrl: 'partials/landing.html',
+            controller: 'landingController'
+        })
+        .state('login', {
+            url: '/login',
+            templateUrl: 'partials/login.html',
+            controller: 'loginController'
+        })
 
 });
 
@@ -24,7 +24,7 @@ app.config(function($stateProvider,$urlRouterProvider){
 //    // TODO:: Do your initialization job
 //
 //    // add eventListener for tizenhwkey
-//	'use strict';
+//  'use strict';
 //    document.addEventListener('tizenhwkey', function(e) {
 //        if (e.keyName === "back") {
 //            try {
