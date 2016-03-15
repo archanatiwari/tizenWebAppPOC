@@ -8,11 +8,11 @@
 </Reference>
 <Reference URI="author-signature.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>d+r/TRsO+yz/H5mUKqSupowonxGgMakY6anvq/DyVOM=</DigestValue>
+<DigestValue>kqQFtWeicFqCCFD8889/Muc2wESDEiLHPLt4O6NQoI8=</DigestValue>
 </Reference>
 <Reference URI="config.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>CtFakKCMl80aP09j1pfMj8KonX2PIv+j2eGUjKQylsI=</DigestValue>
+<DigestValue>RLUw/gsqmAV5kOzO5PCi7NYnzvfa1ZT2kaiEH5r2WIw=</DigestValue>
 </Reference>
 <Reference URI="css%2Fstyle.css">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -28,7 +28,7 @@
 </Reference>
 <Reference URI="index.html">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>Sdyz4DkwDnu5nuuiffERd38kvoFzyzKP1Wzhrq2N04Q=</DigestValue>
+<DigestValue>IRFxR5AtbAO8L9CNkcpStJrpVyKDvBZSNGqZRbpEWww=</DigestValue>
 </Reference>
 <Reference URI="js%2Fapps%2Fpage1Controller.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -62,6 +62,10 @@
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>/GI7E75GxVHfZL4718f+enxLb7EWYGyi/+kDCldhCbM=</DigestValue>
 </Reference>
+<Reference URI="tizen_32.png">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>wP6IeVxb1ipxuaYyXZLY39Y8Nerw5mDwgpaYSVLodn0=</DigestValue>
+</Reference>
 <Reference URI="version.txt">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>MPl0zl/4pJM1CEzTWOGty3/730AfpxtZpYxDSagK0WI=</DigestValue>
@@ -75,9 +79,9 @@
 </Reference>
 </SignedInfo>
 <SignatureValue>
-sbS/GyQArg2nzPIgCjZntQDIGggpB6j1mry3kXGOy3WBPWuovdtUyvslB1Zu+CO/awKrB8oU+26F
-wJgDAG27dGDQZDZk26JKxtLqhclZKqVclU3EOihi5sQ0FOGVuU2vi/2J7IdFN7G9BcEsJ73foTBF
-PnE7JDh7XDNLFmoiTQU=
+kALFrywHpLSimX6lx6YYOdtZoKNL0EOOMRShN0YEgw5FA8be2JAm5kJahel1+o/nHukOSh2zgQWo
+pLnoZ22XVy1AObplykbTQQ5wiMKbqTGnqFDF2puo6XEvnCQrNBUsKVGgPLVUl/M1dbgxeMJXZKSu
+GdV5kM608+mWoGq+dOo=
 </SignatureValue>
 <KeyInfo>
 <X509Data>
