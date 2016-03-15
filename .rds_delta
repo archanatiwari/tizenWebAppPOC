@@ -1,4 +1,7 @@
 #delete
+res/wgt/js\libs\angular-ui-router.min.js
+res/wgt/js\libs\angular.min.js
+res/wgt/js\libs\jquery.min.js
 #add
 #modify
 res/wgt/author-signature.xml
