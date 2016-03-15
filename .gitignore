@@ -1,6 +1,6 @@
 tizenWebAppPOC.wgt
-.settings
-.sign
+.settings/
+.sign/
 .sdk_delta.info
 .rds_delta
 .tproject
