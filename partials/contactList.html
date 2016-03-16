@@ -1,8 +1,15 @@
-<div class="contactList">
-	<ul ng-repeat="user in userContacts track by user.id">
-		<img src="user.picture"/>
-		<li>{{ user.name}}</li>
-		<li>{{ user.notifications}}</li>
-	</ul>
-	
+
+<div class="container">
+	<div class="user-list">
+		<div class="contactList"
+			ng-repeat="user in userContacts track by user.id">
+			<div class="user-avtar">
+				<img src="{{user.picture}}" />
+			</div>
+			<div class="user-data">
+				<div class="user-name">{{ user.name}}</div>
+				<div class="notification">{{ user.notifications}}</div>
+			</div>
+		</div>
+	</div>
 </div>
