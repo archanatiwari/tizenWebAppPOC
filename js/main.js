@@ -1,7 +1,7 @@
 var app = angular.module('myApp', ['ui.router']);
 
 app.config(function($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise('landing');
+    $urlRouterProvider.otherwise('/landing');
     $stateProvider
         .state('landing', {
             url: '/landing',
@@ -12,6 +12,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
             url: '/login',
             templateUrl: 'partials/login.html',
             controller: 'loginController'
+        })
+        .state('contactList', {
+            url: '/contactList',
+            templateUrl: 'partials/contactList.html',
+            controller: 'contactListController'
         })
 
 });
