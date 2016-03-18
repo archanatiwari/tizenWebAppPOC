@@ -18,6 +18,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
             templateUrl: 'partials/contactList.html',
             controller: 'contactListController'
         })
+        .state('navigation', {
+            url: '/navigation',
+            templateUrl: 'partials/navigation.html',
+            controller: 'navigationController'
+        })
 
 });
 
