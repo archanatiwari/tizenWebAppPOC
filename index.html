@@ -12,12 +12,8 @@
     <script type="text/javascript" src="js/libs/jquery.min.js"></script>
     <script type="text/javascript" src="js/libs/angular.min.js"></script>
     <script type="text/javascript" src="js/libs/angular-ui-router.min.js"></script>
-    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
     <script src="js/main.js"></script>
-    <script type="text/javascript" src="js/apps/controllers/landingController.js"></script>
-    <script type="text/javascript" src="js/apps/controllers/loginController.js"></script>
-    <script type="text/javascript" src="js/apps/controllers/contactListController.js"></script>
-    <script type="text/javascript" src="js/apps/controllers/navigationController.js"></script>
+    <script type="text/javascript" src="js/apps/config.js"></script>
     
 </head>
 
@@ -27,7 +23,13 @@
     </div>
     <div class="wrapper" ui-view ></div>
 
-   
+    <script type="text/javascript" src="js/apps/controllers/landingController.js"></script>
+    <script type="text/javascript" src="js/apps/controllers/loginController.js"></script>
+    <script type="text/javascript" src="js/apps/controllers/contactListController.js"></script>
+    <script type="text/javascript" src="js/apps/controllers/navigationController.js"></script>
+    <script async defer 
+        src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCVdNjCjSVWFTEv6xOvMP7kAbb2VXo4cew&libraries=geometry,places&callback=angular.noop">
+    </script>
 </body>
 
 </html>
