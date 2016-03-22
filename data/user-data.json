@@ -1,145 +1,225 @@
-[
-  {
-    "id": "56e9454f6420367f8f75f0f6",
-    "index": 0,
-    "isActive": false,
-    "picture": "tizen_32.png",
-    "age": 34,
-    "name": "Elba Dean",
-    "gender": "female",
-    "email": "elbadean@globant.com",
-    "phone": "+1 (993) 422-2802",
-    "registered": "2015-12-11T06:39:04 -06:-30",
-    "notifications": 3
+{
+ "data": [{
+  "id": "56e9454f6420367f8f75f0f6",
+  "index": 0,
+  "source": {
+   "lat": 12.9160978,
+   "lng": 77.6524069
   },
-  {
-    "id": "56e9454fd4d64dc915f48783",
-    "index": 1,
-    "isActive": true,
-    "picture": "tizen_32.png",
-    "age": 33,
-    "name": "Byers Ramos",
-    "gender": "male",
-    "email": "byersramos@globant.com",
-    "phone": "+1 (857) 565-3509",
-    "registered": "2015-05-28T03:07:46 -06:-30",
-    "notifications": 4
+  "destination": {
+   "lat": 77.65217,
+   "lng": 12.91237
   },
-  {
-    "id": "56e9454fbac8ceb21f18bbbe",
-    "index": 2,
-    "isActive": false,
-    "picture": "tizen_32.png",
-    "age": 34,
-    "name": "Hollie Ratliff",
-    "gender": "female",
-    "email": "hollieratliff@globant.com",
-    "phone": "+1 (806) 528-3351",
-    "registered": "2014-02-14T07:50:28 -06:-30",
-    "notifications": 2
-  },
-  {
-    "id": "56e9454f602f8d30bd04110f",
-    "index": 3,
-    "isActive": true,
-    "picture": "tizen_32.png",
-    "age": 32,
-    "name": "Graham Flores",
-    "gender": "male",
-    "email": "grahamflores@globant.com",
-    "phone": "+1 (890) 586-3176",
-    "registered": "2015-08-20T06:37:18 -06:-30",
-    "notifications": 10
-  },
-  {
-    "id": "56e9454f5e05d4ecf73b91d8",
-    "index": 4,
-    "isActive": false,
-    "picture": "tizen_32.png",
-    "age": 28,
-    "name": "Serrano Sharpe",
-    "gender": "male",
-    "email": "serranosharpe@globant.com",
-    "phone": "+1 (952) 543-2359",
-    "registered": "2014-03-01T09:24:52 -06:-30",
-    "notifications": 3
-  },
-  {
-    "id": "56e9454f7531e7fe41c23d3d",
-    "index": 5,
-    "isActive": true,
-    "picture": "tizen_32.png",
-    "age": 34,
-    "name": "Berry Chandler",
-    "gender": "male",
-    "email": "berrychandler@globant.com",
-    "phone": "+1 (870) 589-2644",
-    "registered": "2015-03-21T07:34:53 -06:-30",
-    "notifications": 7
-  },
-  {
-    "id": "56e9454f61065335a53a211c",
-    "index": 6,
-    "isActive": false,
-    "picture": "tizen_32.png",
-    "age": 24,
-    "name": "Hays Oconnor",
-    "gender": "male",
-    "email": "haysoconnor@globant.com",
-    "phone": "+1 (868) 555-2915",
-    "registered": "2014-05-01T07:45:31 -06:-30",
-    "notifications": 3
-  },
-  {
-    "id": "56e9454f1a0d08093870e349",
-    "index": 7,
-    "isActive": false,
-    "picture": "tizen_32.png",
-    "age": 22,
-    "name": "Therese Donovan",
-    "gender": "female",
-    "email": "theresedonovan@globant.com",
-    "phone": "+1 (860) 591-3442",
-    "registered": "2015-06-02T04:46:49 -06:-30",
-    "notifications": 7
-  },
-  {
-    "id": "56e9454f6420367f8f75fsfdgf",
-    "index": 0,
-    "isActive": false,
-    "picture": "tizen_32.png",
-    "age": 34,
-    "name": "Elba Dean",
-    "gender": "female",
-    "email": "elbadean@globant.com",
-    "phone": "+1 (993) 422-2802",
-    "registered": "2015-12-11T06:39:04 -06:-30",
-    "notifications": 3
-  },
-  {
-    "id": "56e9454f6420367f8f75f0dfjhfd",
-    "index": 0,
-    "isActive": false,
-    "picture": "tizen_32.png",
-    "age": 34,
-    "name": "Elba Dean",
-    "gender": "female",
-    "email": "elbadean@globant.com",
-    "phone": "+1 (993) 422-2802",
-    "registered": "2015-12-11T06:39:04 -06:-30",
-    "notifications": 3
-  },
-  {
-    "id": "56e9454f6420367fdfhbfj",
-    "index": 0,
-    "isActive": false,
-    "picture": "tizen_32.png",
-    "age": 34,
-    "name": "Elba Dean",
-    "gender": "female",
-    "email": "elbadean@globant.com",
-    "phone": "+1 (993) 422-2802",
-    "registered": "2015-12-11T06:39:04 -06:-30",
-    "notifications": 3
+  "isActive": false,
+  "picture": "tizen_32.png",
+  "age": 34,
+  "name": "Shreecharan",
+  "gender": "male",
+  "email": "sricharan.adiga@globant.com",
+  "phone": "+1 (993) 422-2802",
+  "registered": "2015-12-11T06:39:04 -06:-30",
+  "eventlist": {
+   "Accepted": [{
+    "numberofpeople": 4,
+    "eventName": [
+     "BigBrewskyParty",
+     "Elante",
+     "Big Pitchers",
+     "TOIT"
+    ]
+   }],
+   "Rejected": [{
+    "numberofpeople": 2,
+    "eventName": [
+     "OASIS",
+     "Kapoor&Sons"
+    ]
+   }]
   }
-]
+ }, {
+  "id": "56e9454fd4d64dc915f48783",
+  "index": 1,
+  "source": {
+   "lat": 12.9122100,
+   "lng": 77.6518610
+  },
+  "destination": {
+   "lat": 77.65217,
+   "lng": 12.91237
+  },
+  "isActive": true,
+  "picture": "tizen_32.png",
+  "age": 34,
+  "name": "Archit",
+  "gender": "male",
+  "email": "archit.soni@globant.com",
+  "phone": "+1 (993) 422-2802",
+  "registered": "2015-12-11T06:39:04 -06:-30",
+  "eventlist": {
+   "Accepted": [{
+    "numberofpeople": 4,
+    "eventName": [
+     "BigBrewskyParty",
+     "Elante",
+     "Big Pitchers",
+     "TOIT"
+    ]
+   }],
+   "Rejected": [{
+    "numberofpeople": 2,
+    "eventName": [
+     "OASIS",
+     "Kapoor&Sons"
+    ]
+   }]
+  }
+ }, {
+  "id": "56e9454fbac8ceb21f18bbbe",
+  "index": 2,
+  "source": {
+   "lat": 12.9137831,
+   "lng": 77.6375229
+  },
+  "destination": {
+   "lat": 77.65217,
+   "lng": 12.91237
+  },
+  "isActive": true,
+  "picture": "tizen_32.png",
+  "age": 34,
+  "name": "Kaushik",
+  "gender": "male",
+  "email": "kaushik.gotefode@globant.com",
+  "phone": "+1 (993) 422-2802",
+  "registered": "2015-12-11T06:39:04 -06:-30",
+  "eventlist": {
+   "Accepted": [{
+    "numberofpeople": 4,
+    "eventName": [
+     "BigBrewskyParty",
+     "Elante",
+     "Big Pitchers",
+     "TOIT"
+    ]
+   }],
+   "Rejected": [{
+    "numberofpeople": 2,
+    "eventName": [
+     "OASIS",
+     "Kapoor&Sons"
+    ]
+   }]
+  }
+ }, {
+  "id": "56e9454f602f8d30bd04110f",
+  "index": 3,
+  "source": {
+   "lat": 12.9163765,
+   "lng": 77.6217730
+  },
+  "destination": {
+   "lat": 77.65217,
+   "lng": 12.91237
+  },
+  "isActive": true,
+  "picture": "tizen_32.png",
+  "age": 34,
+  "name": "Archana",
+  "gender": "female",
+  "email": "archana.tiwari@globant.com",
+  "phone": "+1 (993) 422-2802",
+  "registered": "2015-12-11T06:39:04 -06:-30",
+  "eventlist": {
+   "Accepted": [{
+    "numberofpeople": 4,
+    "eventName": [
+     "BigBrewskyParty",
+     "Elante",
+     "Big Pitchers",
+     "TOIT"
+    ]
+   }],
+   "Rejected": [{
+    "numberofpeople": 2,
+    "eventName": [
+     "OASIS",
+     "Kapoor&Sons"
+    ]
+   }]
+  }
+ }, {
+  "id": "56e9454f5e05d4ecf73b91d8",
+  "index": 4,
+  "source": {
+   "lat": 12.9095164,
+   "lng": 77.6431877
+  },
+  "destination": {
+   "lat": 77.65217,
+   "lng": 12.91237
+  },
+  "isActive": false,
+  "picture": "tizen_32.png",
+  "age": 34,
+  "name": "Nimmy",
+  "gender": "female",
+  "email": "nimmy.babu@globant.com",
+  "phone": "+1 (993) 422-2802",
+  "registered": "2015-12-11T06:39:04 -06:-30",
+  "eventlist": {
+   "Accepted": [{
+    "numberofpeople": 4,
+    "eventName": [
+     "BigBrewskyParty",
+     "Elante",
+     "Big Pitchers",
+     "TOIT"
+    ]
+   }],
+   "Rejected": [{
+    "numberofpeople": 2,
+    "eventName": [
+     "OASIS",
+     "Kapoor&Sons"
+    ]
+   }]
+  }
+ }, {
+  "id": "56e9454f7531e7fe41c23d3d",
+  "index": 5,
+  "source": {
+   "lat": 12.93246666,
+   "lng": 77.6315631
+  },
+  "destination": {
+   "lat": 77.65217,
+   "lng": 12.91237
+  },
+  "isActive": true,
+  "picture": "tizen_32.png",
+  "age": 34,
+  "name": "Peeyush",
+  "gender": "male",
+  "email": "peeyush.patil@globant.com",
+  "phone": "+1 (993) 422-2802",
+  "registered": "2015-12-11T06:39:04 -06:-30",
+  "eventlist": {
+   "Accepted": [{
+    "numberofpeople": 4,
+    "eventName": [
+     "BigBrewskyParty",
+     "Elante",
+     "Big Pitchers",
+     "TOIT"
+    ]
+   }],
+   "Rejected": [{
+    "numberofpeople": 2,
+    "eventName": [
+     "OASIS",
+     "Kapoor&Sons"
+    ]
+   }]
+  }
+ }]
+}
