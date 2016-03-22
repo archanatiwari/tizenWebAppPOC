@@ -1,42 +1,77 @@
-[
-  "data":[
-      {
-        "id": "56e9454f6420367f8f75f0f6",
-        "index": 0,
-        "source":12.912327-77.652133,
-        "destination":12.912370-77.652170,
-        "isActive": false,
-        "picture": "tizen_32.png",
-        "age": 34,
-        "name": "Elba Dean",
-        "gender": "female",
-        "email": "elbadean@globant.com",
-        "phone": "+1 (993) 422-2802",
-        "registered": "2015-12-11T06:39:04 -06:-30",
-        "eventlist":{
-            "Accepted":[{
-                "numberofpeople":4,
-                "eventName":"BigBrewskyParty",
-                "Time":"06.00pm",
-                "Date":"10/04/2016",
-                "":"",           
-
-            }]
-        }
-      },
-      {
-        "id": "56e9454fd4d64dc915f48783",
-        "index": 1,
-        "isActive": true,
-        "picture": "tizen_32.png",
-        "age": 33,
-        "name": "Byers Ramos",
-        "gender": "male",
-        "email": "byersramos@globant.com",
-        "phone": "+1 (857) 565-3509",
-        "registered": "2015-05-28T03:07:46 -06:-30",
-        "notifications": 4
-      }
-  ]
- 
-]
+{
+	"data": [{
+		"id": "56e9454f6420367f8f75f0f6",
+		"index": 0,
+		"source": {
+			"lat": 12.912327,
+			"lng": 77.652133
+		},
+		"destination": {
+			"lat": 12.91237,
+			"lng": 77.65217
+		},
+		"isActive": false,
+		"picture": "tizen_32.png",
+		"age": 34,
+		"name": "Elba Dean",
+		"gender": "female",
+		"email": "elbadean@globant.com",
+		"phone": "+1 (993) 422-2802",
+		"registered": "2015-12-11T06:39:04 -06:-30",
+		"eventlist": {
+			"Accepted": [{
+				"numberofpeople": 4,
+				"eventName": [
+					"BigBrewskyParty",
+					"Elante",
+					"Big Pitchers",
+					"TOIT"
+				]
+			}],
+			"Rejected": [{
+				"numberofpeople": 2,
+				"eventName": [
+					"OASIS",
+					"Kapoor&Sons"
+				]
+			}]
+		}
+	}, {
+		"id": "56e9454f6420367f8f75f0f7",
+		"index": 0,
+		"source": {
+			"lat": 12.912337,
+			"lng": 77.652143
+		},
+		"destination": {
+			"lat": 12.91237,
+			"lng": 77.65217
+		},
+		"isActive": true,
+		"picture": "tizen_32.png",
+		"age": 34,
+		"name": "Elba Dean",
+		"gender": "female",
+		"email": "elbadean@globant.com",
+		"phone": "+1 (993) 422-2802",
+		"registered": "2015-12-11T06:39:04 -06:-30",
+		"eventlist": {
+			"Accepted": [{
+				"numberofpeople": 4,
+				"eventName": [
+					"BigBrewskyParty",
+					"Elante",
+					"Big Pitchers",
+					"TOIT"
+				]
+			}],
+			"Rejected": [{
+				"numberofpeople": 2,
+				"eventName": [
+					"OASIS",
+					"Kapoor&Sons"
+				]
+			}]
+		}
+	}]
+}
