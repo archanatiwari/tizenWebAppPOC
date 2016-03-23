@@ -78,7 +78,7 @@ app.controller('navigationController', function($scope, $interval, GetUserData, 
 						map: map,
 						label: person.name,
 						//icon: imageUrl,
-						draggable: true
+						//draggable: true
 					});
 				}
 				person.marker.setMap(map);
