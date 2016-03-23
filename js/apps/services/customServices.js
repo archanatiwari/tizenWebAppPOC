@@ -14,3 +14,12 @@ app.factory('GetUserData', function($http) {
         getData: getData
     };
 });
+
+app.service('SharedDataService', function() {
+    this.setTargetData = function(data) {
+        return this.targetData = data;
+    };
+    this.getTargetData = function() {
+        return this.targetData;
+    };
+});
