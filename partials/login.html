@@ -3,10 +3,10 @@
         <div class="login_wrapper">
             <form>
                 <div class="padding-top">
-                    <input type="text" id="username" class="tbx" placeholder="email address">
+                    <input type="text" id="username" class="tbx" placeholder="email address" ng-model="email">
                 </div>
                 <div class="padding-top">
-                    <input type="password" id="password" class="tbx" placeholder="password">
+                    <input type="password" id="password" class="tbx" placeholder="password" ng-model="password">
                 </div>
                 <div class="padding-top">
                     <input type="checkbox" id="check_remember" class="chk-box">
@@ -14,7 +14,7 @@
 					</a>
                 </div>
                 <div class="padding-top">
-                    <a href="#/contactList" class="waves-effect waves-light btn-blue btn">login</a>
+                    <a ng-click="login()" class="waves-effect waves-light btn-blue btn">login</a>
                 </div>
             </form>
             <div class="padding-top">
