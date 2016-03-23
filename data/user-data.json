@@ -7,8 +7,8 @@
    "lng": 77.6524069
   },
   "destination": {
-   "lat": 77.65217,
-   "lng": 12.91237
+   "lat": 12.915913,
+   "lng": 77.65234
   },
   "isActive": false,
   "picture": "tizen_32.png",
@@ -44,8 +44,8 @@
    "lng": 77.6518610
   },
   "destination": {
-   "lat": 77.65217,
-   "lng": 12.91237
+   "lat": 12.915913,
+   "lng": 77.65234
   },
   "isActive": true,
   "picture": "tizen_32.png",
@@ -81,8 +81,8 @@
    "lng": 77.6375229
   },
   "destination": {
-   "lat": 77.65217,
-   "lng": 12.91237
+   "lat": 12.915913,
+   "lng": 77.65234
   },
   "isActive": true,
   "picture": "tizen_32.png",
@@ -118,8 +118,8 @@
    "lng": 77.6217730
   },
   "destination": {
-   "lat": 77.65217,
-   "lng": 12.91237
+   "lat": 12.915913,
+   "lng": 77.65234
   },
   "isActive": true,
   "picture": "tizen_32.png",
@@ -155,8 +155,8 @@
    "lng": 77.6431877
   },
   "destination": {
-   "lat": 77.65217,
-   "lng": 12.91237
+   "lat": 12.915913,
+   "lng": 77.65234
   },
   "isActive": false,
   "picture": "tizen_32.png",
@@ -192,8 +192,8 @@
    "lng": 77.6315631
   },
   "destination": {
-   "lat": 77.65217,
-   "lng": 12.91237
+   "lat": 12.915913,
+   "lng": 77.65234
   },
   "isActive": true,
   "picture": "tizen_32.png",
