@@ -1,5 +1,5 @@
 app.controller('navigationController', function($scope, $interval, GetUserData, SharedDataService) {
-	var next = -1, totalPplMeet = 0, tracker;
+	var next = -1, totalPplReached = 0, tracker;
     $scope.targetLocation = SharedDataService.getTargetData();
 
     var onSuccess = function(response) {
@@ -44,7 +44,7 @@ app.controller('navigationController', function($scope, $interval, GetUserData, 
 	        directionsService.route(request, function(response, status) {
 	            if (status == google.maps.DirectionsStatus.OK) {
 	                // Display the route on the map.
-	                directionsDisplay.setDirections(response);
+	                //directionsDisplay.setDirections(response);
 	                userList[index].destination =  $scope.targetLocation;
 	                userList[index].positions = response.routes[0].overview_path; //gives intermediate coordinates to destination
 	                if(index == (userList.length-1)) //call this method once every user's intermediate coordinates are available 
@@ -86,15 +86,13 @@ app.controller('navigationController', function($scope, $interval, GetUserData, 
 			}
 			else{
 				if ((target.lat === person.destination.lat && target.lng === person.destination.lng) && (!person.reached)) {
-					//if(!person.reached){
 						person.reached = true;
-						totalPplMeet++;
+						totalPplReached++;
 						//all people reached destinamtion;
-						if(totalPplMeet == userList.length){
+						if(totalPplReached == userList.length){
 							next = -1;
 							$interval.cancel(tracker);
 						}
-					//}
 					
 				}	
 			}

@@ -1,225 +1,264 @@
 {
- "data": [{
-  "id": "56e9454f6420367f8f75f0f6",
-  "index": 0,
-  "source": {
-   "lat": 12.9160978,
-   "lng": 77.6524069
-  },
-  "destination": {
-   "lat": 12.915913,
-   "lng": 77.65234
-  },
-  "isActive": false,
-  "picture": "tizen_32.png",
-  "age": 34,
-  "name": "Shreecharan",
-  "gender": "male",
-  "email": "sricharan.adiga@globant.com",
-  "phone": "+1 (993) 422-2802",
-  "registered": "2015-12-11T06:39:04 -06:-30",
-  "eventlist": {
-   "Accepted": [{
-    "numberofpeople": 4,
-    "eventName": [
-     "BigBrewskyParty",
-     "Elante",
-     "Big Pitchers",
-     "TOIT"
-    ]
-   }],
-   "Rejected": [{
-    "numberofpeople": 2,
-    "eventName": [
-     "OASIS",
-     "Kapoor&Sons"
-    ]
-   }]
-  }
- }, {
-  "id": "56e9454fd4d64dc915f48783",
-  "index": 1,
-  "source": {
-   "lat": 12.9122100,
-   "lng": 77.6518610
-  },
-  "destination": {
-   "lat": 12.915913,
-   "lng": 77.65234
-  },
-  "isActive": true,
-  "picture": "tizen_32.png",
-  "age": 34,
-  "name": "Archit",
-  "gender": "male",
-  "email": "archit.soni@globant.com",
-  "phone": "+1 (993) 422-2802",
-  "registered": "2015-12-11T06:39:04 -06:-30",
-  "eventlist": {
-   "Accepted": [{
-    "numberofpeople": 4,
-    "eventName": [
-     "BigBrewskyParty",
-     "Elante",
-     "Big Pitchers",
-     "TOIT"
-    ]
-   }],
-   "Rejected": [{
-    "numberofpeople": 2,
-    "eventName": [
-     "OASIS",
-     "Kapoor&Sons"
-    ]
-   }]
-  }
- }, {
-  "id": "56e9454fbac8ceb21f18bbbe",
-  "index": 2,
-  "source": {
-   "lat": 12.9137831,
-   "lng": 77.6375229
-  },
-  "destination": {
-   "lat": 12.915913,
-   "lng": 77.65234
-  },
-  "isActive": true,
-  "picture": "tizen_32.png",
-  "age": 34,
-  "name": "Kaushik",
-  "gender": "male",
-  "email": "kaushik.gotefode@globant.com",
-  "phone": "+1 (993) 422-2802",
-  "registered": "2015-12-11T06:39:04 -06:-30",
-  "eventlist": {
-   "Accepted": [{
-    "numberofpeople": 4,
-    "eventName": [
-     "BigBrewskyParty",
-     "Elante",
-     "Big Pitchers",
-     "TOIT"
-    ]
-   }],
-   "Rejected": [{
-    "numberofpeople": 2,
-    "eventName": [
-     "OASIS",
-     "Kapoor&Sons"
-    ]
-   }]
-  }
- }, {
-  "id": "56e9454f602f8d30bd04110f",
-  "index": 3,
-  "source": {
-   "lat": 12.9163765,
-   "lng": 77.6217730
-  },
-  "destination": {
-   "lat": 12.915913,
-   "lng": 77.65234
-  },
-  "isActive": true,
-  "picture": "tizen_32.png",
-  "age": 34,
-  "name": "Archana",
-  "gender": "female",
-  "email": "archana.tiwari@globant.com",
-  "phone": "+1 (993) 422-2802",
-  "registered": "2015-12-11T06:39:04 -06:-30",
-  "eventlist": {
-   "Accepted": [{
-    "numberofpeople": 4,
-    "eventName": [
-     "BigBrewskyParty",
-     "Elante",
-     "Big Pitchers",
-     "TOIT"
-    ]
-   }],
-   "Rejected": [{
-    "numberofpeople": 2,
-    "eventName": [
-     "OASIS",
-     "Kapoor&Sons"
-    ]
-   }]
-  }
- }, {
-  "id": "56e9454f5e05d4ecf73b91d8",
-  "index": 4,
-  "source": {
-   "lat": 12.9095164,
-   "lng": 77.6431877
-  },
-  "destination": {
-   "lat": 12.915913,
-   "lng": 77.65234
-  },
-  "isActive": false,
-  "picture": "tizen_32.png",
-  "age": 34,
-  "name": "Nimmy",
-  "gender": "female",
-  "email": "nimmy.babu@globant.com",
-  "phone": "+1 (993) 422-2802",
-  "registered": "2015-12-11T06:39:04 -06:-30",
-  "eventlist": {
-   "Accepted": [{
-    "numberofpeople": 4,
-    "eventName": [
-     "BigBrewskyParty",
-     "Elante",
-     "Big Pitchers",
-     "TOIT"
-    ]
-   }],
-   "Rejected": [{
-    "numberofpeople": 2,
-    "eventName": [
-     "OASIS",
-     "Kapoor&Sons"
-    ]
-   }]
-  }
- }, {
-  "id": "56e9454f7531e7fe41c23d3d",
-  "index": 5,
-  "source": {
-   "lat": 12.93246666,
-   "lng": 77.6315631
-  },
-  "destination": {
-   "lat": 12.915913,
-   "lng": 77.65234
-  },
-  "isActive": true,
-  "picture": "tizen_32.png",
-  "age": 34,
-  "name": "Peeyush",
-  "gender": "male",
-  "email": "peeyush.patil@globant.com",
-  "phone": "+1 (993) 422-2802",
-  "registered": "2015-12-11T06:39:04 -06:-30",
-  "eventlist": {
-   "Accepted": [{
-    "numberofpeople": 4,
-    "eventName": [
-     "BigBrewskyParty",
-     "Elante",
-     "Big Pitchers",
-     "TOIT"
-    ]
-   }],
-   "Rejected": [{
-    "numberofpeople": 2,
-    "eventName": [
-     "OASIS",
-     "Kapoor&Sons"
-    ]
-   }]
-  }
- }]
+	"data": [{
+			"id": "56e9454fd4d64dc915f48783",
+			"index": 1,
+			"source": {
+				"lat": 12.9160978,
+				"lng": 77.6524069
+			},
+			"destination": {
+				"lat": 12.915913,
+				"lng": 77.65234
+			},
+			"isActive": true,
+			"picture": "tizen_32.png",
+			"age": 34,
+			"name": "Archit",
+			"gender": "male",
+			"email": "archit.soni@globant.com",
+			"phone": "+1 (993) 422-2802",
+			"registered": "2015-12-11T06:39:04 -06:-30",
+			"eventlist": {
+				"EventsHostedbyMe": [{
+					"EventName": "Party",
+					"EventDate": "26/03/2016",
+					"EventTime": "06.00 PM",
+					"EventLocation": "BigBrewsky",
+					"destination" : {"lat" : 12.912985, "lng": 77.683131},
+					"EventDescription": "Sarjapur",
+					"UsersAcccepted": ["Kaushik", "Piyush", "Archana"],
+					"UsersInvited": ["Sakshi", "Ayush", "Abhinav", "Kaushik", "Piyush", "Archana"],
+					"UsersPending": ["Sakshi", "Ayush"],
+					"UsersRejected": ["Abhinav"]
+				}, {
+					"EventName": "Booze",
+					"EventDate": "27/03/2016",
+					"EventTime": "06.00 PM",
+					"EventLocation": "BigPitchers",
+					"destination" : {"lat" : 12.960198, "lng": 77.646881},
+					"EventDescription": "Sarjapur",
+					"UsersAcccepted": ["Kaushik", "Archana"],
+					"UsersInvited": ["Sakshi", "Ayush", "Piyush", "Abhinav", "Kaushik", "Archana"],
+					"UsersPending": ["Sakshi", "Abhinav"],
+					"UsersRejected": ["Ayush", "Piyush"]
+				}],
+
+				"EventList": [{
+					"EventName": "Drink",
+					"EventDate": "29/03/2016",
+					"EventTime": "06.00 PM",
+					"EventLocation": "BigPitchers",
+					"destination" : {"lat" : 12.960198, "lng": 77.646881},
+					"EventDescription": "Sarjapur",
+					"mystatus": "ACCEPTED",
+					"Hoster": "Charan",
+					"UsersAcccepted": ["Kaushik", "Piyush", "Archana", "Archit"],
+					"UsersInvited": ["Sakshi", "Archit", "Ayush", "Abhinav", "Kaushik", "Piyush", "Archana"],
+					"UsersPending": ["Sakshi", "Ayush"],
+					"UsersRejected": ["Abhinav"]
+				}, {
+					"EventName": "Holi",
+					"EventDate": "24/03/2016",
+					"EventTime": "06.00 PM",
+					"EventLocation": "Globant",
+					"destination" : {"lat" : 12.915913, "lng": 77.65234},
+					"EventDescription": "HSR Layout",
+					"mystatus": "REJECTED",
+					"Hoster": "Charan",
+					"UsersAcccepted": ["Kaushik", "Piyush", "Archana"],
+					"UsersInvited": ["Sakshi", "Archit", "Ayush", "Abhinav", "Kaushik", "Piyush", "Archana"],
+					"UsersPending": ["Sakshi", "Ayush"],
+					"UsersRejected": ["Abhinav", "Archit"]
+				}, {
+					"EventName": "Movie",
+					"EventDate": "30/03/2016",
+					"EventTime": "06.00 PM",
+					"EventLocation": "Bangalore Central Mall",
+					"destination" : {"lat" : 12.973584, "lng": 77.611293},
+					"EventDescription": "Sarjapur",
+					"mystatus": "PENDING",
+					"Hoster": "Charan",
+					"UsersAcccepted": ["Kaushik", "Piyush", "Archana"],
+					"UsersInvited": ["Sakshi", "Ayush", "Abhinav", "Kaushik", "Piyush", "Archana"],
+					"UsersPending": ["Sakshi", "Ayush", "Archit"],
+					"UsersRejected": ["Abhinav"]
+				}]
+			}
+		},
+
+		{
+			"id": "56e9454fd4d64dc915f48784",
+			"index": 1,
+			"source": {
+				"lat": 12.9122100,
+				"lng": 77.6518610
+			},
+			"destination": {
+				"lat": 12.915913,
+				"lng": 77.65234
+			},
+			"isActive": false,
+			"picture": "tizen_32.png",
+			"age": 34,
+			"name": "Charan",
+			"gender": "male",
+			"email": "charan.adiga@globant.com",
+			"phone": "+1 (993) 422-2323",
+			"registered": "2015-12-11T06:39:04 -06:-30",
+			"eventlist": {
+				"EventsHostedbyMe": [],
+				"EventList": []
+			}
+		},
+
+		{
+			"id": "56e9454fd4d64dc915f48785",
+			"index": 1,
+			"source": {
+				"lat": 12.9137831,
+				"lng": 77.6375229
+			},
+			"destination": {
+				"lat": 12.915913,
+				"lng": 77.65234
+			},
+			"isActive": false,
+			"picture": "tizen_32.png",
+			"age": 34,
+			"name": "Sakshi",
+			"gender": "female",
+			"email": "sakshi@globant.com",
+			"phone": "+1 (993) 2323-2323",
+			"registered": "2015-12-11T06:39:04 -06:-30",
+			"eventlist": {
+				"EventsHostedbyMe": [],
+				"EventList": []
+			}
+		},
+
+		{
+			"id": "56e9454fd4d64dc915f48786",
+			"index": 1,
+			"source": {
+				"lat": 12.9163765,
+				"lng": 77.6217730
+			},
+			"destination": {
+				"lat": 12.915913,
+				"lng": 77.65234
+			},
+			"isActive": false,
+			"picture": "tizen_32.png",
+			"age": 34,
+			"name": "Piyush",
+			"gender": "male",
+			"email": "piyush.patil@globant.com",
+			"phone": "+1 (993) 898-2323",
+			"registered": "2015-12-11T06:39:04 -06:-30",
+			"eventlist": {
+				"EventsHostedbyMe": [],
+				"EventList": []
+			}
+		},
+
+		{
+			"id": "56e9454fd4d64dc915f48787",
+			"index": 1,
+			"source": {
+				"lat": 12.9095164,
+				"lng": 77.6431877
+			},
+			"destination": {
+				"lat": 12.915913,
+				"lng": 77.65234
+			},
+			"isActive": false,
+			"picture": "tizen_32.png",
+			"age": 34,
+			"name": "Kaushik",
+			"gender": "male",
+			"email": "kaushik.patil@globant.com",
+			"phone": "+1 (993) 898-2323",
+			"registered": "2015-12-11T06:39:04 -06:-30",
+			"eventlist": {
+				"EventsHostedbyMe": [],
+				"EventList": []
+			}
+		},
+
+		{
+			"id": "56e9454fd4d64dc915f48788",
+			"index": 1,
+			"source": {
+				"lat": 12.93246666,
+				"lng": 77.6315631
+			},
+			"destination": {
+				"lat": 12.915913,
+				"lng": 77.65234
+			},
+			"isActive": false,
+			"picture": "tizen_32.png",
+			"age": 34,
+			"name": "Ayush",
+			"gender": "male",
+			"email": "ayush.jain@globant.com",
+			"phone": "+1 (993) 898-2323",
+			"registered": "2015-12-11T06:39:04 -06:-30",
+			"eventlist": {
+				"EventsHostedbyMe": [],
+				"EventList": []
+			}
+		},
+
+		{
+			"id": "56e9454fd4d64dc915f48789",
+			"index": 1,
+			"source": {
+				"lat": 12.9122899,
+				"lng": 77.6518888
+			},
+			"destination": {
+				"lat": 12.915913,
+				"lng": 77.65234
+			},
+			"isActive": false,
+			"picture": "tizen_32.png",
+			"age": 34,
+			"name": "Archana",
+			"gender": "male",
+			"email": "archana.tiwari@globant.com",
+			"phone": "+1 (993) 898-2323",
+			"registered": "2015-12-11T06:39:04 -06:-30",
+			"eventlist": {
+				"EventsHostedbyMe": [],
+				"EventList": []
+			}
+		},
+
+		{
+			"id": "56e9454fd4d64dc915f48790",
+			"index": 1,
+			"source": {
+				"lat": 12.9122884,
+				"lng": 77.6518787
+			},
+			"destination": {
+				"lat": 12.915913,
+				"lng": 77.65234
+			},
+			"isActive": false,
+			"picture": "tizen_32.png",
+			"age": 34,
+			"name": "Abhinav",
+			"gender": "male",
+			"email": "abhinav.krishna@globant.com",
+			"phone": "+1 (993) 898-2323",
+			"registered": "2015-12-11T06:39:04 -06:-30",
+			"eventlist": {
+				"EventsHostedbyMe": [],
+				"EventList": []
+			}
+		}
+	]
 }
