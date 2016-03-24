@@ -1,0 +1,7 @@
+@font-face {
+  font-family: 'breezesansregular';
+  src: url('../assets/fonts/breezesans-regular_20150728-webfont.eot');
+  src: url('../assets/fonts/breezesans-regular_20150728-webfont.eot?#iefix') format('embedded-opentype'), url('../assets/fonts/breezesans-regular_20150728-webfont.woff2') format('woff2'), url('../assets/fonts/breezesans-regular_20150728-webfont.woff') format('woff'), url('../assets/fonts/breezesans-regular_20150728-webfont.ttf') format('truetype'), url('../assets/fonts/breezesans-regular_20150728-webfont.svg#breezesansregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

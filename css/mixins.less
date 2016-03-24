@@ -1,0 +1,37 @@
+//DEFAULT COLORS
+@white: #fff;
+@black: #000;
+
+.margin (@top:0, @right: 0, @bottom: 0, @left: 0)
+{
+    margin-top: @top;
+    margin-right: @right;
+    margin-bottom: @bottom;
+    margin-left: @left;
+}
+.border (@width, @top-color: #EEE, @right-color: #EEE, @bottom-color: #EEE, @left-color: #EEE)
+{
+    border-top: solid @width @top-color;
+    border-right: solid @width @right-color;
+    border-bottom: solid @width @bottom-color;
+    border-left: solid @width @left-color;
+}
+.padding (@top: 0, @right: 0, @bottom: 0, @left: 0)
+{
+    padding-top: @top;
+    padding-right: @right;
+    padding-bottom: @bottom;
+    padding-left: @left;
+}
+//FONTS
+@font-face {
+    font-family: 'breezesansregular';
+    src: url('../assets/fonts/breezesans-regular_20150728-webfont.eot');
+    src: url('../assets/fonts/breezesans-regular_20150728-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../assets/fonts/breezesans-regular_20150728-webfont.woff2') format('woff2'),
+         url('../assets/fonts/breezesans-regular_20150728-webfont.woff') format('woff'),
+         url('../assets/fonts/breezesans-regular_20150728-webfont.ttf') format('truetype'),
+         url('../assets/fonts/breezesans-regular_20150728-webfont.svg#breezesansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

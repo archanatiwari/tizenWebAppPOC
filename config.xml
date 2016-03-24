@@ -12,5 +12,8 @@
     <tizen:privilege name="http://tizen.org/privilege/internet"/>
     <tizen:privilege name="http://tizen.org/privilege/location"/>
     <tizen:privilege name="http://developer.samsung.com/privilege/accessoryprotocol"/>
+	<feature name="http://tizen.org/api/time" required="true"/>
+    <feature name="http://tizen.org/api/time.read" required="true"/>
+    <feature name="http://tizen.org/api/time.write" required="true"/>
     <tizen:profile name="mobile"/>
 </widget>
