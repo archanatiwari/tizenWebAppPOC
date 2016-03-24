@@ -9,24 +9,29 @@
     <title>Tizen Mobile Web Basic Application</title>
 
     <link rel="stylesheet" type="text/css" href="css/style.css" />
-     <script type="text/javascript" src="js/libs/jquery.min.js"></script>
+    <script type="text/javascript" src="js/libs/jquery.min.js"></script>
     <script type="text/javascript" src="js/libs/angular.min.js"></script>
     <script type="text/javascript" src="js/libs/angular-ui-router.min.js"></script>
     <script src="js/main.js"></script>
-    <script type="text/javascript" src="js/apps/page1Controller.js"></script>
-    <script type="text/javascript" src="js/apps/page2Controller.js"></script>
+    <script type="text/javascript" src="js/apps/config.js"></script>
+    <script type="text/javascript" src="js/apps/services/customServices.js"></script>
     
 </head>
 
 <body ng-app="myApp">
-    <div>
-    <h1>Tizen Demo</h1>
-        <div ui-view >
-        </div>
-    <!--     <a href="#/page1">Page 1</a>
-        <a href="#/page2">Page 2</a> -->
+    <div class="header">
+        <h1>Tizen</h1>
     </div>
-   
+    <div class="wrapper" ui-view ></div>
+
+    <script async defer 
+        src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCVdNjCjSVWFTEv6xOvMP7kAbb2VXo4cew&libraries=geometry,places&callback=angular.noop">
+    </script>
+    <script type="text/javascript" src="js/apps/controllers/landingController.js"></script>
+    <script type="text/javascript" src="js/apps/controllers/loginController.js"></script>
+    <script type="text/javascript" src="js/apps/controllers/contactListController.js"></script>
+    <script type="text/javascript" src="js/apps/controllers/detailsController.js"></script>
+    <script type="text/javascript" src="js/apps/controllers/navigationController.js"></script>
 </body>
 
 </html>

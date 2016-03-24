@@ -1,37 +1,47 @@
-var app=angular.module('myApp', ['ui.router']);
+//var app = angular.module('myApp', ['ui.router']);
+//
+//app.config(function($stateProvider, $urlRouterProvider) {
+//    $urlRouterProvider.otherwise('/landing');
+//    $stateProvider
+//        .state('landing', {
+//            url: '/landing',
+//            templateUrl: 'partials/landing.html',
+//            controller: 'landingController'
+//        })
+//        .state('login', {
+//            url: '/login',
+//            templateUrl: 'partials/login.html',
+//            controller: 'loginController'
+//        })
+//        .state('contactList', {
+//            url: '/contactList',
+//            templateUrl: 'partials/contactList.html',
+//            controller: 'contactListController'
+//        })
+//        .state('navigation', {
+//            url: '/navigation',
+//            templateUrl: 'partials/navigation.html',
+//            controller: 'navigationController'
+//        })
+//
+//});
 
-app.config(function($stateProvider,$urlRouterProvider){
-    $urlRouterProvider.otherwise('/page1');
-        $stateProvider
-             .state('page1',{
-              url:'/page1',
-              templateUrl: 'partials/page1.html',
-                controller: 'page1Controller'      
-              })
-              .state('page2',{
-              url:'/page2',
-              templateUrl: 'partials/page2.html',
-              controller: 'page2Controller'
-              })
-
-});
 
 
 
 
-
-//window.onload = function() {
+window.onload = function() {
 //    // TODO:: Do your initialization job
 //
 //    // add eventListener for tizenhwkey
-//	'use strict';
-//    document.addEventListener('tizenhwkey', function(e) {
-//        if (e.keyName === "back") {
-//            try {
-//                tizen.application.getCurrentApplication().exit();
-//            } catch (ignore) {}
-//        }
-//    });
+  'use strict';
+    document.addEventListener('tizenhwkey', function(e) {
+        if (e.keyName === "back") {
+            try {
+                tizen.application.getCurrentApplication().exit();
+            } catch (ignore) {}
+        }
+    });
 //
 //    // Sample code
 //    var mainPage = document.querySelector('#main');
@@ -41,4 +51,4 @@ app.config(function($stateProvider,$urlRouterProvider){
 //
 //        contentText.innerHTML = (contentText.innerHTML === "Basic") ? "Tizen" : "Basic";
 //    });
-//};
+};

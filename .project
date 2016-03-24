@@ -27,21 +27,4 @@
 		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
 		<nature>org.tizen.web.project.builder.WebNature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>js/libs/angular-ui-router.min.js</name>
-			<type>1</type>
-			<location>D:/HybridMobileApp/testapp/www/js/angular-ui-router/release/angular-ui-router.min.js</location>
-		</link>
-		<link>
-			<name>js/libs/angular.min.js</name>
-			<type>1</type>
-			<location>D:/HybridMobileApp/testapp/www/js/angular/angular.min.js</location>
-		</link>
-		<link>
-			<name>js/libs/jquery.min.js</name>
-			<type>1</type>
-			<location>D:/HybridMobileApp/testapp/www/js/jquery/dist/jquery.min.js</location>
-		</link>
-	</linkedResources>
 </projectDescription>
