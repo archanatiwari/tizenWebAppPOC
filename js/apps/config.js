@@ -1,11 +1,7 @@
 var app = angular.module('myApp', ['ui.router']);
 
 app.config(function($stateProvider, $urlRouterProvider) {
-<<<<<<< HEAD
-    $urlRouterProvider.otherwise('/login');
-=======
     $urlRouterProvider.otherwise('/home');
->>>>>>> 17e6f1857753c9a72e97c9e506a24f7afd62f1b9
     $stateProvider
         .state('home', {
             url: '/home',
