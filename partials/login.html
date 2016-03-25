@@ -1,23 +1,18 @@
-<<<<<<< HEAD
-<div class="contentWrapper ui-content">
-    <div id="login_wrapper">
-        <div class="container">
-=======
+
 <div class="loginpage">
     <div class="container">
         <div class="login_wrapper">
->>>>>>> 17e6f1857753c9a72e97c9e506a24f7afd62f1b9
             <form>
-                <div class="padding-top">
-                    <input type="text" id="username" class="tbx" placeholder="email address" ng-model="email">
+                <div class="form-input">
+                    <input type="text" id="username" class="tbx-login" placeholder="Username" ng-model="email" >
                 </div>
-                <div class="padding-top">
-                    <input type="password" id="password" class="tbx" placeholder="password" ng-model="password">
+                <div class="form-input">
+                    <input type="password" id="password" class="tbx-login" placeholder="Password" ng-model="password">
+                </div>
+                <div class="form-input">
+                    <button data-inline="true" class="ui-btn btn-login" ng-click="login()">Log in</button>
                 </div>
                 <div ng-show="errorMsg">username or password invalid</div>
-                <div class="padding-top">
-                    <a ng-click="login()" class="waves-effect waves-light btn-blue btn">login</a>
-                </div>
             </form>
         </div>
     </div>

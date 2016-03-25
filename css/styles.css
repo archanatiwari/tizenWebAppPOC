@@ -81,27 +81,54 @@ html body a:hover {
   font-weight: normal;
   font-style: normal;
 }
-#login_wrapper {
-  width: 100%;
-  height: 100%;
-  background-image: url(../assets/images/loginbg.png) !important;
-  background-repeat: no-repeat;
-  background-position: 0px 0px !important;
-  background-size: cover !important;
-}
 .contentWrapper {
   width: 100%;
   height: 100% !important;
   background-image: url(../assets/images/mainbg.png) !important;
   background-repeat: no-repeat;
 }
+.wrapper {
+  width: 100%;
+  height: 100%;
+}
 .loginpage {
   width: 100%;
   height: 100%;
-  background-image: url(../images/loginbg.png);
+  background-image: url(../assets/images/loginbg.png);
   background-repeat: no-repeat;
   background-position: 0px 0px;
   background-size: cover;
+}
+.loginpage .login_wrapper {
+  position: absolute;
+  bottom: 20px;
+  width: 92%;
+}
+.loginpage .login_wrapper .form-input {
+  padding-top: 20px;
+}
+.loginpage .login_wrapper .form-input .tbx-login {
+  position: relative;
+  display: block;
+  padding: 4px 12px;
+  min-height: 39px;
+  vertical-align: middle;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+  color: #ffffff;
+  font-size: 20px;
+  white-space: nowrap;
+  cursor: pointer;
+  background-color: rgba(61, 57, 61, 0.95);
+  box-sizing: border-box;
+  border-radius: 26px;
+  width: 100%;
+  border: none;
+  font-family: 'SOne-F200_v20';
+}
+.loginpage .login_wrapper .form-input .btn-login {
+  background: #a72a6d !important;
 }
 .header {
   background: none;
@@ -130,4 +157,8 @@ html body a:hover {
   bottom: 0px;
   overflow-y: auto;
   background-color: #ffffff;
+}
+.container {
+  padding-left: 4%;
+  padding-right: 4%;
 }
