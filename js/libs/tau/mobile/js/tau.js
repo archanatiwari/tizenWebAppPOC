@@ -7369,22 +7369,22 @@ ns.version = '0.11.1';
 			 * @static
 			 * @member ns.event.vmouse
 			 */
-			function copyProps(from, to, properties, propertiesNames) {
-				var i,
-					length,
-					descriptor,
-					property;
+			// function copyProps(from, to, properties, propertiesNames) {
+			// 	var i,
+			// 		length,
+			// 		descriptor,
+			// 		property;
 
-				for (i = 0, length = propertiesNames.length; i < length; ++i) {
-					property = propertiesNames[i];
-					if (isNaN(properties[property]) === false || isNaN(from[property]) === false) {
-						descriptor = Object.getOwnPropertyDescriptor(to, property);
-						if (!descriptor || descriptor.writable) {
-							to[property] = properties[property] || from[property];
-						}
-					}
-				}
-			}
+			// 	for (i = 0, length = propertiesNames.length; i < length; ++i) {
+			// 		property = propertiesNames[i];
+			// 		if (isNaN(properties[property]) === false || isNaN(from[property]) === false) {
+			// 			descriptor = Object.getOwnPropertyDescriptor(to, property);
+			// 			if (!descriptor || descriptor.writable) {
+			// 				to[property] = properties[property] || from[property];
+			// 			}
+			// 		}
+			// 	}
+			// }
 
 			/**
 			 * Create custom event
@@ -7410,7 +7410,7 @@ ns.version = '0.11.1';
 					len,
 					prop;
 
-				copyProps(original, evt, properties, eventProps);
+				// copyProps(original, evt, properties, eventProps);
 				evt._originalEvent = original;
 
 				if (orginalType.indexOf("touch") !== -1) {
