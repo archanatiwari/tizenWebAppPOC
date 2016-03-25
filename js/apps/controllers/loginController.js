@@ -9,7 +9,7 @@ app.controller('loginController' ,function($scope,$http,$location,SharedDataServ
 		angular.forEach($scope.userContacts, function(user, key){
 			if(user.email==$scope.email && user.password==$scope.password){
 				SharedDataService.setCurrentUser(user);
-				$location.path('/contactList');
+				$location.path('/home');
 			}else{
 				$scope.errorMsg=true;
 			}
