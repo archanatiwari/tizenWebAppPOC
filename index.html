@@ -5,11 +5,16 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <meta name="description" content="Tizen Mobile Web Basic Template" />
-
+    
+    <!-- for compatibility test -->
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    
     <title>Tizen Mobile Web Basic Application</title>
 
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <link rel="stylesheet" type="text/css" href="js/libs/tau/mobile/theme/changeable/tau.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="js/libs/tau/mobile/theme/default/tau.css" data-build-remove="false"/>
+    
     <script type="text/javascript" src="js/libs/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="js/libs/angular/angular.min.js"></script>
     <script type="text/javascript" src="js/libs/angular/angular-ui-router.min.js"></script>
@@ -20,15 +25,13 @@
 </head>
 
 <body ng-app="myApp">
-    <div class="header">
-        <h1>Tizen</h1>
+    <div class="ui-page pages" ui-view >
     </div>
-    <div class="wrapper" ui-view ></div>
 
     <script async defer 
         src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCVdNjCjSVWFTEv6xOvMP7kAbb2VXo4cew&libraries=geometry,places&callback=angular.noop">
     </script>
-    <!--<script type="text/javascript" src="js/libs/tau/mobile/js/tau.min.js"></script>-->
+    <script type="text/javascript" src="js/libs/tau/mobile/js/tau.min.js"></script>
     <script type="text/javascript" src="js/apps/controllers/landingController.js"></script>
     <script type="text/javascript" src="js/apps/controllers/loginController.js"></script>
     <script type="text/javascript" src="js/apps/controllers/contactListController.js"></script>

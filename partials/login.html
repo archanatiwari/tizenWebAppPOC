@@ -1,6 +1,6 @@
-<div class="contentWrapper">
-    <div class="container">
-        <div class="login_wrapper">
+<div class="contentWrapper ui-content">
+    <div id="login_wrapper">
+        <div class="container">
             <form>
                 <div class="padding-top">
                     <input type="text" id="username" class="tbx" placeholder="email address" ng-model="email">
@@ -9,17 +9,9 @@
                     <input type="password" id="password" class="tbx" placeholder="password" ng-model="password">
                 </div>
                 <div class="padding-top">
-                    <input type="checkbox" id="check_remember" class="chk-box">
-                    <label for="check_remember">Remember me</label><a href="#/signup" class="forget_password">Forgot Password?
-					</a>
-                </div>
-                <div class="padding-top">
                     <a ng-click="login()" class="waves-effect waves-light btn-blue btn">login</a>
                 </div>
             </form>
-            <div class="padding-top">
-                <a href="#/signup">Sign Up</a>
-            </div>
         </div>
     </div>
 </div>
