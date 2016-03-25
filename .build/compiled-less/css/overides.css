@@ -1,0 +1,29 @@
+html {
+  font-size: 75%;
+  height: 100%;
+}
+html body {
+  font-family: 'SOne-F200_v20';
+  overflow: auto;
+  /*Setting scroll for the wrapper*/
+
+  min-width: 1024px;
+  height: 100%;
+}
+html body h1,
+html body h2,
+html body h3,
+html body h4,
+html body h5,
+html body h6 {
+  font-family: 'SOne-F200_v20';
+}
+html body hr {
+  max-width: 100%;
+}
+html body a {
+  text-decoration: none;
+}
+html body a:hover {
+  text-decoration: none;
+}

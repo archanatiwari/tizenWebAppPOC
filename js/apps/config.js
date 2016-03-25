@@ -1,12 +1,12 @@
 var app = angular.module('myApp', ['ui.router']);
 
 app.config(function($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise('/landing');
+    $urlRouterProvider.otherwise('/login');
     $stateProvider
-        .state('landing', {
-            url: '/landing',
-            templateUrl: 'partials/landing.html',
-            controller: 'landingController'
+        .state('home', {
+            url: '/home',
+            templateUrl: 'partials/home.html',
+            controller: 'homeController'
         })
         .state('login', {
             url: '/login',
