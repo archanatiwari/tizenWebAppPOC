@@ -22,4 +22,10 @@ app.service('SharedDataService', function() {
     this.getTargetData = function() {
         return this.targetData;
     };
+    this.setCurrentUser= function(data){
+        return this.currentUser = data;
+    };
+    this.getCurrentUser = function(){
+        return this.currentUser;
+    }
 });
