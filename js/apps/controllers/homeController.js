@@ -1,6 +1,6 @@
-app.controller('homeController',function($scope){
+app.controller('homeController',function($scope,SharedDataService){
 
-      $scope.message="This is page 1";
-      console.log($scope.message);
+     $scope.currentUser= SharedDataService.getCurrentUser();
+     console.log($scope.currentUser);
 
 });

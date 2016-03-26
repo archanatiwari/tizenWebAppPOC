@@ -2,19 +2,20 @@
 @import 'less/overides';
 @import 'less/mixins';
 @import 'less/variable';
-
-.contentWrapper{
- width: 100%;
+.contentWrapper {
+    width: 100%;
     height: 100% !important;
-    background-image: url(../assets/images/mainbg.png) !important;   
+    background-image: url(../assets/images/mainbg.png) !important;
     background-repeat: no-repeat;
 }
+
 .wrapper {
     width: 100%;
     height: 100%;
 }
-.loginpage{
-	width: 100%;
+
+.loginpage {
+    width: 100%;
     height: 100%;
     background-image: url(../assets/images/loginbg.png);
     background-repeat: no-repeat;
@@ -24,9 +25,9 @@
         position: absolute;
         bottom: 20px;
         width: 92%;
-        .form-input{
-            padding-top:20px;
-            .tbx-login{
+        .form-input {
+            padding-top: 20px;
+            .tbx-login {
                 position: relative;
                 display: block;
                 padding: 4px 12px;
@@ -46,34 +47,28 @@
                 border: none;
                 font-family: 'SOne-F200_v20';
             }
-            .btn-login{
+            .btn-login {
                 background: rgb(167, 42, 109, 1) !important;
             }
         }
     }
 }
-.header{
-	background: none;
+
+.header {
+    background: none;
     height: 32px;
     text-align: center;
     font-family: 'SOne-F300_v20';
     font-size: 32px;
     color: #fff;
     padding: 20px 10px 0px 10px;
-
-	.header-left{
-
-
-	}
-	.header-left{
-	color:#fff;
-
-	}
-	.header-left{
-
-	}
-
+    .header-left {}
+    .header-left {
+        color: #fff;
+    }
+    .header-left {}
 }
+
 .tabbar {
     width: 100%;
     height: 80px;
@@ -82,15 +77,39 @@
     font-size: 32px;
     color: #fff;
 }
-.content{
-	height: 100%;
+
+.content {
+    height: 100%;
     width: 100%;
     top: 55px;
     bottom: 0px;
-	overflow-y: auto;
+    overflow-y: auto;
     background-color: rgb(255, 255, 255);
 }
-.container {
+
+.login-container {
     padding-left: 4%;
     padding-right: 4%;
+}
+
+.kg-event-list {
+    .event-detail {
+        .event-date {
+            width: 20%;
+            float: left;
+            position: relative;
+        }
+        .event-dtls {
+            width: 80%;
+            float: left;
+            position: relative;
+        }
+    }
+    .event-member-list {
+        .member-list {
+            list-style: none;
+            display: inline-flex;
+            padding: 10px;
+        }
+    }
 }
