@@ -176,3 +176,28 @@ html body a:hover {
   display: inline-flex;
   padding: 10px;
 }
+#map {
+  width: 100%;
+  height: 70%;
+  background: #ccc;
+}
+#map .labels {
+  color: white;
+  background: none;
+  font-size: 14px;
+  font-family: "Lucida Grande", "Arial", sans-serif;
+  text-align: center;
+  width: 70px;
+  white-space: nowrap;
+  opacity: 1 !important;
+}
+.arrivedPplWrapper {
+  height: 50px;
+}
+.arrivedPplWrapper .arrivedPplItem {
+  background-color: #493073;
+  color: white;
+  border: 1px solid;
+  border-radius: 3px;
+  margin-right: 5px;
+}

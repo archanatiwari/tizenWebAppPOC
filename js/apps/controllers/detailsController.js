@@ -18,5 +18,5 @@ app.controller('detailsController', function($scope, $interval, GetUserData, Sha
         });
     });
     $scope.currentUser = SharedDataService.getCurrentUser();
-    alert($scope.currentUser);
+    //alert($scope.currentUser);
 });

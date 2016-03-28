@@ -2,4 +2,8 @@
     <input id="pac-input" class="controls" type="text" placeholder="Enter a location">
 </div>
 <div class="container" id="map"></div>
-<a href="#/login">back</a>
+<div class="container arrivedPplWrapper">Reached People	
+	<span class="arrivedPplItem" ng-repeat="person in arrivedPpl">{{ person.name }}</div>
+</div>
+<span ng-click="trackUsers()">Start Tracking</span>
+<a href="#/details">back</a>
