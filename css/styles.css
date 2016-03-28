@@ -247,6 +247,12 @@ button {
 .homepage .pending {
   border-left: 4px solid #FECA15;
 }
+.homepage .accepted {
+  border-left: 4px solid #41C555;
+}
+.homepage .rejected {
+  border-left: 4px solid #FF0000;
+}
 .homepage .ui-btn {
   background-color: #7b3f87 !important;
 }
