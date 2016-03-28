@@ -17,7 +17,7 @@
                             <!--Upcoming start  -->
                             <section class="ui-section-active">
                                 <ul class="ui-listview ui-colored-list">
-                                    <li class="ui-li-static pending" ng-repeat="event in currentUser.eventlist.EventList">
+                                    <li class="ui-li-static pending" ng-repeat="event in upcomingEvents">
                                         <div class="kg-event-list">
                                             <div class="event-detail">
                                                 <div class="event-date ">
@@ -38,26 +38,34 @@
                                             </div>
                                         </div>
                                     </li>
-                                    <!-- <li class="ui-li-static">fdhfgh</li>
-                                    <li class="ui-li-static">fdhfgh</li>
-                                    <li class="ui-li-static">fdhfgh</li>
-                                    <li class="ui-li-static">fdhfgh</li>
-                                    <li class="ui-li-static">fdhfgh</li>
-                                    <li class="ui-li-static">fdhfgh</li>
-                                    <li class="ui-li-static">fdhfgh</li>
-                                    <li class="ui-li-static">fdhfgh</li>
-                                    <li class="ui-li-static">fdhfgh</li>
-                                    <li class="ui-li-static">fdhfgh</li>
-                                    <li class="ui-li-static">fdhfgh</li>
-                                    <li class="ui-li-static">fdhfgh</li> -->
+                                    
                                 </ul>
                             </section>
                             <!--Upcoming end  -->
                             <!--All start  -->
                             <section>
                                 <ul class="ui-listview">
-                                    <li class="ui-li-anchor"><a href="#">List 1</a></li>
-                                    <li class="ui-li-anchor"><a href="#">List 2</a></li>
+                                    <li class="ui-li-anchor" ng-repeat="event in currentUser.eventlist.EventList">
+                                        <div class="kg-event-list">
+                                            <div class="event-detail">
+                                                <div class="event-date ">
+                                                    <span>{{event.EventDate|date:"dd MMM"}}</span></br><span>{{event.EventTime}}</span>
+                                                </div>
+                                                <div class="event-dtls ">
+                                                    <span>{{event.EventName}}</span></br><span>{{event.EventLocation}},{{event.EventDescription}}</span>
+                                                </div>
+                                            </div>
+                                            <div class="event-member-list">
+                                                <ul class="member-list">
+                                                    <li ng-repeat="member in event.UsersAcccepted">{{member}}, </li>
+                                                </ul>
+                                            </div>
+                                            <div>
+                                                <a class="ui-btn" data-inline="true">Reject</a>
+                                                <a class="ui-btn" data-inline="true">Accept</a>
+                                            </div>
+                                        </div>
+                                    </li>
                                 </ul>
                             </section>
                             <!--All end  -->
