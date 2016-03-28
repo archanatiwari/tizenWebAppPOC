@@ -1,8 +1,55 @@
+<script type="text/javascript" src="js/libs/tau/mobile/js/tau.js"></script>
 <div class="contentWrapper homepage">
 <a href="#/details">Details</a>
     <div class="container">
         <header-template></header-template>
-        <div class="ui-tabbar ui-tabbar-portrait" id="tau-14-1458837581419" data-tau-built="TabBar" data-tau-name="TabBar" aria-disabled="false" data-tau-bound="TabBar">
+        <div class="ui-page ui-page-active" id="tabs_text_with_title">
+		   <div class="ui-tabs">
+		    <h1 class="ui-title">Title</h1>
+		    <div class="ui-tabbar">
+		     <ul>
+		      <li class="ui-li-anchor"><a href="#" class="ui-tab-active">Upcoming</a></li>
+		      <li class="ui-li-anchor"><a href="#">All</a></li>
+		     </ul>
+		    </div>
+		    <div class="ui-section-changer" id="sectionChanger">
+		     <div>
+		      <section class="ui-section-active">
+		       <ul class="ui-listview"> 
+		        <li class="ui-li-anchor" ng-repeat="event in currentUser.eventlist.EventList">
+                    <div class="kg-event-list">
+                        <div class="event-detail">
+                            <div class="event-date ">
+                            	<span>{{event.EventDate}}</span></br><span>{{event.EventTime}}</span>
+                            </div>
+                            <div class="event-dtls ">
+                            	<span>{{event.EventName}}</span></br><span>{{event.EventLocation}},{{event.EventDescription}}</span>
+                            </div>
+                        </div>
+                        <div class="event-member-list">
+                            <ul class="member-list">
+                                <li ng-repeat="member in event.UsersAcccepted">{{member}}, </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <a class="ui-btn"  data-inline="true">Reject</a>
+                            <a class="ui-btn" data-inline="true">Accept</a>
+                        </div>
+                    </div>
+                </li>
+		       </ul>
+		      </section>
+		      <section>
+		       <ul class="ui-listview">
+		        <li class="ui-li-anchor"><a href="#">List 1</a></li>
+		        <li class="ui-li-anchor"><a href="#">List 2</a></li>
+		       </ul>
+		      </section>
+		     </div>
+		    </div>
+		   </div>
+		  </div>
+       <!--  <div class="ui-tabbar ui-tabbar-portrait" id="tau-14-1458837581419" data-tau-built="TabBar" data-tau-name="TabBar" aria-disabled="false" data-tau-bound="TabBar">
             <ul>
                 <li class="ui-li-anchor ui-li-active" style="width: 50%;"><a><span class="ui-tabbar-text">Upcoming</span></a></li>
                 <li class="ui-li-anchor ui-li-active" style="width: 50%;"><a><span class="ui-tabbar-text">All</span></a></li>
@@ -37,5 +84,5 @@
                     
                 </ul>
             </div>
-        </div>
+        </div> -->
     </div>
