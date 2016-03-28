@@ -1,4 +1,4 @@
-app.controller('loginController' ,function($scope,$http,$location,SharedDataService){
+app.controller('loginController' ,function($scope,$http,$state,SharedDataService){
 	$scope.userContacts= [];
 	$scope.errorMsg=false;
 	$http.get('data/user-data.json').success(function(data){
@@ -12,7 +12,7 @@ app.controller('loginController' ,function($scope,$http,$location,SharedDataServ
 			var user = userContacts[i];
 			if(user.email==$scope.email && user.password==$scope.password){
 				SharedDataService.setCurrentUser(user);
-				$location.path('/home');
+				$state.go('home');
 				break;
 			}else{
 				$scope.errorMsg=true;

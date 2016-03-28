@@ -145,14 +145,23 @@ button {
   font-family: 'SOne-F200_v20';
 }
 .loginpage .login_wrapper .form-input .btn-login {
-  background: #a72a6d !important;
+  background-color: #A72A6D !important;
+}
+.loginpage .login_wrapper .form-input .btn-login:hover {
+  background-color: #A72A6D !important;
+}
+.loginpage .login_wrapper .form-input .btn-login:active {
+  background-color: #A72A6D !important;
+}
+.loginpage .login_wrapper .form-input .btn-login::before {
+  background-color: #A72A6D !important;
 }
 .header {
   background: none;
   height: 32px;
   text-align: center;
   font-family: 'SOne-F300_v20';
-  font-size: 32px;
+  font-size: 25px;
   color: #fff;
   padding: 20px 10px 0px 10px;
 }
@@ -227,6 +236,16 @@ button {
   list-style: none;
   display: inline-flex;
   padding: 10px;
+}
+.homepage .ui-tabbar a {
+  font-family: 'SOne-F400c_v21';
+  color: rgba(255, 255, 255, 0.7);
+}
+.homepage .ui-tabbar li:active {
+  background-color: #A72A6D !important;
+}
+.homepage .pending {
+  border-left: 4px solid #FECA15;
 }
 .homepage .ui-btn {
   background-color: #7b3f87 !important;

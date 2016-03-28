@@ -2,10 +2,25 @@
 @import 'less/overides';
 @import 'less/mixins';
 @import 'less/variable';
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button {
+    font-family: 'SOne-F200_v20'!important;
+}
 
-span, h1, h2, h3, h4, h5, h6,button{font-family: 'SOne-F200_v20'!important;}
-.fleft{float: left;}
-.fright{float: right;}
+.fleft {
+    float: left;
+}
+
+.fright {
+    float: right;
+}
+
 .contentWrapper {
     width: 100%;
     height: 100% !important;
@@ -52,7 +67,16 @@ span, h1, h2, h3, h4, h5, h6,button{font-family: 'SOne-F200_v20'!important;}
                 font-family: 'SOne-F200_v20';
             }
             .btn-login {
-                background: rgb(167, 42, 109, 1) !important;
+                background-color: @loginbtn-bg !important;
+            }
+            .btn-login:hover {
+                background-color: @loginbtn-bg !important;
+            }
+            .btn-login:active {
+                background-color: @loginbtn-bg !important;
+            }
+            .btn-login::before {
+                background-color: @loginbtn-bg !important;
             }
         }
     }
@@ -63,14 +87,12 @@ span, h1, h2, h3, h4, h5, h6,button{font-family: 'SOne-F200_v20'!important;}
     height: 32px;
     text-align: center;
     font-family: 'SOne-F300_v20';
-    font-size: 32px;
+    font-size: 25px;
     color: #fff;
     padding: 20px 10px 0px 10px;
-    .header-left {}
     .header-left {
         color: #fff;
     }
-    .header-left {}
 }
 
 .tabbar {
@@ -96,39 +118,35 @@ span, h1, h2, h3, h4, h5, h6,button{font-family: 'SOne-F200_v20'!important;}
     padding-right: 4%;
 }
 
-
-
 #map {
     width: 100%;
     height: 70%;
     background: #ccc;
-    
-    .labels{
-		color: white;
-		background: none;
-		font-size: 14px;
-		font-family: "Lucida Grande", "Arial", sans-serif;
-	  	text-align: center;
-	  	width: 70px;
-	  	white-space: nowrap;
-	  	opacity: 1 !important;
-	}
+    .labels {
+        color: white;
+        background: none;
+        font-size: 14px;
+        font-family: "Lucida Grande", "Arial", sans-serif;
+        text-align: center;
+        width: 70px;
+        white-space: nowrap;
+        opacity: 1 !important;
+    }
 }
 
-.arrivedPplWrapper{
-	height: 50px;
-	
-	.arrivedPplItem{
-		background-color: #493073;
-		color: white;
-		border: 1px solid;
-		border-radius: 3px;
-		margin-right: 5px;	
-	}
+.arrivedPplWrapper {
+    height: 50px;
+    .arrivedPplItem {
+        background-color: #493073;
+        color: white;
+        border: 1px solid;
+        border-radius: 3px;
+        margin-right: 5px;
+    }
 }
 
-// home page code 
-.homepage{
+// home page style 
+.homepage {
     .kg-event-list {
         padding: 8px 0px 14px 0px;
         .event-detail {
@@ -154,6 +172,19 @@ span, h1, h2, h3, h4, h5, h6,button{font-family: 'SOne-F200_v20'!important;}
                 padding: 10px;
             }
         }
+
     }
-    .ui-btn{background-color: @primary-bg!important;}
+    .ui-tabbar a{
+        font-family: 'SOne-F400c_v21';
+        color:rgba(255, 255, 255, 0.7);
+    }
+    .ui-tabbar li:active {
+        background-color: @loginbtn-bg !important;
+    }
+    .pending{
+            border-left:4px solid @pending-bg;
+        }
+    .ui-btn {
+        background-color: @primary-bg!important;
+    }
 }
