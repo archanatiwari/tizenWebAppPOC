@@ -1,25 +1,22 @@
-app.controller('loginController' ,function($scope,$http,$location,SharedDataService){
-	$scope.userContacts= [];
-	$scope.errorMsg=false;
-	$http.get('data/user-data.json').success(function(data){
-		$scope.userContacts = data.data;
+app.controller('loginController', function($scope, $http, $state, SharedDataService) {
+    $scope.userContacts = [];
+    $scope.errorMsg = false;
 
-	});
-	$scope.login= function(){
-		var userContacts = $scope.userContacts;
-		//angular.forEach($scope.userContacts, function(user, key){ //do not use forEach, as there is no option to break the loop
-		for(var i=0; i<userContacts.length;i++){
-			var user = userContacts[i];
-			if(user.email==$scope.email && user.password==$scope.password){
-				SharedDataService.setCurrentUser(user);
-				$location.path('/home');
-				break;
-			}else{
-				$scope.errorMsg=true;
-			}
-		}
-		//})
-	}
-	
-	
+    $http.get('data/user-data.json').success(function(data) {
+        $scope.userContacts = data.data;
+
+    });
+    $scope.login = function() {
+        $scope.username = document.getElementById('username').value;
+        $scope.password = document.getElementById('password').value;
+        var userContacts = $scope.userContacts;
+        angular.forEach($scope.userContacts, function(user, key) {
+            if (user.email == $scope.username && user.password == $scope.password) {
+                SharedDataService.setCurrentUser(user);
+                $state.go('home');
+            } else {
+                return $scope.errorMsg = true;
+            }
+        })
+    }
 });
