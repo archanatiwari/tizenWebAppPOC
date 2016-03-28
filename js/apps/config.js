@@ -20,13 +20,23 @@ app.config(function($stateProvider, $urlRouterProvider) {
         })
         .state('details', {
             url: '/details',
-            templateUrl: 'partials/details.html',
-            controller: 'detailsController'
+            templateUrl: 'partials/eventDetails.html',
+            controller: 'eventDetailsController'
         })
         .state('navigation', {
             url: '/navigation',
             templateUrl: 'partials/navigation.html',
             controller: 'navigationController'
+        })
+        .state('location', {
+            url: '/location',
+            templateUrl: 'partials/locationPage.html',
+            controller: 'locationController'
+        })
+        .state('newEvent', {
+            url: '/newevent',
+            templateUrl: 'partials/newEvent.html',
+            controller: 'newEventController'
         })
 
 });
