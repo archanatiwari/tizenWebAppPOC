@@ -1,4 +1,4 @@
-app.controller('detailsController', function($scope, $interval, GetUserData, SharedDataService) {
+app.controller('eventDetailsController', function($scope, $interval, GetUserData, SharedDataService) {
 
     $scope.inputText = document.getElementById('pac-input');
     $scope.searchBox = new google.maps.places.SearchBox($scope.inputText);
