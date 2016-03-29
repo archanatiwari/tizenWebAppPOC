@@ -1,4 +1,4 @@
-app.controller('locationController', function($scope, $interval, GetUserData, SharedDataService) {
+app.controller('locationController', function($scope, $state, $interval, SharedDataService) {
 
     $scope.inputText = document.getElementById('pac-input');
     $scope.searchBox = new google.maps.places.SearchBox($scope.inputText);
@@ -23,5 +23,6 @@ app.controller('locationController', function($scope, $interval, GetUserData, Sh
     //alert($scope.currentUser);
     $scope.setLocation = function() {
         SharedDataService.setDestination($scope.location);
+        $state.go('newEvent');
     }
 });

@@ -14,14 +14,14 @@
                     <div class="ui-section-changer" id="sectionChanger">
                         <div>
                             <!--Upcoming start  -->
-                            <section class="ui-section-active">
-                                <ul class="ui-listview ui-colored-list">
-                                    <li class="ui-li-static {{event.statusClass}} event-content" ng-repeat="event in upcomingEvents" ng-click="getEventDetails(event)">
-                                        <div class="event-list">
+                          
+                            <section>
+                                <ul class="ui-listview ">
+                                    <li class="ui-li-static {{event.statusClass}}" ng-repeat="event in upcomingEvents | orderBy: 'EventDate'" ng-click="getEventDetails(event)">
+                                        <div class="kg-event-list">
                                             <div class="event-detail">
                                                 <div class="event-date ">
-                                                    <span class="date-view">{{event.EventDate|date:"dd MMM"}}</span>
-                                                    </br><span>{{event.EventTime|date : 'shortTime'}}</span>
+                                                    <span>{{event.EventDate|date:"dd MMM"}}</span></br><span>{{event.EventTime}}</span>
                                                 </div>
                                                 <div class="event-dtls ">
                                                     <span>{{event.EventName}}</span></br><span>{{event.EventLocation}},{{event.EventDescription}}</span>
