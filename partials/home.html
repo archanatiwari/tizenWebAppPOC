@@ -21,7 +21,7 @@
                                         <div class="kg-event-list">
                                             <div class="event-detail">
                                                 <div class="event-date ">
-                                                    <span>{{event.EventDate|date:"dd MMM"}}</span></br><span>{{event.EventTime}}</span>
+                                                    <span>{{event.EventDate|date:"dd MMM"}}</span></br><span>{{event.EventTime|date : 'shortTime'}}</span>
                                                 </div>
                                                 <div class="event-dtls ">
                                                     <span>{{event.EventName}}</span></br><span>{{event.EventLocation}},{{event.EventDescription}}</span>
@@ -34,8 +34,8 @@
                                                     </ul>
                                                 </div>
                                                 <div>
-                                                    <a class="ui-btn" data-inline="true">Reject</a>
-                                                    <a class="ui-btn" data-inline="true">Accept</a>
+                                                    <a class="ui-btn event-button" data-inline="true">Reject</a>
+                                                    <a class="ui-btnevent-button" data-inline="true">Accept</a>
                                                 </div>
                                             </div>
                                         </div>

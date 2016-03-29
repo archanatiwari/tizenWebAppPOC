@@ -34,7 +34,7 @@ app.controller('navigationController', function($scope, $interval, SharedFactory
 
     var map = new google.maps.Map(document.getElementById('map'), {
         center: $scope.targetLocation,
-        //scrollwheel: false,
+        scrollwheel: true,
         zoom: 13,
         mapTypeId: google.maps.MapTypeId.ROADMAP
     });
