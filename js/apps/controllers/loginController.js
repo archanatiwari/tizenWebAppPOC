@@ -1,10 +1,17 @@
-app.controller('loginController' ,function($scope,$http,$state,SharedDataService){
+app.controller('loginController' ,function($scope,$http,$state,SharedFactory,SharedDataService){
 	$scope.userContacts= [];
 	$scope.errorMsg=false;
-	$http.get('data/user-data.json').success(function(data){
-		$scope.userContacts = data.data;
+//	$http.get('data/user-data.json').success(function(data){
+//		$scope.userContacts = data.data;
+//
+//	});
 
+	SharedFactory.getData().then(function(response){
+		$scope.userContacts = response;
+	}, function(response){
+		$scope.userContacts = response;
 	});
+	
 	$scope.login= function(){
 		var userContacts = $scope.userContacts;
 		//angular.forEach($scope.userContacts, function(user, key){ //do not use forEach, as there is no option to break the loop

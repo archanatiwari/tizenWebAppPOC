@@ -1,4 +1,4 @@
-app.controller('homeController', function($scope, SharedDataService) {
+app.controller('homeController', function($scope, $state, SharedDataService) {
 
     $scope.currentUser = SharedDataService.getCurrentUser();
     console.log($scope.currentUser);
@@ -12,6 +12,12 @@ app.controller('homeController', function($scope, SharedDataService) {
         } else {
             $scope.currentUser.eventlist.EventList[i].EventDate = date;
         }
+    };
+    
+    $scope.getEventDetails = function(eventObj){
+    	//SharedDataService.setEventData(eventObj);
+    	SharedDataService.setTargetData(eventObj.Destination);
+    	$state.go('navigation');
     }
 
 });
