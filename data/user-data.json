@@ -262,7 +262,7 @@
 		"isActive": false
 	}, {
 		"index": 1,
-		"name": "Kaushik G",
+		"name": "Kaushik Gotefode",
 		"picture": "tizen_32.png",
 		"gender": "male",
 		"age": 34,
@@ -279,8 +279,169 @@
 			"lng": 77.6217730
 		},
 		"eventlist": {
-			"EventList": [],
-			"EventsHostedbyMe": []
+			"EventList": [{
+				"Hoster": "Charan",
+				"UsersInvited": [
+					"Sakshi",
+					"Archit",
+					"Ayush",
+					"Abhinav",
+					"Kaushik",
+					"Piyush",
+					"Archana"
+				],
+				"UsersAcccepted": [
+					"Kaushik",
+					"Piyush",
+					"Archana",
+					"Archit"
+				],
+				"UsersRejected": [
+					"Abhinav"
+				],
+				"EventName": "Drink",
+				"mystatus": "ACCEPTED",
+				"UsersPending": [
+					"Sakshi",
+					"Ayush"
+				],
+				"EventDate": "Mar 29 2016",
+				"EventTime": "06.00 PM",
+				"EventDescription": "Sarjapur",
+				"EventLocation": "BigBrewsky",
+				"Destination": {
+					"lat": 12.912985,
+					"lng": 77.683131
+				}
+			}, {
+				"Hoster": "Charan",
+				"UsersInvited": [
+					"Sakshi",
+					"Archit",
+					"Ayush",
+					"Abhinav",
+					"Kaushik",
+					"Piyush",
+					"Archana"
+				],
+				"UsersAcccepted": [
+					"Kaushik",
+					"Piyush",
+					"Archana"
+				],
+				"UsersRejected": [
+					"Abhinav",
+					"Archit"
+				],
+				"EventName": "Holi",
+				"mystatus": "REJECTED",
+				"UsersPending": [
+					"Sakshi",
+					"Ayush"
+				],
+				"EventDate": "Mar 29 2016",
+				"EventTime": "06.00 PM",
+				"EventDescription": "Sarjapur",
+				"EventLocation": "Globant",
+				"Destination": {
+					"lat": 12.915913,
+					"lng": 77.65234
+				}
+			}, {
+				"Hoster": "Charan",
+				"UsersInvited": [
+					"Sakshi",
+					"Ayush",
+					"Abhinav",
+					"Kaushik",
+					"Piyush",
+					"Archana"
+				],
+				"UsersAcccepted": [
+					"Kaushik",
+					"Piyush",
+					"Archana"
+				],
+				"UsersRejected": [
+					"Abhinav"
+				],
+				"EventName": "Movie",
+				"mystatus": "PENDING",
+				"UsersPending": [
+					"Sakshi",
+					"Ayush",
+					"Archit"
+				],
+				"EventDate": "Mar 30 2016",
+				"EventTime": "06.00 PM",
+				"EventDescription": "Sarjapur",
+				"EventLocation": "Bangalore Central Mall",
+				"Destination": {
+					"lat": 12.912985,
+					"lng": 77.683131
+				}
+			}],
+			"EventsHostedbyMe": [{
+				"UsersInvited": [
+					"Sakshi",
+					"Ayush",
+					"Abhinav",
+					"Kaushik",
+					"Piyush",
+					"Archana"
+				],
+				"EventTime": "06.00 PM",
+				"EventDescription": "Sarjapur",
+				"EventLocation": "BigBrewsky",
+				"Destination": {
+					"lat": 12.912985,
+					"lng": 77.683131
+				},
+				"UsersAcccepted": [
+					"Kaushik",
+					"Piyush",
+					"Archana"
+				],
+				"UsersRejected": [
+					"Abhinav"
+				],
+				"EventName": "Party",
+				"UsersPending": [
+					"Sakshi",
+					"Ayush"
+				],
+				"EventDate": "Mar 31 2016"
+			}, {
+				"UsersInvited": [
+					"Sakshi",
+					"Ayush",
+					"Piyush",
+					"Abhinav",
+					"Kaushik",
+					"Archana"
+				],
+				"EventTime": "06.00 PM",
+				"EventDescription": "Sarjapur",
+				"EventLocation": "BigPitchers",
+				"Destination": {
+					"lat": 12.960198,
+					"lng": 77.646881
+				},
+				"UsersAcccepted": [
+					"Kaushik",
+					"Archana"
+				],
+				"UsersRejected": [
+					"Ayush",
+					"Piyush"
+				],
+				"EventName": "Booze",
+				"UsersPending": [
+					"Sakshi",
+					"Abhinav"
+				],
+				"EventDate": "April 1 2016"
+			}]
 		},
 		"id": "56e9454fd4d64dc915f48787",
 		"isActive": false
