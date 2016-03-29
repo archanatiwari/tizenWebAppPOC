@@ -1,6 +1,6 @@
 <script type="text/javascript" src="js/libs/tau/mobile/js/tau.js"></script>
 <!--NewEvent page-->
-<div class="contentWrapper homepage">
+<div class="contentWrapper newevent">
     <div id="newevent" class="ui-page ui-page-active">
         <div class="ui-header" data-position="fixed">
             <h2 class="ui-title">New Event</h2>
@@ -8,25 +8,36 @@
             <a class="ui-header-btn ui-header-btn-text ui-header-btn-right">CREATE</a>
         </div>
         <div class="ui-content">
-            <div class="textinput-box">
-                <input type="text" name="eventName" id="eventName" placeholder="Event" data-clear-btn="true" />
-            </div>
-            <div class="textinput-box" ui-sref="location">
-                <input type="text" name="locationField" id="locationField" placeholder="Location" disabled="disabled" ng-model="location"/>
-            </div>
-            <div class="textinput-box">
-                <label for="DateTime">Date</label>
-                <input type="date" name="dateField" id="dateField" />
-                <input type="time" name="timeField" id="timeField" />
-            </div>
-            <div class="textinput-box" ui-sref="contactList">
-                <input type="text" name="peopleField" id="peopleField" placeholder="People" disabled="disabled" />
-            </div>
+            <ul class="ui-listview ui-colored-list">
+                <li class="ui-li-static">
+                    <div class="textinput-box">
+                        <input type="text" name="eventName" id="eventName" placeholder="Event" data-clear-btn="true" />
+                    </div>
+                </li>
+                <li class="ui-li-static">
+                    <div class="textinput-box" ui-sref="location">
+                        <!-- <input type="text" name="locationField" id="locationField" placeholder="Location" disabled="disabled" ng-model="location" /> -->
+                        <textarea name="locationField" id="locationField" placeholder="Location" disabled="disabled" ng-model="location"></textarea>
+                    </div>
+                </li>
+                <li class="ui-li-static">
+                    <div class="textinput-box">
+                        <label for="DateTime">Date</label>
+                        <input type="date" name="dateField" id="dateField" />
+                        <input type="time" name="timeField" id="timeField" />
+                    </div>
+                </li>
+                <li class="ui-li-static">
+                    <div class="textinput-box" ui-sref="contactList">
+                        <input type="text" name="peopleField" id="peopleField" placeholder="People" disabled="disabled" />
+                    </div>
+                </li>
+                <li class="ui-li-static">fgfhfgh</li>
+            </ul>
         </div>
         <!-- Button not required - (direct from input field) -->
         <!-- Add People input field (direct to ContactList) -->
         <div class="ui-footer">
-            
         </div>
         <!-- Reminder + End Time -->
     </div>

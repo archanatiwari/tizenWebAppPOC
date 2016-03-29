@@ -108,6 +108,9 @@ button {
   width: 100%;
   height: 100%;
 }
+.ui-header {
+  background: transparent !important;
+}
 .loginpage {
   width: 100%;
   height: 100%;
@@ -185,8 +188,8 @@ button {
   background-color: #ffffff;
 }
 .login-container {
-  padding-left: 4%;
-  padding-right: 4%;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 #map {
   width: 100%;
@@ -218,6 +221,7 @@ button {
   position: relative;
   box-sizing: border-box;
   display: inline-block;
+  padding: 8px 0;
 }
 .homepage .kg-event-list .event-detail .event-date {
   float: left;
@@ -227,7 +231,6 @@ button {
 }
 .homepage .kg-event-list .event-detail .event-date .event-dd {
   font-size: 20px;
-  padding: 8px 0;
   font-family: 'SOne-F400_v21';
 }
 .homepage .kg-event-list .event-detail .event-date span {
@@ -244,14 +247,13 @@ button {
 .homepage .kg-event-list .event-detail .event-dtls .event-name {
   font-size: 20px;
   font-weight: bold;
-  padding: 8px 0;
 }
 .homepage .kg-event-list .event-detail .event-dtls span {
   font-size: 16px;
 }
 .homepage .kg-event-list .event-member-list {
   text-align: center;
-  padding: 17px 0;
+  padding: 12px 0;
 }
 .homepage .kg-event-list .event-member-list .member-list {
   list-style: none;
@@ -298,4 +300,24 @@ button {
   opacity: 50%;
   color: #000;
   font-family: 'SOne-F400c_v21' !important;
+}
+.homepage #ui-floatingactions {
+  background-color: #200055 !important;
+}
+.newevent .ui-header > .ui-header-btn.ui-header-btn-text {
+  min-width: 0px;
+  margin-left: 16px;
+  margin-right: 16px;
+}
+.newevent .ui-header > .ui-header-btn:active::before {
+  background: transparent !important;
+}
+.newevent input.ui-text-input,
+.newevent textarea.ui-text-input {
+  padding: 0px 0px 0px 0px;
+  background: transparent !important;
+}
+.newevent .ui-text-input-textline {
+  background: #3EB9CB !important;
+  margin: 0px !important;
 }
