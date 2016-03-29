@@ -213,11 +213,7 @@ button {
   border-radius: 3px;
   margin-right: 5px;
 }
-.homepage .kg-event-list {
-  padding: 8px 0px 14px 0px;
-}
 .homepage .kg-event-list .event-detail {
-  padding-top: 15px;
   width: 100%;
   position: relative;
   box-sizing: border-box;
@@ -227,8 +223,15 @@ button {
   float: left;
   border-right: 1px solid #CACACA;
   padding: 0px 14px;
-  width: 20%;
   display: block;
+}
+.homepage .kg-event-list .event-detail .event-date .event-dd {
+  font-size: 20px;
+  padding: 8px 0;
+  font-family: 'SOne-F400_v21';
+}
+.homepage .kg-event-list .event-detail .event-date span {
+  font-size: 16px;
 }
 .homepage .kg-event-list .event-detail .event-dtls {
   padding-left: 20px;
@@ -238,10 +241,26 @@ button {
   position: relative;
   box-sizing: border-box;
 }
+.homepage .kg-event-list .event-detail .event-dtls .event-name {
+  font-size: 20px;
+  font-weight: bold;
+  padding: 8px 0;
+}
+.homepage .kg-event-list .event-detail .event-dtls span {
+  font-size: 16px;
+}
+.homepage .kg-event-list .event-member-list {
+  text-align: center;
+  padding: 17px 0;
+}
 .homepage .kg-event-list .event-member-list .member-list {
   list-style: none;
   display: inline-flex;
-  padding: 10px;
+}
+.homepage .kg-event-list .pending-status {
+  margin: 0 auto;
+  text-align: center;
+  padding: 12px 0;
 }
 .homepage .ui-tabbar a {
   font-family: 'SOne-F400c_v21';
@@ -252,13 +271,31 @@ button {
 }
 .homepage .pending {
   border-left: 4px solid #FECA15;
+  padding: 0px !important;
 }
 .homepage .accepted {
   border-left: 4px solid #41C555;
+  border-bottom: none !important;
+  padding: 0px !important;
 }
 .homepage .rejected {
   border-left: 4px solid #FF0000;
+  padding: 0px !important;
 }
 .homepage .ui-btn {
   background-color: #7b3f87 !important;
+  padding: 13px 49px;
+  margin: 0 8px;
+}
+.homepage .event-members {
+  background: #fff;
+  padding: 11px 18px;
+  margin-top: -3px;
+  border-left: 4px solid #ccc;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 16px;
+  opacity: 50%;
+  color: #000;
+  font-family: 'SOne-F400c_v21' !important;
 }

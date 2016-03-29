@@ -38,13 +38,13 @@
 				"UsersRejected": [
 					"Abhinav"
 				],
-				"EventName": "Drink",
+				"EventName": "Birthday Party",
 				"mystatus": "ACCEPTED",
 				"UsersPending": [
 					"Sakshi",
 					"Ayush"
 				],
-				"EventDate": "Mar 31 2016",
+				"EventDate": "Mar 29 2016",
 				"EventTime": "06.00 PM",
 				"EventDescription": "Sarjapur",
 				"EventLocation": "BigBrewsky",
@@ -299,8 +299,8 @@
 				"UsersRejected": [
 					"Abhinav"
 				],
-				"EventName": "Drink",
-				"mystatus": "ACCEPTED",
+				"EventName": "Birthday Party",
+				"mystatus": "PENDING",
 				"UsersPending": [
 					"Sakshi",
 					"Ayush"
