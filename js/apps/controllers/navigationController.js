@@ -87,7 +87,7 @@ app.controller('navigationController', function($scope, $interval, SharedFactory
             fillOpacity: 1,
             strokeColor: '#000',
             strokeWeight: 1,
-            scale: 2,
+            scale: 1,
             //url: "images/user_icon_g.png",
         };
     };
@@ -98,7 +98,7 @@ app.controller('navigationController', function($scope, $interval, SharedFactory
 	        position: $scope.currentUser.source,
 	        map: map,
 	        labelContent: "You",
-			labelAnchor: new google.maps.Point(35, 60),
+			labelAnchor: new google.maps.Point(35, 30),
 			labelClass: "labels",
 			labelInBackground: false,
 			icon: pinSymbol('#00387B')
@@ -168,7 +168,7 @@ app.controller('navigationController', function($scope, $interval, SharedFactory
 							position : newPoint,
 							map: map,
 							labelContent: "You",
-							labelAnchor: new google.maps.Point(35, 60),
+							labelAnchor: new google.maps.Point(35, 30),
 							labelClass: "labels",
 							labelInBackground: false,
 							icon: pinSymbol('#00387B'),
@@ -180,7 +180,7 @@ app.controller('navigationController', function($scope, $interval, SharedFactory
 							map: map,
 							//title: person.name,
 							labelContent: pictureLabel,//labelName,
-							labelAnchor: new google.maps.Point(35, 60),
+							labelAnchor: new google.maps.Point(35, 30),
 							labelClass: "labels",
 							labelInBackground: false,
 							//map_icon_label: '<span class="map-icon map-icon-male"></span>',
