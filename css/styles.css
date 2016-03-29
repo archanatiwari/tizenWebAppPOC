@@ -144,6 +144,9 @@ button {
   border: none;
   font-family: 'SOne-F200_v20';
 }
+.loginpage .login_wrapper .form-input .tbx-login:focus {
+  outline: transparent;
+}
 .loginpage .login_wrapper .form-input .btn-login {
   background-color: #A72A6D !important;
 }
@@ -213,26 +216,29 @@ button {
   border-radius: 3px;
   margin-right: 5px;
 }
-.homepage .kg-event-list {
-  padding: 8px 0px 14px 0px;
+.homepage .event-content {
+  float: left;
 }
-.homepage .kg-event-list .event-detail {
-  padding-top: 15px;
+.homepage .event-content .event-list {
+  padding: 0px;
 }
-.homepage .kg-event-list .event-detail .event-date {
+.homepage .event-content .event-list .event-detail {
+  float: left;
+}
+.homepage .event-content .event-list .event-detail .event-date {
   float: left;
   width: 21%;
   position: relative;
   border-right: 1px solid #CACACA;
   padding: 0px 14px;
 }
-.homepage .kg-event-list .event-detail .event-dtls {
+.homepage .event-content .event-list .event-detail .event-dtls {
   width: 61%;
   float: left;
   padding-left: 20px;
   position: relative;
 }
-.homepage .kg-event-list .event-member-list .member-list {
+.homepage .event-content .event-list .event-member-list .member-list {
   list-style: none;
   display: inline-flex;
   padding: 10px;

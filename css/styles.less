@@ -66,6 +66,9 @@ button {
                 border: none;
                 font-family: 'SOne-F200_v20';
             }
+            .tbx-login:focus {
+                outline: transparent;
+            }
             .btn-login {
                 background-color: @loginbtn-bg !important;
             }
@@ -147,48 +150,53 @@ button {
 
 // home page style 
 .homepage {
-    .kg-event-list {
-        padding: 8px 0px 14px 0px;
-        .event-detail {
-            padding-top: 15px;
-            .event-date {
-                float: left;
-                width: 21%;
-                position: relative;
-                border-right: 1px solid #CACACA;
-                padding: 0px 14px
-            }
-            .event-dtls {
-                width: 61%;
-                float: left;
-                padding-left: 20px;
-                position: relative;
-            }
-        }
-        .event-member-list {
-            .member-list {
-                list-style: none;
-                display: inline-flex;
-                padding: 10px;
-            }
-        }
+    .event-content {
+        float:left;
+        .event-list {
+            padding: 0px;
+            .event-detail {
+                float:left;
+                .event-date {
+                    float: left;
+                    width: 21%;
+                    position: relative;
+                    border-right: 1px solid #CACACA;
+                    padding: 0px 14px;
+                    .date-view{
 
+                    }
+                }
+                .event-dtls {
+                    width: 61%;
+                    float: left;
+                    padding-left: 20px;
+                    position: relative;
+                }
+            }
+            .event-member-list {
+                .member-list {
+                    list-style: none;
+                    display: inline-flex;
+                    padding: 10px;
+                }
+            }
+        }
     }
-    .ui-tabbar a{
+    .ui-tabbar a {
         font-family: 'SOne-F400c_v21';
-        color:rgba(255, 255, 255, 0.7);
+        color: rgba(255, 255, 255, 0.7);
     }
     .ui-tabbar li:active {
         background-color: @loginbtn-bg !important;
     }
-    .pending{
-            border-left:4px solid @pending-bg;
-        }
-    .accepted{
-        border-left:4px solid @accepted-bg;
+    .pending {
+        border-left: 4px solid @pending-bg;
     }
-    .rejected{
-        border-left:4px solid @rejected-bg;
+    .accepted {
+        border-left: 4px solid @accepted-bg;
+    }
+    .rejected {
+        border-left: 4px solid @rejected-bg;
     }
     .ui-btn {
         background-color: @primary-bg!important;

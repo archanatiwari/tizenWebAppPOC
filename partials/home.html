@@ -17,11 +17,11 @@
                             <!--Upcoming start  -->
                             <section class="ui-section-active">
                                 <ul class="ui-listview ui-colored-list">
-                                    <li class="ui-li-static {{event.statusClass}}" ng-repeat="event in upcomingEvents" ng-click="getEventDetails(event)">
-                                        <div class="kg-event-list">
+                                    <li class="ui-li-static {{event.statusClass}} event-content" ng-repeat="event in upcomingEvents" ng-click="getEventDetails(event)">
+                                        <div class="event-list">
                                             <div class="event-detail">
                                                 <div class="event-date ">
-                                                    <span>{{event.EventDate|date:"dd MMM"}}</span></br><span>{{event.EventTime}}</span>
+                                                    <span class="date-view">{{event.EventDate|date:"dd MMM"}}</span></br><span>{{event.EventTime}}</span>
                                                 </div>
                                                 <div class="event-dtls ">
                                                     <span>{{event.EventName}}</span></br><span>{{event.EventLocation}},{{event.EventDescription}}</span>
@@ -41,6 +41,10 @@
                                         </div>
                                     </li>
                                 </ul>
+                                <!-- <ul class="ui-listview ui-colored-list">
+                                    <li class="ui-li-static ">fdffgbf</li>
+                                    <li class="ui-li-static ">fdffgbf</li><li class="ui-li-static ">fdffgbf</li><li class="ui-li-static ">fdffgbf</li><li class="ui-li-static ">fdffgbf</li><li class="ui-li-static ">fdffgbf</li><li class="ui-li-static ">fdffgbf</li><li class="ui-li-static ">fdffgbf</li><li class="ui-li-static ">fdffgbf</li><li class="ui-li-static ">fdffgbf</li><li class="ui-li-static ">fdffgbf</li>
+                                </ul> -->
                             </section>
                             <!--Upcoming end  -->
                             <!--All start  -->
