@@ -1,202 +1,201 @@
-@import 'less/common';
-@import 'less/overides';
-@import 'less/mixins';
-@import 'less/variable';
-span,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-button {
-    font-family: 'SOne-F200_v20'!important;
-}
-
-.fleft {
-    float: left;
-}
-
-.fright {
-    float: right;
-}
-
-.contentWrapper {
-    width: 100%;
-    height: 100% !important;
-    background-image: url(../assets/images/mainbg.png) !important;
-    background-repeat: no-repeat;
-}
-
-.wrapper {
-    width: 100%;
-    height: 100%;
-}
-
-.loginpage {
-    width: 100%;
-    height: 100%;
-    background-image: url(../assets/images/loginbg.png);
-    background-repeat: no-repeat;
-    background-position: 0px 0px;
-    background-size: cover;
-    .login_wrapper {
-        position: absolute;
-        bottom: 20px;
-        width: 92%;
-        .form-input {
-            padding-top: 20px;
-            .tbx-login {
-                position: relative;
-                display: block;
-                padding: 4px 12px;
-                min-height: 39px;
-                vertical-align: middle;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                text-align: center;
-                color: rgba(255, 255, 255, 1);
-                font-size: 20px;
-                white-space: nowrap;
-                cursor: pointer;
-                background-color: rgba(61, 57, 61, 0.95);
-                box-sizing: border-box;
-                border-radius: 26px;
-                width: 100%;
-                border: none;
-                font-family: 'SOne-F200_v20';
-            }
-            .btn-login {
-                background-color: @loginbtn-bg !important;
-            }
-            .btn-login:hover {
-                background-color: @loginbtn-bg !important;
-            }
-            .btn-login:active {
-                background-color: @loginbtn-bg !important;
-            }
-            .btn-login::before {
-                background-color: @loginbtn-bg !important;
+    @import 'less/common';
+    @import 'less/overides';
+    @import 'less/mixins';
+    @import 'less/variable';
+    span,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    button {
+        font-family: 'SOne-F200_v20'!important;
+    }
+    
+    .fleft {
+        float: left;
+    }
+    
+    .fright {
+        float: right;
+    }
+    
+    .contentWrapper {
+        width: 100%;
+        height: 100% !important;
+        background-image: url(../assets/images/mainbg.png) !important;
+        background-repeat: no-repeat;
+    }
+    
+    .wrapper {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .loginpage {
+        width: 100%;
+        height: 100%;
+        background-image: url(../assets/images/loginbg.png);
+        background-repeat: no-repeat;
+        background-position: 0px 0px;
+        background-size: cover;
+        .login_wrapper {
+            position: absolute;
+            bottom: 20px;
+            width: 92%;
+            .form-input {
+                padding-top: 20px;
+                .tbx-login {
+                    position: relative;
+                    display: block;
+                    padding: 4px 12px;
+                    min-height: 39px;
+                    vertical-align: middle;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    text-align: center;
+                    color: rgba(255, 255, 255, 1);
+                    font-size: 20px;
+                    white-space: nowrap;
+                    cursor: pointer;
+                    background-color: rgba(61, 57, 61, 0.95);
+                    box-sizing: border-box;
+                    border-radius: 26px;
+                    width: 100%;
+                    border: none;
+                    font-family: 'SOne-F200_v20';
+                }
+                .btn-login {
+                    background-color: @loginbtn-bg !important;
+                }
+                .btn-login:hover {
+                    background-color: @loginbtn-bg !important;
+                }
+                .btn-login:active {
+                    background-color: @loginbtn-bg !important;
+                }
+                .btn-login::before {
+                    background-color: @loginbtn-bg !important;
+                }
             }
         }
     }
-}
-
-.header {
-    background: none;
-    height: 32px;
-    text-align: center;
-    font-family: 'SOne-F300_v20';
-    font-size: 25px;
-    color: #fff;
-    padding: 20px 10px 0px 10px;
-    .header-left {
+    
+    .header {
+        background: none;
+        height: 32px;
+        text-align: center;
+        font-family: 'SOne-F300_v20';
+        font-size: 25px;
+        color: #fff;
+        padding: 20px 10px 0px 10px;
+        .header-left {
+            color: #fff;
+        }
+    }
+    
+    .tabbar {
+        width: 100%;
+        height: 80px;
+        text-align: center;
+        font-family: 'SOne-F400_v20';
+        font-size: 32px;
         color: #fff;
     }
-}
-
-.tabbar {
-    width: 100%;
-    height: 80px;
-    text-align: center;
-    font-family: 'SOne-F400_v20';
-    font-size: 32px;
-    color: #fff;
-}
-
-.content {
-    height: 100%;
-    width: 100%;
-    top: 55px;
-    bottom: 0px;
-    overflow-y: auto;
-    background-color: rgb(255, 255, 255);
-}
-
-.login-container {
-    padding-left: 4%;
-    padding-right: 4%;
-}
-
-#map {
-    width: 100%;
-    height: 70%;
-    background: #ccc;
-    .labels {
-        color: white;
-        background: none;
-        font-size: 14px;
-        font-family: "Lucida Grande", "Arial", sans-serif;
-        text-align: center;
-        width: 70px;
-        white-space: nowrap;
-        opacity: 1 !important;
+    
+    .content {
+        height: 100%;
+        width: 100%;
+        top: 55px;
+        bottom: 0px;
+        overflow-y: auto;
+        background-color: rgb(255, 255, 255);
     }
-}
-
-.arrivedPplWrapper {
-    height: 50px;
-    .arrivedPplItem {
-        background-color: #493073;
-        color: white;
-        border: 1px solid;
-        border-radius: 3px;
-        margin-right: 5px;
+    
+    .login-container {
+        padding-left: 4%;
+        padding-right: 4%;
     }
-}
-
-// home page style 
-.homepage {
-    .kg-event-list {
-        padding: 8px 0px 14px 0px;
-        .event-detail {
-            padding-top: 15px;
-            .event-date {
-                float: left;
-                width: 21%;
-                position: relative;
-                border-right: 1px solid #CACACA;
-                padding: 0px 14px
-            }
-            .event-dtls {
-                width: 61%;
-                float: left;
-                padding-left: 20px;
-                position: relative;
-            }
+    
+    #map {
+        width: 100%;
+        height: 70%;
+        background: #ccc;
+        .labels {
+            color: white;
+            background: none;
+            font-size: 14px;
+            font-family: "Lucida Grande", "Arial", sans-serif;
+            text-align: center;
+            width: 70px;
+            white-space: nowrap;
+            opacity: 1 !important;
         }
-        .event-member-list {
-            .member-list {
-                list-style: none;
-                display: inline-flex;
-                padding: 10px;
-            }
+    }
+    
+    .arrivedPplWrapper {
+        height: 50px;
+        .arrivedPplItem {
+            background-color: #493073;
+            color: white;
+            border: 1px solid;
+            border-radius: 3px;
+            margin-right: 5px;
         }
-        .event-button {
-            .ui-btn .ui-inline {
+    }
+    
+    // home page style 
+    .homepage {
+        .kg-event-list {
+            padding: 8px 0px 14px 0px;
+            .event-detail {
+                padding-top: 15px;
+                width: 100%;
+                position: relative;
+                box-sizing: border-box;
                 display: inline-block;
-                width: 49%;
-                height: 55px;
+                .event-date {
+                    float: left;
+                    border-right: 1px solid #CACACA;
+                    padding: 0px 14px;
+                    width: 20%;
+                    display: block;
+                }
+                .event-dtls {
+                    padding-left: 20px;
+                    width: 66%;
+                    float: left;
+                    display: block;
+                    position: relative;
+                    box-sizing: border-box;
+                }
+            }
+            .event-member-list {
+                .member-list {
+                    list-style: none;
+                    display: inline-flex;
+                    padding: 10px;
+                }
             }
         }
+        .ui-tabbar a {
+            font-family: 'SOne-F400c_v21';
+            color: rgba(255, 255, 255, 0.7);
+        }
+        .ui-tabbar li:active {
+            background-color: @loginbtn-bg !important;
+        }
+        .pending {
+            border-left: 4px solid @pending-bg;
+        }
+        .accepted {
+            border-left: 4px solid @accepted-bg;
+        }
+        .rejected {
+            border-left: 4px solid @rejected-bg;
+        }
+        .ui-btn {
+            background-color: @primary-bg!important;
+        }
     }
-    .ui-tabbar a {
-        font-family: 'SOne-F400c_v21';
-        color: rgba(255, 255, 255, 0.7);
-    }
-    .ui-tabbar li:active {
-        background-color: @loginbtn-bg !important;
-    }
-    .pending {
-        border-left: 4px solid @pending-bg;
-    }
-    .accepted {
-        border-left: 4px solid @accepted-bg;
-    }
-    .rejected {
-        border-left: 4px solid @rejected-bg;
-    }
-    .ui-btn {
-        background-color: @primary-bg!important;
-    }
-}

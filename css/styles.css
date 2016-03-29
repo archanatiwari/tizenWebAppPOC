@@ -218,29 +218,30 @@ button {
 }
 .homepage .kg-event-list .event-detail {
   padding-top: 15px;
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
+  display: inline-block;
 }
 .homepage .kg-event-list .event-detail .event-date {
   float: left;
-  width: 21%;
-  position: relative;
   border-right: 1px solid #CACACA;
   padding: 0px 14px;
+  width: 20%;
+  display: block;
 }
 .homepage .kg-event-list .event-detail .event-dtls {
-  width: 61%;
-  float: left;
   padding-left: 20px;
+  width: 66%;
+  float: left;
+  display: block;
   position: relative;
+  box-sizing: border-box;
 }
 .homepage .kg-event-list .event-member-list .member-list {
   list-style: none;
   display: inline-flex;
   padding: 10px;
-}
-.homepage .kg-event-list .event-button .ui-btn .ui-inline {
-  display: inline-block;
-  width: 49%;
-  height: 55px;
 }
 .homepage .ui-tabbar a {
   font-family: 'SOne-F400c_v21';
