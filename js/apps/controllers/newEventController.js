@@ -1,7 +1,6 @@
-app.controller('newEventController', function($scope, SharedDataService) {
+app.controller('newEventController',function($scope, SharedDataService){
 
-    $scope.location = SharedDataService.getDestination();
-
-    $scope.message = "This is page 1";
+      $scope.message="This is page 1";
+      $scope.AddedUsers = SharedDataService.getAddedUsers;
 
 });
