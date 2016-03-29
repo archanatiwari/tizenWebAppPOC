@@ -1,6 +1,7 @@
 app.controller('navigationController', function($scope, $interval, SharedFactory, SharedDataService) {
 	var next = -1, totalPplReached = 0, tracker;
-    $scope.targetLocation = SharedDataService.getTargetData();
+    $scope.selectedEvent = SharedDataService.getEventData();
+    $scope.targetLocation = $scope.selectedEvent.Destination;
     
     $scope.arrivedPpl = [];
 

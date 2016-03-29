@@ -29,8 +29,8 @@ app.controller('homeController', function($scope, $state, SharedDataService) {
     };
     
     $scope.getEventDetails = function(eventObj){
-    	//SharedDataService.setEventData(eventObj);
-    	SharedDataService.setTargetData(eventObj.Destination);
+    	SharedDataService.setEventData(eventObj);
+    	//SharedDataService.setTargetData(eventObj.Destination);
     	$state.go('navigation');
     }
 
