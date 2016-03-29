@@ -13,16 +13,16 @@ app.controller('loginController', function($scope, $http, $state, SharedFactory,
     });
 
     $scope.login = function() {
+        $scope.username = document.getElementById('username').value;
+        $scope.password = document.getElementById('password').value;
         var userContacts = $scope.userContacts;
-        for (var i = 0; i < userContacts.length; i++) {
-            var user = userContacts[i];
-            if (user.email == $scope.email && user.password == $scope.password) {
+        angular.forEach($scope.userContacts, function(user, key) {
+            if (user.email == $scope.username && user.password == $scope.password) {
                 SharedDataService.setCurrentUser(user);
                 $state.go('home');
-                break;
             } else {
-                $scope.errorMsg = true;
+                return $scope.errorMsg = true;
             }
-        }
+        })
     }
 });
