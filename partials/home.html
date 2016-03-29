@@ -1,6 +1,6 @@
 <script type="text/javascript" src="js/libs/tau/mobile/js/tau.js"></script>
 <div class="contentWrapper homepage">
-    <!-- <a href="#/details">Details</a> -->
+
     <div class="container">
         <div class="ui-page ui-page-active" id="tabs_text_with_title">
             <header-template></header-template>
@@ -17,8 +17,8 @@
                             <!--Upcoming start  -->
                             <section class="ui-section-active">
                                 <ul class="ui-listview ui-colored-list">
-                                    <li class="ui-li-static {{event.statusClass}}" ng-repeat="event in upcomingEvents | orderBy: 'EventDate'">
-                                        <div class="kg-event-list ">
+                                    <li class="ui-li-static {{event.statusClass}}" ng-repeat="event in currentUser.eventlist.EventList" ng-click="getEventDetails(event)">
+                                        <div class="kg-event-list">
                                             <div class="event-detail">
                                                 <div class="event-date ">
                                                     <span>{{event.EventDate|date:"dd MMM"}}</span></br><span>{{event.EventTime}}</span>
@@ -46,7 +46,7 @@
                             <!--All start  -->
                             <section>
                                 <ul class="ui-listview ui-colored-list">
-                                    <li class="ui-li-static {{event.statusClass}}" ng-repeat="event in currentUser.eventlist.EventList | orderBy: 'EventDate'">
+                                    <li class="ui-li-static {{event.statusClass}}" ng-repeat="event in currentUser.eventlist.EventList | orderBy: 'EventDate'" ng-click="getEventDetails(event)">
                                         <div class="kg-event-list">
                                             <div class="event-detail">
                                                 <div class="event-date ">

@@ -1,23 +1,30 @@
-app.controller('navigationController', function($scope, $interval, GetUserData, SharedDataService) {
+app.controller('navigationController', function($scope, $interval, SharedFactory, SharedDataService) {
 	var next = -1, totalPplReached = 0, tracker;
     $scope.targetLocation = SharedDataService.getTargetData();
     
     $scope.arrivedPpl = [];
 
     var onSuccess = function(response) {
-        $scope.userList = response.data;
-        $scope.currentUser =  $scope.userList[0]; //assuming userId as "archit.soni@globant.com" 
+        $scope.userList = response;
+        $scope.currentUser =  SharedDataService.getCurrentUser(); //$scope.userList[0]; //assuming userId as "archit.soni@globant.com" 
         $scope.updateCurrentUserPosition();
         
         $scope.getCoordinates();
     };
 
     var onError = function(response) {
-        $scope.userList = [];
+        $scope.userList = response;
     }
 
-    GetUserData.getData().then(onSuccess, onError);
-
+    SharedFactory.getData().then(onSuccess, onError);
+    
+//    SharedDataService.getJsonData(function(data){
+//   	 $scope.userList = data;
+//        $scope.currentUser =  SharedDataService.getCurrentUser(); //$scope.userList[0]; //assuming userId as "archit.soni@globant.com" 
+//        $scope.updateCurrentUserPosition();
+//        $scope.getCoordinates();
+//	});
+    
     var bangalore = { lat: 12.9715987, lng: 77.5945627 };
     var curUserMarker, directionsDisplay, directionsService;
     
@@ -36,20 +43,6 @@ app.controller('navigationController', function($scope, $interval, GetUserData, 
         position: $scope.targetLocation,
         map: map,
     });
-    
-    $scope.updateCurrentUserPosition = function(){
-	    //set current user position according to source
-	    curUserMarker = new MarkerWithLabel({
-	        position: $scope.currentUser.source,
-	        map: map,
-	        labelContent: "You",
-			labelAnchor: new google.maps.Point(35, 60),
-			labelClass: "labels",
-			labelInBackground: false,
-			icon: pinSymbol('#00387B')
-	    });
-    };
-    
     
     //to show Directions button on map
     var directionBtn = document.createElement('div');
@@ -86,7 +79,32 @@ app.controller('navigationController', function($scope, $interval, GetUserData, 
 	  });
 
 	};
+	
+	function pinSymbol(color) {
+        return {
+            path: 'M0-48c-9.8 0-17.7 7.8-17.7 17.4 0 15.5 17.7 30.6 17.7 30.6s17.7-15.4 17.7-30.6c0-9.6-7.9-17.4-17.7-17.4z',
+            fillColor: color,
+            fillOpacity: 1,
+            strokeColor: '#000',
+            strokeWeight: 1,
+            scale: 2,
+            //url: "images/user_icon_g.png",
+        };
+    };
 
+    $scope.updateCurrentUserPosition = function(){
+	    //set current user position according to source
+	    curUserMarker = new MarkerWithLabel({
+	        position: $scope.currentUser.source,
+	        map: map,
+	        labelContent: "You",
+			labelAnchor: new google.maps.Point(35, 60),
+			labelClass: "labels",
+			labelInBackground: false,
+			icon: pinSymbol('#00387B')
+	    });
+    };
+    
     $scope.getCoordinates = function() {
     	var userList = $scope.userList;
 	    var  currentUser = $scope.currentUser;
@@ -193,18 +211,6 @@ app.controller('navigationController', function($scope, $interval, GetUserData, 
 		});
     };
     
-    function pinSymbol(color) {
-        return {
-            path: 'M0-48c-9.8 0-17.7 7.8-17.7 17.4 0 15.5 17.7 30.6 17.7 30.6s17.7-15.4 17.7-30.6c0-9.6-7.9-17.4-17.7-17.4z',
-            fillColor: color,
-            fillOpacity: 1,
-            strokeColor: '#000',
-            strokeWeight: 1,
-            scale: 2,
-            //url: "images/user_icon_g.png",
-        };
-    };
-    
     $scope.trackUserPosition = function(){
     	tracker = $interval(function(){
 			next++;
@@ -226,7 +232,7 @@ app.controller('navigationController', function($scope, $interval, GetUserData, 
     };
     
     $scope.getDirections = function(){
-    	
     	directionsDisplay.setDirections($scope.currentUser.route);
     };
+    
 });
