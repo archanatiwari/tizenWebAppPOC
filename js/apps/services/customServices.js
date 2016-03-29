@@ -28,4 +28,10 @@ app.service('SharedDataService', function() {
     this.getCurrentUser = function(){
         return this.currentUser;
     }
+    this.setDestination= function(data){
+        return this.destination =  data;
+    }
+    this.getDestination = function(){
+        return this.destination;
+    }
 });
