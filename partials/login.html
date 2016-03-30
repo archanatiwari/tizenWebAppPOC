@@ -8,13 +8,11 @@
                 <div class="form-input">
                     <input type="text" id="username" name="username" class="tbx-login" placeholder="Username" ng-model="email">
                     <div ng-show="userForm.$submitted || userForm.username.$touched">
-                        <!-- <div  class=""></div> -->
                         <div ng-show="userForm.username.$error.required" id="popup_toast" data-role="popup" class="ui-popup ui-popup-toast text-danger">
                             <div class="ui-popup-content">
                                 Enter the valid username
                             </div>
                         </div>
-                        <!-- <div ng-show="userForm.username.$error.number">Not a valid username!</div> -->
                     </div>
                 </div>
                 <div class="form-input">

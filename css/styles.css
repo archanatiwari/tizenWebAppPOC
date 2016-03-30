@@ -98,6 +98,9 @@ button {
 .fright {
   float: right;
 }
+.paddingBottom30px {
+  padding-bottom: 30px;
+}
 .contentWrapper {
   width: 100%;
   height: 100% !important;
@@ -107,6 +110,9 @@ button {
 .wrapper {
   width: 100%;
   height: 100%;
+}
+.ui-header {
+  background: transparent !important;
 }
 .loginpage {
   width: 100%;
@@ -162,7 +168,7 @@ button {
 .loginpage .ui-header-login .ui-header-btn {
   margin-right: 16px;
 }
-.loginpage .header {
+.header {
   background: none;
   height: 32px;
   text-align: center;
@@ -171,10 +177,10 @@ button {
   color: #fff;
   padding: 20px 10px 0px 10px;
 }
-.loginpage .header .header-left {
+.header .header-left {
   color: #fff;
 }
-.loginpage .tabbar {
+.tabbar {
   width: 100%;
   height: 80px;
   text-align: center;
@@ -182,7 +188,7 @@ button {
   font-size: 32px;
   color: #fff;
 }
-.loginpage .content {
+.content {
   height: 100%;
   width: 100%;
   top: 55px;
@@ -190,56 +196,64 @@ button {
   overflow-y: auto;
   background-color: #ffffff;
 }
-.loginpage .login-container {
-  padding-left: 4%;
-  padding-right: 4%;
+.login-container {
+  padding-left: 16px;
+  padding-right: 16px;
 }
-.loginpage #map {
+#map {
   width: 100%;
   height: 70%;
   background: #ccc;
 }
-.loginpage #map .labels {
+#map .labels {
   color: white;
   background: none;
-  font-size: 14px;
-  font-family: "Lucida Grande", "Arial", sans-serif;
+  height: 32px;
   text-align: center;
-  width: 70px;
-  white-space: nowrap;
-  opacity: 1 !important;
+  font-family: 'SOne-F300_v20';
+  font-size: 25px;
+  color: #fff;
+  padding: 20px 10px 0px 10px;
 }
-.loginpage .arrivedPplWrapper {
+.arrivedPplWrapper {
   height: 50px;
 }
-.loginpage .arrivedPplWrapper .arrivedPplItem {
+.arrivedPplWrapper .arrivedPplItem {
   background-color: #493073;
   color: white;
   border: 1px solid;
   border-radius: 3px;
   margin-right: 5px;
 }
-.loginpage .homepage .kg-event-list .event-detail {
+.eventDetailsWrapper .dateTimeHolder {
+  float: left;
+  width: 40%;
+}
+.eventDetailsWrapper .eventDetailsHolder {
+  float: right;
+  width: 60%;
+}
+.homepage .kg-event-list .event-detail {
   width: 100%;
   position: relative;
   box-sizing: border-box;
   display: inline-block;
 }
-.loginpage .homepage .kg-event-list .event-detail .event-date {
+.homepage .kg-event-list .event-detail .event-date {
   float: left;
   border-right: 1px solid #CACACA;
   padding: 0px 14px;
   display: block;
 }
-.loginpage .homepage .kg-event-list .event-detail .event-date .event-dd {
+.homepage .kg-event-list .event-detail .event-date .event-dd {
   font-size: 20px;
   padding: 8px 0;
   font-family: 'SOne-F400_v21';
 }
-.loginpage .homepage .kg-event-list .event-detail .event-date span {
+.homepage .kg-event-list .event-detail .event-date span {
   font-size: 16px;
 }
-.loginpage .homepage .kg-event-list .event-detail .event-dtls {
+.homepage .kg-event-list .event-detail .event-dtls {
   padding-left: 20px;
   width: 66%;
   float: left;
@@ -247,53 +261,64 @@ button {
   position: relative;
   box-sizing: border-box;
 }
-.loginpage .homepage .kg-event-list .event-detail .event-dtls .event-name {
+.homepage .kg-event-list .event-detail .event-dtls .event-name {
   font-size: 20px;
   font-weight: bold;
   padding: 8px 0;
 }
-.loginpage .homepage .kg-event-list .event-detail .event-dtls span {
+.homepage .kg-event-list .event-detail .event-dtls span {
   font-size: 16px;
 }
-.loginpage .homepage .kg-event-list .event-member-list {
+.homepage .kg-event-list .event-member-list {
   text-align: center;
-  padding: 17px 0;
 }
-.loginpage .homepage .kg-event-list .event-member-list .member-list {
+.homepage .kg-event-list .event-member-list .member-list {
   list-style: none;
   display: inline-flex;
 }
-.loginpage .homepage .kg-event-list .pending-status {
+.homepage .kg-event-list .eventDetailsWrapper .dateTimeHolder {
+  float: left;
+  width: 40%;
+}
+.homepage .kg-event-list .eventDetailsWrapper .eventDetailsHolder {
+  float: right;
+  width: 60%;
+}
+.homepage .kg-event-list .pending-status {
   margin: 0 auto;
   text-align: center;
   padding: 12px 0;
 }
-.loginpage .homepage .ui-tabbar a {
+.homepage .ui-tabbar a {
   font-family: 'SOne-F400c_v21';
   color: rgba(255, 255, 255, 0.7);
 }
-.loginpage .homepage .ui-tabbar li:active {
+.homepage .ui-listview li {
+  font-size: 16px;
+  font-weight: 600;
+}
+.homepage .ui-tabbar li:active {
   background-color: #e75480 !important;
 }
-.loginpage .homepage .pending {
+.homepage .pending {
   border-left: 4px solid #FECA15;
   padding: 0px !important;
 }
-.loginpage .homepage .accepted {
+.homepage .accepted {
   border-left: 4px solid #41C555;
   border-bottom: none !important;
   padding: 0px !important;
 }
-.loginpage .homepage .rejected {
+.homepage .rejected {
   border-left: 4px solid #FF0000;
   padding: 0px !important;
 }
-.loginpage .homepage .ui-btn {
-  background-color: #7B3F87 !important;
+.homepage .ui-btn {
+  background-color: #7B3F87;
   padding: 13px 49px;
   margin: 0 8px;
 }
-.loginpage .homepage .event-members {
+.homepage .event-members {
   background: #fff;
   padding: 11px 18px;
   margin-top: -3px;
@@ -305,11 +330,14 @@ button {
   color: #000;
   font-family: 'SOne-F400c_v21' !important;
 }
-.loginpage .ui-btn:not(.ui-btn-circle):not(.ui-btn-nobg):not(.ui-floatingactions-item) {
+.ui-btn:not(.ui-btn-circle):not(.ui-btn-nobg):not(.ui-floatingactions-item) {
   background-color: #7B3F87;
 }
-.loginpage .ui-btn:not(.ui-btn-circle):not(.ui-btn-nobg):not(.ui-floatingactions-item)::before {
+.ui-btn:not(.ui-btn-circle):not(.ui-btn-nobg):not(.ui-floatingactions-item)::before {
   background-color: #200055;
+}
+.ui-floatingactions {
+  background-color: #200055 !important;
 }
 .btn-fab {
   background-color: #7B3F87 !important;
@@ -328,4 +356,125 @@ button {
 }
 .ui-floatingactions .ui-floatingactions-item::before {
   background-color: #7B3F87 !important;
+}
+.newevent .ui-header > .ui-header-btn.ui-header-btn-text {
+  min-width: 0px;
+  margin-left: 16px;
+  margin-right: 16px;
+}
+.newevent .ui-header > .ui-header-btn:active::before {
+  background: transparent !important;
+}
+.newevent input.ui-text-input,
+.newevent textarea.ui-text-input {
+  padding: 0px 0px 0px 0px;
+  background: transparent !important;
+}
+.newevent .ui-text-input-textline {
+  background: #3EB9CB !important;
+  margin: 0px !important;
+}
+.newevent .ui-listview.ui-colored-list .ui-li-static:active {
+  background: transparent !important;
+}
+.newevent .textinput-box label {
+  display: block;
+  font-weight: bold;
+  padding-bottom: 5px;
+}
+.newevent .datepicker {
+  display: inline-block;
+  width: 160px;
+  background-color: #7b3f87 !important;
+  padding: 4px 20px;
+  border-radius: 26px;
+  position: relative;
+  min-height: 39px;
+  overflow: hidden;
+  text-align: center;
+  color: #ffffff;
+  font-size: 20px;
+  cursor: pointer;
+  box-sizing: border-box;
+  border: none;
+}
+.newevent .timepicker {
+  display: inline-block;
+  width: 120px;
+  background-color: #7b3f87 !important;
+  padding: 4px 10px;
+  border-radius: 26px;
+  position: relative;
+  min-height: 39px;
+  text-align: center;
+  color: #ffffff;
+  font-size: 20px;
+  cursor: pointer;
+  box-sizing: border-box;
+  border: none;
+  float: right;
+}
+.newevent .location {
+  display: block;
+  float: right;
+  position: relative;
+  top: -45px;
+  box-sizing: border-box;
+  width: 30px;
+  height: 30px;
+  margin-right: 12px;
+  background: url(../assets/images/location_map_icon.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.newevent .people {
+  display: block;
+  float: right;
+  position: relative;
+  top: -45px;
+  box-sizing: border-box;
+  width: 30px;
+  height: 30px;
+  margin-right: 12px;
+  background: url(../assets/images/person_icon.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.newevent .member-list {
+  list-style: none;
+  display: inline-flex;
+}
+.newevent .notification {
+  display: flex;
+  justify-content: center;
+}
+.newevent .notification .reminder {
+  background: url(../assets/images/reminder_icon.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100px;
+  height: 50px;
+  position: relative;
+  text-align: center;
+}
+.newevent .notification .reminder span {
+  position: absolute;
+  top: 55px;
+  left: 16px;
+  font-size: 18px;
+}
+.newevent .notification .endtime {
+  background: url(../assets/images/clock_icon.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100px;
+  height: 50px;
+  position: relative;
+  text-align: center;
+}
+.newevent .notification .endtime span {
+  position: absolute;
+  top: 55px;
+  left: 16px;
+  font-size: 18px;
 }

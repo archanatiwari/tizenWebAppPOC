@@ -1,9 +1,43 @@
 app.controller('navigationController', function($scope, $interval, SharedFactory, SharedDataService) {
 	var next = -1, totalPplReached = 0, tracker;
     $scope.selectedEvent = SharedDataService.getEventData();
-    $scope.targetLocation = $scope.selectedEvent.Destination;
+    $scope.targetLocation = $scope.selectedEvent.destination;
+   
+    $scope.customisedInviteeList = "", $scope.arrivedPpl = [];
     
-    $scope.arrivedPpl = [];
+    var inviteeList = $scope.selectedEvent.inviteeList, str = "";
+    
+    //doing this for customizing invitee list
+    for(var i=0; i<inviteeList.length; i++ ){
+    	var invitee = inviteeList[i].name;
+    	if(inviteeList.length == 1){
+    		$scope.customisedInviteeList = invitee;
+    		break;
+    	}
+    	if(inviteeList.length <= 4){
+    		if(inviteeList[i+1]){
+    			str += invitee;
+    			if(inviteeList[i+2])
+    				str += ", ";
+    		}else{
+				str += " and "+invitee;
+				$scope.customisedInviteeList = str;
+    			break;
+    		}
+    	}
+    	else{
+    		if(i <= 3){
+    			str += invitee;
+    			if(i<3)
+    				str += ", ";
+    		}else{
+    			var remainingPpl = inviteeList.length - i;
+				str += " and "+ remainingPpl +" more";
+				$scope.customisedInviteeList = str;
+    			break;
+    		}
+    	}
+    }
 
     var onSuccess = function(response) {
         $scope.userList = response;
@@ -36,7 +70,8 @@ app.controller('navigationController', function($scope, $interval, SharedFactory
         center: $scope.targetLocation,
         scrollwheel: true,
         zoom: 13,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        disableDefaultUI: true, // way to hide all controls
     });
     
     //set the marker to destination
@@ -48,6 +83,7 @@ app.controller('navigationController', function($scope, $interval, SharedFactory
     //to show Directions button on map
     var directionBtn = document.createElement('div');
     directionBtn.style.padding = "0px 0px 20px 0px";
+    //directionBtn.style.right = "10px !important";
     var directopnControl =  new createCustomBtn(directionBtn, map);
     //directopnControl .index = 1;
     
@@ -74,7 +110,6 @@ app.controller('navigationController', function($scope, $interval, SharedFactory
 	  controlText.innerHTML = 'Directions';
 	  controlUI.appendChild(controlText);
 
-	  // Setup the click event listeners: simply set the map to Chicago.
 	  controlUI.addEventListener('click', function() {
 		  $scope.getDirections();
 	  });
