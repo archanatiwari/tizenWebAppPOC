@@ -1,6 +1,6 @@
 <div class="controls container">
 	<ul><!-- ng-repeat="(status, invitees) in (inviteeList | groupBy: 'status')" -->
-		<li ng-repeat="invitee in inviteeList">
+		<li ng-repeat="invitee in inviteeList | orderBy: 'status'">
 			<span>{{ invitee.name }}</span>
 			<span>{{ invitee.status }}</span>
 		</li>

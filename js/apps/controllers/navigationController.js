@@ -19,8 +19,6 @@ app.controller('navigationController', function($scope, $interval, SharedFactory
     			str += invitee;
     			if(inviteeList[i+2])
     				str += ", ";
-//    			else
-//    				str += invitee;
     		}else{
 				str += " and "+invitee;
 				$scope.customisedInviteeList = str;
@@ -32,8 +30,6 @@ app.controller('navigationController', function($scope, $interval, SharedFactory
     			str += invitee;
     			if(i<3)
     				str += ", ";
-//    			else
-//    				str += invitee;
     		}else{
     			var remainingPpl = inviteeList.length - i;
 				str += " and "+ remainingPpl +" more";
@@ -74,7 +70,8 @@ app.controller('navigationController', function($scope, $interval, SharedFactory
         center: $scope.targetLocation,
         scrollwheel: true,
         zoom: 13,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        disableDefaultUI: true, // way to hide all controls
     });
     
     //set the marker to destination
@@ -86,6 +83,7 @@ app.controller('navigationController', function($scope, $interval, SharedFactory
     //to show Directions button on map
     var directionBtn = document.createElement('div');
     directionBtn.style.padding = "0px 0px 20px 0px";
+    //directionBtn.style.right = "10px !important";
     var directopnControl =  new createCustomBtn(directionBtn, map);
     //directopnControl .index = 1;
     
@@ -112,7 +110,6 @@ app.controller('navigationController', function($scope, $interval, SharedFactory
 	  controlText.innerHTML = 'Directions';
 	  controlUI.appendChild(controlText);
 
-	  // Setup the click event listeners: simply set the map to Chicago.
 	  controlUI.addEventListener('click', function() {
 		  $scope.getDirections();
 	  });
