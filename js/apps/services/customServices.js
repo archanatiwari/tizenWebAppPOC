@@ -47,7 +47,7 @@ app.service('SharedDataService', function($http, $timeout) {
     this.getTargetData = function() {
         return this.targetData;
     };
-    
+
     this.setCurrentUser = function(data) {
         return this.currentUser = data;
     };
@@ -69,4 +69,11 @@ app.service('SharedDataService', function($http, $timeout) {
         return this.selectedEvent;
     };
 
+    this.setAddedUsers = function(addedUsers) {
+        this.getAddedUsers = addedUsers;
+    };
+    
+    this.getAddedUsers = function() {
+        return this.getAddedUsers;
+    };
 });

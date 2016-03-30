@@ -33,6 +33,10 @@ button {
     height: 100%;
 }
 
+.ui-header {
+    background: @secondary-bg !important;
+}
+
 .loginpage {
     width: 100%;
     height: 100%;
@@ -114,8 +118,8 @@ button {
 }
 
 .login-container {
-    padding-left: 4%;
-    padding-right: 4%;
+    padding-left: 16px;
+    padding-right: 16px;
 }
 // navigation page styles goes here
 #map {
@@ -160,49 +164,113 @@ button {
 // home page style 
 .homepage {
     .kg-event-list {
-        padding: 8px 0px 14px 0px;
         .event-detail {
-            padding-top: 15px;
+            width: 100%;
+            position: relative;
+            box-sizing: border-box;
+            display: inline-block;
+            padding: 8px 0;
             .event-date {
                 float: left;
-                width: 21%;
-                position: relative;
                 border-right: 1px solid #CACACA;
-                padding: 0px 14px
+                padding: 0px 14px;
+                display: block;
+                .event-dd {
+                    font-size: 20px;
+                    font-family: 'SOne-F400_v21';
+                }
+                span {
+                    font-size: 16px;
+                }
             }
             .event-dtls {
-                width: 61%;
-                float: left;
                 padding-left: 20px;
+                width: 66%;
+                float: left;
+                display: block;
                 position: relative;
+                box-sizing: border-box;
+                .event-name {
+                    font-size: 20px;
+                    font-weight: bold;
+                }
+                span {
+                    font-size: 16px;
+                }
             }
         }
         .event-member-list {
+            text-align: center;
+            padding: 12px 0;
             .member-list {
                 list-style: none;
                 display: inline-flex;
-                padding: 10px;
             }
         }
-
+        .pending-status {
+            margin: 0 auto;
+            text-align: center;
+            padding: 12px 0;
+        }
     }
-    .ui-tabbar a{
+    .ui-tabbar a {
         font-family: 'SOne-F400c_v21';
-        color:rgba(255, 255, 255, 0.7);
+        color: rgba(255, 255, 255, 0.7);
     }
     .ui-tabbar li:active {
         background-color: @loginbtn-bg !important;
     }
-    .pending{
-            border-left:4px solid @pending-bg;
-        }
-    .accepted{
-        border-left:4px solid @accepted-bg;
+    .pending {
+        border-left: 4px solid @pending-bg;
+        padding: 0px !important;
     }
-    .rejected{
-        border-left:4px solid @rejected-bg;
+    .accepted {
+        border-left: 4px solid @accepted-bg;
+        border-bottom: none !important;
+        padding: 0px !important;
+    }
+    .rejected {
+        border-left: 4px solid @rejected-bg;
+        padding: 0px !important;
     }
     .ui-btn {
         background-color: @primary-bg!important;
+        padding: 13px 49px;
+        margin: 0 8px;
+    }
+    .event-members {
+        background: #fff;
+        padding: 11px 18px;
+        margin-top: -3px;
+        border-left: 4px solid #ccc;
+        box-sizing: border-box;
+        text-align: center;
+        font-size: 16px;
+        opacity: 50%;
+        color: #000;
+        font-family: 'SOne-F400c_v21' !important;
+    }
+    #ui-floatingactions {
+        background-color: #200055 !important;
+    }
+}
+
+// New Event
+.newevent {
+    .ui-header > .ui-header-btn.ui-header-btn-text {
+        min-width: 0px;
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+    .ui-header > .ui-header-btn:active::before {
+        background: @secondary-bg !important;
+    }
+    input.ui-text-input, textarea.ui-text-input{
+        padding: 0px 0px 0px 0px;
+        background: @secondary-bg !important;
+    }
+    .ui-text-input-textline{
+         background: #3EB9CB !important;
+         margin: 0px !important;
     }
 }

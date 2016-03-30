@@ -1,8 +1,8 @@
 app.controller('loginController', function($scope, $http, $state, SharedFactory, SharedDataService) {
     $scope.userContacts = [];
     $scope.errorMsg = false;
-    //	$http.get('data/user-data.json').success(function(data){
-    //		$scope.userContacts = data.data;
+    //  $http.get('data/user-data.json').success(function(data){
+    //      $scope.userContacts = data.data;
     //
     //	});
     

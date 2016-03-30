@@ -1,6 +1,5 @@
 <script type="text/javascript" src="js/libs/tau/mobile/js/tau.js"></script>
 <div class="contentWrapper homepage">
-
     <div class="container">
         <div class="ui-page ui-page-active" id="tabs_text_with_title">
             <header-template></header-template>
@@ -15,25 +14,27 @@
                     <div class="ui-section-changer" id="sectionChanger">
                         <div>
                             <!--Upcoming start  -->
-                            <section class="ui-section-active">
-                                <ul class="ui-listview ui-colored-list">
-                                    <li class="ui-li-static {{event.statusClass}}" ng-repeat="event in upcomingEvents" ng-click="getEventDetails(event)">
+
+                            <section>
+                                <ul class="ui-listview ">
+                                    <li class="ui-li-static {{event.statusClass}}" ng-repeat="event in upcomingEvents | orderBy: 'EventDate'" ng-click="getEventDetails(event)">
                                         <div class="kg-event-list">
                                             <div class="event-detail">
                                                 <div class="event-date ">
-                                                    <span>{{event.EventDate|date:"dd MMM"}}</span></br><span>{{event.EventTime}}</span>
+                                                    <div class="event-dd">{{event.EventDate|date:"dd MMM"}}</div><span>{{event.EventTime}}</span>
+
                                                 </div>
                                                 <div class="event-dtls ">
-                                                    <span>{{event.EventName}}</span></br><span>{{event.EventLocation}},{{event.EventDescription}}</span>
+                                                    <div class="event-name">{{event.EventName}}</div><span>{{event.EventLocation}},{{event.EventDescription}}</span>
                                                 </div>
                                             </div>
-                                            <div ng-if="event.mystatus =='PENDING'">
+                                            <div ng-if="event.mystatus =='PENDING'" >
                                                 <div class="event-member-list">
                                                     <ul class="member-list">
                                                         <li ng-repeat="member in event.UsersAcccepted">{{member}}, </li>
                                                     </ul>
                                                 </div>
-                                                <div>
+                                                <div class="pending-status">
                                                     <a class="ui-btn" data-inline="true">Reject</a>
                                                     <a class="ui-btn" data-inline="true">Accept</a>
                                                 </div>
@@ -44,25 +45,26 @@
                             </section>
                             <!--Upcoming end  -->
                             <!--All start  -->
+                           
                             <section>
-                                <ul class="ui-listview ui-colored-list">
+                                <ul class="ui-listview ">
                                     <li class="ui-li-static {{event.statusClass}}" ng-repeat="event in currentUser.eventlist.EventList | orderBy: 'EventDate'" ng-click="getEventDetails(event)">
                                         <div class="kg-event-list">
                                             <div class="event-detail">
                                                 <div class="event-date ">
-                                                    <span>{{event.EventDate|date:"dd MMM"}}</span></br><span>{{event.EventTime}}</span>
+                                                    <div class="event-dd">{{event.EventDate|date:"dd MMM"}}</div><span>{{event.EventTime}}</span>
                                                 </div>
                                                 <div class="event-dtls ">
-                                                    <span>{{event.EventName}}</span></br><span>{{event.EventLocation}},{{event.EventDescription}}</span>
+                                                    <div class="event-name">{{event.EventName}}</div><span>{{event.EventLocation}},{{event.EventDescription}}</span>
                                                 </div>
                                             </div>
-                                            <div ng-if="event.mystatus =='PENDING'">
+                                            <div ng-if="event.mystatus =='PENDING'" >
                                                 <div class="event-member-list">
                                                     <ul class="member-list">
                                                         <li ng-repeat="member in event.UsersAcccepted">{{member}}, </li>
                                                     </ul>
                                                 </div>
-                                                <div>
+                                                <div class="pending-status">
                                                     <a class="ui-btn" data-inline="true">Reject</a>
                                                     <a class="ui-btn" data-inline="true">Accept</a>
                                                 </div>
@@ -74,7 +76,7 @@
                             <!--All end  -->
                         </div>
                     </div>
-                    <div class="ui-floatingactions">
+                    <div class="ui-floatingactions abcd" style="background-color:#200055; !important">
                         <a data-role="button" ui-sref="newEvent" class="ui-floatingactions-item" data-icon="floating-add"></a>
                     </div>
                 </div>
