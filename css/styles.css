@@ -250,10 +250,10 @@ button {
 }
 .homepage .kg-event-list .event-detail .event-dtls span {
   font-size: 16px;
+  font-weight: 600;
 }
 .homepage .kg-event-list .event-member-list {
   text-align: center;
-  padding: 12px 0;
 }
 .homepage .kg-event-list .event-member-list .member-list {
   list-style: none;
@@ -267,6 +267,10 @@ button {
 .homepage .ui-tabbar a {
   font-family: 'SOne-F400c_v21';
   color: rgba(255, 255, 255, 0.7);
+}
+.homepage .ui-listview li {
+  font-size: 16px ;
+  font-weight: 600;
 }
 .homepage .ui-tabbar li:active {
   background-color: #A72A6D !important;
