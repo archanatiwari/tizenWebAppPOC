@@ -6,14 +6,15 @@
             <div class="ui-tabs">
                 <div class="ui-tabbar">
                     <ul>
-                        <li class="ui-li-anchor"><a href="#" class="ui-tab-active">Upcoming</a></li>
-                        <li class="ui-li-anchor"><a href="#">All</a></li>
+                        <li class="ui-li-anchor"><a href="" class="ui-tab-active">Upcoming</a></li>
+                        <li class="ui-li-anchor"><a href="">All</a></li>
                     </ul>
                 </div>
                 <div class="ui-content">
                     <div class="ui-section-changer" id="sectionChanger">
                         <div>
                             <!--Upcoming start  -->
+                            
                             <section>
                                 <ul class="ui-listview ">
                                     <li class="ui-li-static {{event.statusClass}}" ng-repeat="event in upcomingEvents | orderBy: 'eventDate'" ng-click="getEventDetails(event)">
@@ -29,12 +30,12 @@
                                             <div ng-if="event.mystatus =='PENDING'">
                                                 <div class="event-member-list">
                                                     <ul class="member-list">
-                                                        <li ng-repeat="member in event.UsersAcccepted">{{member}}, </li>
+                                                        <li>{{customisedInviteeList}} </li>
                                                     </ul>
                                                 </div>
                                                 <div class="pending-status">
-                                                    <a class="ui-btn" data-inline="true">Reject</a>
-                                                    <a class="ui-btn" data-inline="true">Accept</a>
+                                                    <a class="ui-btn btn-fab" data-inline="true">Reject</a>
+                                                    <a class="ui-btn btn-fab" data-inline="true">Accept</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -58,7 +59,7 @@
                                             <div ng-if="event.mystatus =='PENDING'">
                                                 <div class="event-member-list">
                                                     <ul class="member-list">
-                                                        <li ng-repeat="member in event.UsersAcccepted">{{member}}, </li>
+                                                        <li>{{customisedInviteeList}} </li>
                                                     </ul>
                                                 </div>
                                                 <div class="pending-status">

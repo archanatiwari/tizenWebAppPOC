@@ -1,9 +1,21 @@
-<div class="controls container">
-	<ul><!-- ng-repeat="(status, invitees) in (inviteeList | groupBy: 'status')" -->
-		<li ng-repeat="invitee in inviteeList | orderBy: 'status'">
-			<span>{{ invitee.name }}</span>
-			<span>{{ invitee.status }}</span>
-		</li>
-	</ul>
+<div class="ui-header" data-position="fixed">
+    <h2 class="ui-title">Event Name</h2>
+    <a class="ui-header-btn ui-header-btn-text ui-header-btn-left">BACK</a>
+    <!-- <a class="ui-header-btn ui-header-btn-text ui-header-btn-right">CREATE</a> -->
+</div>
+<div class=" ui-content">
+    <ul class="ui-listview ui-colored-list">
+    	<li>gfgkj</li>
+        <li ng-repeat="invitee in inviteeList | orderBy: 'status'">
+            <span>{{ invitee.name }}</span>
+            <span>{{ invitee.status }}</span>
+        </li>
+    </ul>
+    <!-- ng-repeat="(status, invitees) in (inviteeList | groupBy: 'status')" -->
+    <!-- <li ng-repeat="invitee in inviteeList | orderBy: 'status'">
+    <span>{{ invitee.name }}</span>
+    <span>{{ invitee.status }}</span>
+</li>
+ -->
 </div>
 <a ui-sref="navigation">back</a>
