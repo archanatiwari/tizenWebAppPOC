@@ -439,4 +439,47 @@ button {
     }
 }
 
-//Location Page
+//Invitee Page
+.invitee-list {
+    .pending {
+        border-left: 4px solid @pending-bg !important;
+        padding: 0px !important;
+    }
+    .accepted {
+        border-left: 4px solid @accepted-bg !important;
+        border-bottom: none !important;
+        padding: 0px !important;
+    }
+    .rejected {
+        border-left: 4px solid @rejected-bg !important;
+        padding: 0px !important;
+    }
+    .textinput-box {
+        height: 30px !important;
+        padding: 16px !important;
+        .invitee-status {
+            float: right;
+            font-family: 'SOne-F400_v21' !important;
+            opacity: 0.5;
+        }
+        .invitee-name {
+            font-family: 'SOne-F400_v21' !important;
+            font-size: 20px;
+        }
+    }
+    .status-text {
+        font-family: 'SOne-F600_v20' !important;
+        font-size: 20px;
+        text-align:center;
+    }
+    .pending-status {
+        margin: 0 auto !important;
+        text-align: center;
+        padding: 12px 0 !important;
+    }
+    .accepted-status {
+        margin: 0 auto;
+        text-align: center;
+        padding: 12px 0;
+    }
+}

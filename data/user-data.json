@@ -217,7 +217,7 @@
 						"lng": 77.646881
 					},
 					"organiser": "Kaushik",
-					"mystatus": "ACCEPTED",
+					"mystatus": "PENDING",
 					"inviteeList": [{
 							"name": "Archit",
 							"email": "archit.soni@globant.com",
@@ -351,26 +351,10 @@
 							"name": "Ayush",
 							"email": "ayush.jain@globant.com",
 							"status": "ACCEPTED"
-						}, {
-							"name": "Abhinav",
-							"email": "abhinav.krishna@globant.com",
-							"status": "REJECTED"
-						}, {
+						},  {
 							"name": "Kaushik",
 							"email": "kaushik.gotefode@globant.com",
 							"status": "PENDING"
-						}, {
-							"name": "Piyush",
-							"email": "piyush.patil@globant.com",
-							"status": "REJECTED"
-						}, {
-							"name": "Charan",
-							"email": "charan.adiga@globant.com",
-							"status": "ACCEPTED"
-						}, {
-							"name": "Archana",
-							"email": "archana.tiwari@globant.com",
-							"status": "ACCEPTED"
 						}
 
 					]

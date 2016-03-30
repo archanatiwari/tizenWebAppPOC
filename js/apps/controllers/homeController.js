@@ -1,5 +1,5 @@
 app.controller('homeController', function($scope, $state, SharedDataService) {
-     $scope.eventMemberList = function(inviteeList) {
+    $scope.eventMemberList = function(inviteeList) {
         $scope.customisedInviteeList = "";
         $scope.arrivedPpl = [];
         str = "";
@@ -34,6 +34,7 @@ app.controller('homeController', function($scope, $state, SharedDataService) {
                 }
             }
         }
+        return $scope.customisedInviteeList
     }
 
     $scope.currentUser = SharedDataService.getCurrentUser();
@@ -44,11 +45,11 @@ app.controller('homeController', function($scope, $state, SharedDataService) {
             $scope.currentUser.eventList[i].statusClass = "accepted";
         } else if ($scope.currentUser.eventList[i].mystatus == "PENDING") {
             $scope.currentUser.eventList[i].statusClass = "pending";
-            $scope.eventMemberList($scope.currentUser.eventList[i].inviteeList);
+            $scope.currentUser.eventList[i].customisedInviteeList = $scope.eventMemberList($scope.currentUser.eventList[i].inviteeList);
         } else {
             $scope.currentUser.eventList[i].statusClass = "rejected";
         }
-        
+
         var date = new Date($scope.currentUser.eventList[i].eventDate);
         if (date >= new Date()) {
             $scope.upcomingEvents.push($scope.currentUser.eventList[i]);
@@ -71,6 +72,6 @@ app.controller('homeController', function($scope, $state, SharedDataService) {
         $state.go('navigation');
     }
 
-   
+
 
 });

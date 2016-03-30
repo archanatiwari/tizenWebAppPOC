@@ -1,21 +1,37 @@
-<div class="ui-header" data-position="fixed">
-    <h2 class="ui-title">Event Name</h2>
-    <a class="ui-header-btn ui-header-btn-text ui-header-btn-left">BACK</a>
-    <!-- <a class="ui-header-btn ui-header-btn-text ui-header-btn-right">CREATE</a> -->
+<script type="text/javascript" src="js/libs/tau/mobile/js/tau.js"></script>
+<!--NewEvent page-->
+<div class="contentWrapper invitee-list">
+    <div id="eventDetail" class="ui-page ui-page-active">
+        <div class="ui-header" data-position="fixed">
+            <h2 class="ui-title">Invitee List</h2>
+            <a class="ui-header-btn ui-header-btn-text ui-header-btn-left" ui-sref="home">BACK</a>
+            <!-- <a class="ui-header-btn ui-header-btn-text ui-header-btn-right">CREATE</a> -->
+        </div>
+        <div class="ui-content">
+            <ul class="ui-listview">
+                <li class="ui-li-static {{invitee.statusClass}}" ng-repeat="invitee in inviteeList | orderBy: 'status'">
+                    <div class="textinput-box">
+                        <span class="invitee-name">{{ invitee.name }}</span>
+                        <span class="invitee-status">{{ invitee.status }}</span>
+                    </div>
+                </li>
+                <li class="ui-li-static">
+                    <div class="textinput-box status-text">
+                        {{statusText}}
+                    </div>
+                </li>
+                <li class="ui-li-static" ng-if="mystatus=='pending'">
+                    <div class="pending-status" >
+                        <a class="ui-btn btn-fab" data-inline="true">Reject</a>
+                        <a class="ui-btn btn-fab" data-inline="true">Accept</a>
+                    </div>
+                </li>
+                <li class="ui-li-static" ng-if="mystatus=='accepted'">
+                    <div class="accepted-status" >
+                        <a class="ui-btn btn-fab" data-inline="true">Opt out of the event</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
 </div>
-<div class=" ui-content">
-    <ul class="ui-listview ui-colored-list">
-    	<li>gfgkj</li>
-        <li ng-repeat="invitee in inviteeList | orderBy: 'status'">
-            <span>{{ invitee.name }}</span>
-            <span>{{ invitee.status }}</span>
-        </li>
-    </ul>
-    <!-- ng-repeat="(status, invitees) in (inviteeList | groupBy: 'status')" -->
-    <!-- <li ng-repeat="invitee in inviteeList | orderBy: 'status'">
-    <span>{{ invitee.name }}</span>
-    <span>{{ invitee.status }}</span>
-</li>
- -->
-</div>
-<a ui-sref="navigation">back</a>
