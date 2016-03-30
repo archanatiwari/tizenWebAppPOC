@@ -38,6 +38,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
             templateUrl: 'partials/newEvent.html',
             controller: 'newEventController'
         })
+        .state('inviteeList', {
+            url: '/inviteeList',
+            templateUrl: 'partials/inviteeList.html',
+            controller: 'inviteeListController'
+        })
 
 });
 

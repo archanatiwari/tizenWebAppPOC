@@ -5,5 +5,22 @@
 <div class="container arrivedPplWrapper">Reached People	
 	<span class="arrivedPplItem" ng-repeat="person in arrivedPpl">{{ person.name }}</div>
 </div>
-<span ng-click="trackUsers()">Start Tracking</span>
-<a href="#/home">back</a>
+<div>
+	<span ng-click="trackUsers()">Start Tracking</span>
+	<a ui-sref="home">back</a>
+</div>	
+
+<div class="container eventDetailsWrapper">
+	<div class="dateTimeHolder">
+		<span>{{ selectedEvent.EventDate }}</span>
+		<span>{{ selectedEvent.EventTime }}</span>
+	</div>
+	<div class="eventDetailsHolder">
+		<span>{{ selectedEvent.EventName }}</span>
+		<span>{{ selectedEvent.EventLocation }}</span>
+	</div>
+</div>
+<div class="container attendeeList" ui-sref="inviteeList">
+	<!-- <span ng-repeat="invitee in selectedEvent.UsersInvited">{{invitee +" "}}</span> -->
+	<span>{{ customisedInviteeList }}</span>
+</div>
