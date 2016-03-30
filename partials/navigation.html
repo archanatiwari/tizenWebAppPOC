@@ -1,28 +1,34 @@
-<div class="ui-header" data-position="fixed">
-        <h2 class="ui-title">Event Name</h2>
-        <a class="ui-header-btn ui-header-btn-text ui-header-btn-left">BACK</a>
-        <!-- <a class="ui-header-btn ui-header-btn-text ui-header-btn-right">CREATE</a> -->
+<script type="text/javascript" src="js/libs/tau/mobile/js/tau.js"></script>
+<!--Navigation page-->
+<div class="contentWrapper navigation">
+    <div id="navigation" class="ui-page ui-page-active">
+        <div class="ui-header" data-position="fixed">
+            <h2 class="ui-title">{{selectedEvent.eventName}}</h2>
+            <a class="ui-header-btn ui-header-btn-text ui-header-btn-left" ui-sref="home">BACK</a>
+        </div>
+        <div class="container" id="map"></div>
+        <div class="ui-content">
+            <div class="container arrivedPplWrapper">Reached People
+                <span class="arrivedPplItem" ng-repeat="person in arrivedPpl">{{ person.name }}</span>
+            </div>
+            <div>
+                <span ng-click="trackUsers()">Start Tracking</span>
+                <a ui-sref="home">back</a>
+            </div>
+            <div class="container eventDetailsWrapper">
+                <div class="dateTimeHolder">
+                    <span>{{ selectedEvent.eventDate }}</span>
+                    <span>{{ selectedEvent.eventTime }}</span>
+                </div>
+                <div class="eventDetailsHolder">
+                    <span>{{ selectedEvent.eventName }}</span>
+                    <span>{{ selectedEvent.eventLocation }}</span>
+                </div>
+            </div>
+            <div class="container attendeeList" ui-sref="inviteeList">
+                <!-- <span ng-repeat="invitee in selectedEvent.UsersInvited">{{invitee +" "}}</span> -->
+                <span>{{ customisedInviteeList }}</span>
+            </div>
+        </div>
     </div>
-<div class="container" id="map"></div>
-<div class="container arrivedPplWrapper">Reached People	
-	<span class="arrivedPplItem" ng-repeat="person in arrivedPpl">{{ person.name }}</div>
-</div>
-<div>
-	<span ng-click="trackUsers()">Start Tracking</span>
-	<a ui-sref="home">back</a>
-</div>	
-
-<div class="container eventDetailsWrapper">
-	<div class="dateTimeHolder">
-		<span>{{ selectedEvent.eventDate }}</span>
-		<span>{{ selectedEvent.eventTime }}</span>
-	</div>
-	<div class="eventDetailsHolder">
-		<span>{{ selectedEvent.eventName }}</span>
-		<span>{{ selectedEvent.eventLocation }}</span>
-	</div>
-</div>
-<div class="container attendeeList" ui-sref="inviteeList">
-	<!-- <span ng-repeat="invitee in selectedEvent.UsersInvited">{{invitee +" "}}</span> -->
-	<span>{{ customisedInviteeList }}</span>
 </div>

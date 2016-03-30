@@ -357,6 +357,14 @@ button {
 .ui-floatingactions .ui-floatingactions-item::before {
   background-color: #7B3F87 !important;
 }
+.ui-header > .ui-header-btn:active::before {
+  background-color: #7B3F87 !important;
+}
+.ui-listview.ui-colored-list .ui-li.ui-li-anchor:active,
+.ui-listview.ui-colored-list .ui-li.ui-btn:active,
+.ui-listview.ui-colored-list .ui-li-static:active {
+  background: transparent !important;
+}
 .newevent .ui-header > .ui-header-btn.ui-header-btn-text {
   min-width: 0px;
   margin-left: 16px;
