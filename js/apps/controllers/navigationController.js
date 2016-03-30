@@ -2,8 +2,46 @@ app.controller('navigationController', function($scope, $interval, SharedFactory
 	var next = -1, totalPplReached = 0, tracker;
     $scope.selectedEvent = SharedDataService.getEventData();
     $scope.targetLocation = $scope.selectedEvent.Destination;
+   
+    $scope.customisedInviteeList = "", $scope.arrivedPpl = [];
     
-    $scope.arrivedPpl = [];
+    var inviteeList = $scope.selectedEvent.UsersInvited, str = "";
+    
+    //doing this for customizing invitee list
+    for(var i=0; i<inviteeList.length; i++ ){
+    	var invitee = inviteeList[i];
+    	if(inviteeList.length == 1){
+    		$scope.customisedInviteeList = invitee;
+    		break;
+    	}
+    	if(inviteeList.length <= 4){
+    		if(inviteeList[i+1]){
+    			str += invitee;
+    			if(inviteeList[i+2])
+    				str += ", ";
+//    			else
+//    				str += invitee;
+    		}else{
+				str += " and "+invitee;
+				$scope.customisedInviteeList = str;
+    			break;
+    		}
+    	}
+    	else{
+    		if(i <= 3){
+    			str += invitee;
+    			if(i<3)
+    				str += ", ";
+//    			else
+//    				str += invitee;
+    		}else{
+    			var remainingPpl = inviteeList.length - i;
+				str += " and "+ remainingPpl +" more";
+				$scope.customisedInviteeList = str;
+    			break;
+    		}
+    	}
+    }
 
     var onSuccess = function(response) {
         $scope.userList = response;

@@ -216,6 +216,19 @@ button {
   border-radius: 3px;
   margin-right: 5px;
 }
+
+.eventDetailsWrapper .dateTimeHolder {
+  float: left;
+  width: 40%;
+}
+.eventDetailsWrapper .eventDetailsHolder {
+  float: right;
+  width: 60%;
+}
+.homepage .kg-event-list {
+  padding: 8px 0px 14px 0px;
+}
+
 .homepage .kg-event-list .event-detail {
   width: 100%;
   position: relative;
