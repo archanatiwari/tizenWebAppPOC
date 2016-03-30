@@ -98,6 +98,9 @@ button {
 .fright {
   float: right;
 }
+.paddingBottom30px {
+  padding-bottom: 30px;
+}
 .contentWrapper {
   width: 100%;
   height: 100% !important;
@@ -216,7 +219,6 @@ button {
   border-radius: 3px;
   margin-right: 5px;
 }
-
 .eventDetailsWrapper .dateTimeHolder {
   float: left;
   width: 40%;
@@ -225,10 +227,6 @@ button {
   float: right;
   width: 60%;
 }
-.homepage .kg-event-list {
-  padding: 8px 0px 14px 0px;
-}
-
 .homepage .kg-event-list .event-detail {
   width: 100%;
   position: relative;
@@ -337,4 +335,104 @@ button {
 .newevent .ui-text-input-textline {
   background: #3EB9CB !important;
   margin: 0px !important;
+}
+.newevent .ui-listview.ui-colored-list .ui-li-static:active {
+  background: transparent !important;
+}
+.newevent .textinput-box label {
+  display: block;
+  font-weight: bold;
+  padding-bottom: 5px;
+}
+.newevent .datepicker {
+  display: inline-block;
+  width: 160px;
+  background-color: #7b3f87 !important;
+  padding: 4px 20px;
+  border-radius: 26px;
+  position: relative;
+  min-height: 39px;
+  overflow: hidden;
+  text-align: center;
+  color: #ffffff;
+  font-size: 20px;
+  cursor: pointer;
+  box-sizing: border-box;
+  border: none;
+}
+.newevent .timepicker {
+  display: inline-block;
+  width: 120px;
+  background-color: #7b3f87 !important;
+  padding: 4px 10px;
+  border-radius: 26px;
+  position: relative;
+  min-height: 39px;
+  text-align: center;
+  color: #ffffff;
+  font-size: 20px;
+  cursor: pointer;
+  box-sizing: border-box;
+  border: none;
+  float: right;
+}
+.newevent .location {
+  display: block;
+  float: right;
+  position: relative;
+  top: -45px;
+  box-sizing: border-box;
+  width: 30px;
+  height: 30px;
+  margin-right: 12px;
+  background: url(../assets/images/location_map_icon.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.newevent .people {
+  display: block;
+  float: right;
+  position: relative;
+  top: -45px;
+  box-sizing: border-box;
+  width: 30px;
+  height: 30px;
+  margin-right: 12px;
+  background: url(../assets/images/person_icon.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.newevent .notification {
+  display: flex;
+  justify-content: center;
+}
+.newevent .notification .reminder {
+  background: url(../assets/images/reminder_icon.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100px;
+  height: 50px;
+  position: relative;
+  text-align: center;
+}
+.newevent .notification .reminder span {
+  position: absolute;
+  top: 55px;
+  left: 16px;
+  font-size: 18px;
+}
+.newevent .notification .endtime {
+  background: url(../assets/images/clock_icon.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100px;
+  height: 50px;
+  position: relative;
+  text-align: center;
+}
+.newevent .notification .endtime span {
+  position: absolute;
+  top: 55px;
+  left: 16px;
+  font-size: 18px;
 }

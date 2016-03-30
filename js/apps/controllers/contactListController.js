@@ -18,9 +18,10 @@ app.controller('contactListController', function($scope, $state, SharedFactory, 
         angular.forEach($scope.userContacts, function(checkedUser, key) {
             if (checkedUser.checked) {
                 $scope.addedUsers.push(checkedUser.name);
-                SharedDataService.setAddedUsers($scope.addedUsers);
+                
             }
         })
+        SharedDataService.setAddedUsers($scope.addedUsers);
         $state.go('newEvent');
     };
     // $scope.time=  tizen.time.getCurrentDateTime().toDateString();
