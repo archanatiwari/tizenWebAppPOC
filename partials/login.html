@@ -1,18 +1,34 @@
 <div class="loginpage">
     <div class="login-container">
         <div class="login_wrapper">
-            <form>
+            <div class="ui-header ui-header-login">
+                <button class="ui-header-btn ui-header-btn-text  ui-header-btn-right ui-btn-nobg">SIGN UP</button>
+            </div>
+            <div ng-form="userForm" novalidate>
                 <div class="form-input">
-                    <input type="text" id="username" class="tbx-login" placeholder="Username" ng-model="email" >
+                    <input type="text" id="username" name="username" class="tbx-login" placeholder="Username" ng-model="email">
+                    <div ng-show="userForm.$submitted || userForm.username.$touched">
+                        <!-- <div  class=""></div> -->
+                        <div ng-show="userForm.username.$error.required" id="popup_toast" data-role="popup" class="ui-popup ui-popup-toast text-danger">
+                            <div class="ui-popup-content">
+                                Enter the valid username
+                            </div>
+                        </div>
+                        <!-- <div ng-show="userForm.username.$error.number">Not a valid username!</div> -->
+                    </div>
                 </div>
                 <div class="form-input">
-                    <input type="password" id="password" class="tbx-login" placeholder="Password" ng-model="password">
+                    <input type="password" id="password" name="password" class="tbx-login" placeholder="Password" ng-model="password">
+                    <div ng-show="userForm.password.$error.required" id="popup_toast" data-role="popup" class="ui-popup ui-popup-toast text-danger">
+                        <div class="ui-popup-content">
+                            Enter the valid password
+                        </div>
+                    </div>
                 </div>
                 <div class="form-input">
                     <button data-inline="true" class="ui-btn btn-login" ng-click="login()">Log in</button>
                 </div>
-                <div ng-show="errorMsg">username or password invalid</div>
-            </form>
+            </div>
         </div>
     </div>
 </div>
