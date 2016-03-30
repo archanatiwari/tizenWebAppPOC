@@ -196,15 +196,16 @@ button {
                 }
                 span {
                     font-size: 16px;
+                    font-weight: 600;
                 }
             }
         }
         .event-member-list {
             text-align: center;
-            padding: 12px 0;
             .member-list {
                 list-style: none;
                 display: inline-flex;
+                
             }
         }
         .pending-status {
@@ -216,6 +217,10 @@ button {
     .ui-tabbar a {
         font-family: 'SOne-F400c_v21';
         color: rgba(255, 255, 255, 0.7);
+    }
+    .ui-listview li {
+        font-size: 16px ;
+        font-weight: 600;
     }
     .ui-tabbar li:active {
         background-color: @loginbtn-bg !important;
@@ -265,12 +270,16 @@ button {
     .ui-header > .ui-header-btn:active::before {
         background: @secondary-bg !important;
     }
-    input.ui-text-input, textarea.ui-text-input{
+    input.ui-text-input,
+    textarea.ui-text-input {
         padding: 0px 0px 0px 0px;
         background: @secondary-bg !important;
     }
-    .ui-text-input-textline{
-         background: #3EB9CB !important;
-         margin: 0px !important;
+    .ui-text-input-textline {
+        background: #3EB9CB !important;
+        margin: 0px !important;
     }
 }
+
+//Location Page
+
