@@ -270,7 +270,7 @@ button {
   font-size: 16px;
 }
 .homepage .kg-event-list .event-member-list {
-  text-align: center;
+  margin-left: -24px !important;
 }
 .homepage .kg-event-list .event-member-list .member-list {
   list-style: none;

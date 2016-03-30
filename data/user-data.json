@@ -326,7 +326,249 @@
 				"lat": 12.9163765,
 				"lng": 77.6217730
 			},
-			"eventList": [],
+			"eventList": [{
+					"eventId": "1459318575416",
+					"eventName": "Birthday Party",
+					"eventDate": "Mar 29 2016",
+					"eventTime": "06.00 PM",
+					"eventDescription": "Sarjapur",
+					"eventLocation": "BigBrewsky",
+					"destination": {
+						"lat": 12.912985,
+						"lng": 77.683131
+					},
+					"organiser": "charan",
+					"mystatus": "PENDING",
+					"inviteeList": [{
+							"name": "Archit",
+							"email": "archit.soni@globant.com",
+							"status": "ACCEPTED"
+						}, {
+							"name": "Sakshi",
+							"email": "sakshi@globant.com",
+							"status": "PENDING"
+						}, {
+							"name": "Ayush",
+							"email": "ayush.jain@globant.com",
+							"status": "ACCEPTED"
+						}, {
+							"name": "Abhinav",
+							"email": "abhinav.krishna@globant.com",
+							"status": "REJECTED"
+						}, {
+							"name": "Kaushik",
+							"email": "kaushik.gotefode@globant.com",
+							"status": "PENDING"
+						}, {
+							"name": "Piyush",
+							"email": "piyush.patil@globant.com",
+							"status": "REJECTED"
+						}, {
+							"name": "Charan",
+							"email": "charan.adiga@globant.com",
+							"status": "ACCEPTED"
+						}, {
+							"name": "Archana",
+							"email": "archana.tiwari@globant.com",
+							"status": "ACCEPTED"
+						}
+
+					]
+				}, {
+					"eventId": "1459318575417",
+					"eventName": "Party",
+					"eventDate": "Apr 05 2016",
+					"eventTime": "06.00 PM",
+					"eventDescription": "Sarjapur",
+					"eventLocation": "BigBrewsky",
+					"destination": {
+						"lat": 12.912985,
+						"lng": 77.683131
+					},
+					"organiser": "Archit",
+					"mystatus": "REJECTED",
+					"inviteeList": [{
+							"name": "Archit",
+							"email": "archit.soni@globant.com",
+							"status": "ACCEPTED"
+						}, {
+							"name": "Sakshi",
+							"email": "sakshi@globant.com",
+							"status": "PENDING"
+						}, {
+							"name": "Ayush",
+							"email": "ayush.jain@globant.com",
+							"status": "ACCEPTED"
+						}, {
+							"name": "Abhinav",
+							"email": "abhinav.krishna@globant.com",
+							"status": "REJECTED"
+						}, {
+							"name": "Kaushik",
+							"email": "kaushik.gotefode@globant.com",
+							"status": "REJECTED"
+						}, {
+							"name": "Piyush",
+							"email": "piyush.patil@globant.com",
+							"status": "REJECTED"
+						}, {
+							"name": "Charan",
+							"email": "charan.adiga@globant.com",
+							"status": "ACCEPTED"
+						}, {
+							"name": "Archana",
+							"email": "archana.tiwari@globant.com",
+							"status": "ACCEPTED"
+						}
+
+					]
+				}, {
+					"eventId": "1459318575418",
+					"eventName": "Booz",
+					"eventDate": "Apr 04 2016",
+					"eventTime": "06.00 PM",
+					"eventDescription": "Sarjapur",
+					"eventLocation": "BigPitchers",
+					"destination": {
+						"lat": 12.960198,
+						"lng": 77.646881
+					},
+					"organiser": "Archit",
+					"mystatus": "ACCEPTED",
+					"inviteeList": [{
+							"name": "Archit",
+							"email": "archit.soni@globant.com",
+							"status": "ACCEPTED"
+						}, {
+							"name": "Sakshi",
+							"email": "sakshi@globant.com",
+							"status": "PENDING"
+						}, {
+							"name": "Ayush",
+							"email": "ayush.jain@globant.com",
+							"status": "ACCEPTED"
+						}, {
+							"name": "Abhinav",
+							"email": "abhinav.krishna@globant.com",
+							"status": "REJECTED"
+						}, {
+							"name": "Kaushik",
+							"email": "kaushik.gotefode@globant.com",
+							"status": "ACCEPTED"
+						}, {
+							"name": "Piyush",
+							"email": "piyush.patil@globant.com",
+							"status": "REJECTED"
+						}, {
+							"name": "Charan",
+							"email": "charan.adiga@globant.com",
+							"status": "ACCEPTED"
+						}, {
+							"name": "Archana",
+							"email": "archana.tiwari@globant.com",
+							"status": "ACCEPTED"
+						}
+
+					]
+				}, {
+					"eventId": "1459318575419",
+					"eventName": "Movie",
+					"eventDate": "Apr 06 2016",
+					"eventTime": "06.00 PM",
+					"eventDescription": "Sarjapur",
+					"eventLocation": "Bangalore Central Mall",
+					"destination": {
+						"lat": 12.912985,
+						"lng": 77.683131
+					},
+					"organiser": "Archit",
+					"mystatus": "PENDING",
+					"inviteeList": [{
+							"name": "Archit",
+							"email": "archit.soni@globant.com",
+							"status": "ACCEPTED"
+						}, {
+							"name": "Sakshi",
+							"email": "sakshi@globant.com",
+							"status": "PENDING"
+						}, {
+							"name": "Ayush",
+							"email": "ayush.jain@globant.com",
+							"status": "ACCEPTED"
+						}, {
+							"name": "Abhinav",
+							"email": "abhinav.krishna@globant.com",
+							"status": "REJECTED"
+						}, {
+							"name": "Kaushik",
+							"email": "kaushik.gotefode@globant.com",
+							"status": "PENDING"
+						}, {
+							"name": "Piyush",
+							"email": "piyush.patil@globant.com",
+							"status": "REJECTED"
+						}, {
+							"name": "Charan",
+							"email": "charan.adiga@globant.com",
+							"status": "ACCEPTED"
+						}, {
+							"name": "Archana",
+							"email": "archana.tiwari@globant.com",
+							"status": "ACCEPTED"
+						}
+
+					]
+				}, {
+					"eventId": "1459318575421",
+					"eventName": "Birthday Party",
+					"eventDate": "Apr 03 2016",
+					"eventTime": "06.00 PM",
+					"eventDescription": "Sarjapur",
+					"eventLocation": "BigPitchers",
+					"destination": {
+						"lat": 12.960198,
+						"lng": 77.646881
+					},
+					"organiser": "Kaushik",
+					"mystatus": "PENDING",
+					"inviteeList": [{
+							"name": "Archit",
+							"email": "archit.soni@globant.com",
+							"status": "ACCEPTED"
+						}, {
+							"name": "Sakshi",
+							"email": "sakshi@globant.com",
+							"status": "PENDING"
+						}, {
+							"name": "Ayush",
+							"email": "ayush.jain@globant.com",
+							"status": "ACCEPTED"
+						}, {
+							"name": "Abhinav",
+							"email": "abhinav.krishna@globant.com",
+							"status": "REJECTED"
+						}, {
+							"name": "Kaushik",
+							"email": "kaushik.gotefode@globant.com",
+							"status": "PENDING"
+						}, {
+							"name": "Piyush",
+							"email": "piyush.patil@globant.com",
+							"status": "REJECTED"
+						}, {
+							"name": "Charan",
+							"email": "charan.adiga@globant.com",
+							"status": "ACCEPTED"
+						}, {
+							"name": "Archana",
+							"email": "archana.tiwari@globant.com",
+							"status": "ACCEPTED"
+						}
+
+					]
+				}
+
+			],
 			"id": "56e9454fd4d64dc915f48787",
 			"isActive": false
 		}, {
