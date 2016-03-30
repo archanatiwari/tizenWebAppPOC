@@ -6,7 +6,7 @@ app.controller('loginController', function($scope, $http, $state, SharedFactory,
     //
     //	});
     
-    //$scope.email = "archit.soni@globant.com", $scope.password = "1234";
+    $scope.email = "archit.soni@globant.com", $scope.password = "1234";
 
     SharedFactory.getData().then(function(response) {
         $scope.userContacts = response;

@@ -1,6 +1,9 @@
 <div class="controls container">
-	<ul>
-		<li ng-repeat="invitee in inviteeList">{{ invitee }}</li>
+	<ul><!-- ng-repeat="(status, invitees) in (inviteeList | groupBy: 'status')" -->
+		<li ng-repeat="invitee in inviteeList">
+			<span>{{ invitee.name }}</span>
+			<span>{{ invitee.status }}</span>
+		</li>
 	</ul>
 </div>
 <a ui-sref="navigation">back</a>

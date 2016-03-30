@@ -1,15 +1,15 @@
 app.controller('navigationController', function($scope, $interval, SharedFactory, SharedDataService) {
 	var next = -1, totalPplReached = 0, tracker;
     $scope.selectedEvent = SharedDataService.getEventData();
-    $scope.targetLocation = $scope.selectedEvent.Destination;
+    $scope.targetLocation = $scope.selectedEvent.destination;
    
     $scope.customisedInviteeList = "", $scope.arrivedPpl = [];
     
-    var inviteeList = $scope.selectedEvent.UsersInvited, str = "";
+    var inviteeList = $scope.selectedEvent.inviteeList, str = "";
     
     //doing this for customizing invitee list
     for(var i=0; i<inviteeList.length; i++ ){
-    	var invitee = inviteeList[i];
+    	var invitee = inviteeList[i].name;
     	if(inviteeList.length == 1){
     		$scope.customisedInviteeList = invitee;
     		break;
