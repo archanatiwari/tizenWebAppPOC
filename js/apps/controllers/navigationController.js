@@ -7,6 +7,7 @@ app.controller('navigationController', function($scope, $interval, SharedFactory
     
     var inviteeList = $scope.selectedEvent.UsersInvited, str = "";
     
+    //doing this for customizing invitee list
     for(var i=0; i<inviteeList.length; i++ ){
     	var invitee = inviteeList[i];
     	if(inviteeList.length == 1){
@@ -15,10 +16,11 @@ app.controller('navigationController', function($scope, $interval, SharedFactory
     	}
     	if(inviteeList.length <= 4){
     		if(inviteeList[i+1]){
+    			str += invitee;
     			if(inviteeList[i+2])
-    				str += invitee + ", ";
-    			else
-    				str += invitee;
+    				str += ", ";
+//    			else
+//    				str += invitee;
     		}else{
 				str += " and "+invitee;
 				$scope.customisedInviteeList = str;
@@ -27,10 +29,11 @@ app.controller('navigationController', function($scope, $interval, SharedFactory
     	}
     	else{
     		if(i <= 3){
+    			str += invitee;
     			if(i<3)
-    				str += invitee + ", ";
-    			else
-    				str += invitee;
+    				str += ", ";
+//    			else
+//    				str += invitee;
     		}else{
     			var remainingPpl = inviteeList.length - i;
 				str += " and "+ remainingPpl +" more";
