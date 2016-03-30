@@ -78,14 +78,20 @@ button {
                 background-color: @loginbtn-bg !important;
             }
             .btn-login:hover {
-                background-color: @loginbtn-bg !important;
+                background-color: @login-bg-active !important;
             }
             .btn-login:active {
-                background-color: @loginbtn-bg !important;
+                background-color: @login-bg-active !important;
             }
             .btn-login::before {
                 background-color: @loginbtn-bg !important;
             }
+        }
+    }
+    .ui-header-login {
+        background: @secondary-bg !important;
+        .ui-header-btn {
+            margin-right: 16px;
         }
     }
 }
@@ -134,12 +140,12 @@ button {
     .labels {
         color: white;
         background: none;
-        font-size: 14px;
-        font-family: "Lucida Grande", "Arial", sans-serif;
+        height: 32px;
         text-align: center;
-        width: 70px;
-        white-space: nowrap;
-        opacity: 1 !important;
+        font-family: 'SOne-F300_v20';
+        font-size: 25px;
+        color: #fff;
+        padding: 20px 10px 0px 10px;
     }
 }
 
@@ -173,7 +179,6 @@ button {
             position: relative;
             box-sizing: border-box;
             display: inline-block;
-            padding: 8px 0;
             .event-date {
                 float: left;
                 border-right: 1px solid #CACACA;
@@ -181,6 +186,7 @@ button {
                 display: block;
                 .event-dd {
                     font-size: 20px;
+                    padding: 8px 0;
                     font-family: 'SOne-F400_v21';
                 }
                 span {
@@ -197,10 +203,10 @@ button {
                 .event-name {
                     font-size: 20px;
                     font-weight: bold;
+                    padding: 8px 0;
                 }
                 span {
                     font-size: 16px;
-                    font-weight: 600;
                 }
             }
         }
@@ -209,6 +215,16 @@ button {
             .member-list {
                 list-style: none;
                 display: inline-flex;
+            }
+        }
+        .eventDetailsWrapper {
+            .dateTimeHolder {
+                float: left;
+                width: 40%;
+            }
+            .eventDetailsHolder {
+                float: right;
+                width: 60%;
             }
         }
         .pending-status {
@@ -242,7 +258,7 @@ button {
         padding: 0px !important;
     }
     .ui-btn {
-        background-color: @primary-bg!important;
+        background-color: @primary-bg;
         padding: 13px 49px;
         margin: 0 8px;
     }
@@ -258,9 +274,42 @@ button {
         color: #000;
         font-family: 'SOne-F400c_v21' !important;
     }
-    #ui-floatingactions {
-        background-color: #200055 !important;
-    }
+}
+
+.ui-btn:not(.ui-btn-circle):not(.ui-btn-nobg):not(.ui-floatingactions-item) {
+    background-color: #7B3F87;
+}
+
+.ui-btn:not(.ui-btn-circle):not(.ui-btn-nobg):not(.ui-floatingactions-item)::before {
+    background-color: #200055;
+}
+
+.ui-floatingactions {
+    background-color: #200055 !important;
+}
+
+.btn-fab {
+    background-color: @primary-bg !important;
+}
+
+.btn-fab:hover {
+    background-color: @primary-bg-active !important;
+}
+
+.btn-fab:active {
+    background-color: @primary-bg-active !important;
+}
+
+.btn-fab::before {
+    background-color: @primary-bg !important;
+}
+
+.ui-floatingactions .ui-floatingactions-item.ui-icon-floating-add::after {
+    left: 20px;
+}
+
+.ui-floatingactions .ui-floatingactions-item::before {
+    background-color: @primary-bg !important;
 }
 
 // New Event

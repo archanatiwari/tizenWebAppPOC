@@ -151,7 +151,7 @@ button {
   font-family: 'SOne-F200_v20';
 }
 .loginpage .login_wrapper .form-input .btn-login {
-  background-color: #A72A6D !important;
+  background-color: #e75480 !important;
 }
 .loginpage .login_wrapper .form-input .btn-login:hover {
   background-color: #A72A6D !important;
@@ -160,7 +160,13 @@ button {
   background-color: #A72A6D !important;
 }
 .loginpage .login_wrapper .form-input .btn-login::before {
-  background-color: #A72A6D !important;
+  background-color: #e75480 !important;
+}
+.loginpage .ui-header-login {
+  background: transparent !important;
+}
+.loginpage .ui-header-login .ui-header-btn {
+  margin-right: 16px;
 }
 .header {
   background: none;
@@ -202,12 +208,12 @@ button {
 #map .labels {
   color: white;
   background: none;
-  font-size: 14px;
-  font-family: "Lucida Grande", "Arial", sans-serif;
+  height: 32px;
   text-align: center;
-  width: 70px;
-  white-space: nowrap;
-  opacity: 1 !important;
+  font-family: 'SOne-F300_v20';
+  font-size: 25px;
+  color: #fff;
+  padding: 20px 10px 0px 10px;
 }
 .arrivedPplWrapper {
   height: 50px;
@@ -232,7 +238,6 @@ button {
   position: relative;
   box-sizing: border-box;
   display: inline-block;
-  padding: 8px 0;
 }
 .homepage .kg-event-list .event-detail .event-date {
   float: left;
@@ -242,6 +247,7 @@ button {
 }
 .homepage .kg-event-list .event-detail .event-date .event-dd {
   font-size: 20px;
+  padding: 8px 0;
   font-family: 'SOne-F400_v21';
 }
 .homepage .kg-event-list .event-detail .event-date span {
@@ -258,10 +264,10 @@ button {
 .homepage .kg-event-list .event-detail .event-dtls .event-name {
   font-size: 20px;
   font-weight: bold;
+  padding: 8px 0;
 }
 .homepage .kg-event-list .event-detail .event-dtls span {
   font-size: 16px;
-  font-weight: 600;
 }
 .homepage .kg-event-list .event-member-list {
   text-align: center;
@@ -269,6 +275,14 @@ button {
 .homepage .kg-event-list .event-member-list .member-list {
   list-style: none;
   display: inline-flex;
+}
+.homepage .kg-event-list .eventDetailsWrapper .dateTimeHolder {
+  float: left;
+  width: 40%;
+}
+.homepage .kg-event-list .eventDetailsWrapper .eventDetailsHolder {
+  float: right;
+  width: 60%;
 }
 .homepage .kg-event-list .pending-status {
   margin: 0 auto;
@@ -280,11 +294,11 @@ button {
   color: rgba(255, 255, 255, 0.7);
 }
 .homepage .ui-listview li {
-  font-size: 16px ;
+  font-size: 16px;
   font-weight: 600;
 }
 .homepage .ui-tabbar li:active {
-  background-color: #A72A6D !important;
+  background-color: #e75480 !important;
 }
 .homepage .pending {
   border-left: 4px solid #FECA15;
@@ -300,7 +314,7 @@ button {
   padding: 0px !important;
 }
 .homepage .ui-btn {
-  background-color: #7b3f87 !important;
+  background-color: #7B3F87;
   padding: 13px 49px;
   margin: 0 8px;
 }
@@ -316,8 +330,32 @@ button {
   color: #000;
   font-family: 'SOne-F400c_v21' !important;
 }
-.homepage #ui-floatingactions {
+.ui-btn:not(.ui-btn-circle):not(.ui-btn-nobg):not(.ui-floatingactions-item) {
+  background-color: #7B3F87;
+}
+.ui-btn:not(.ui-btn-circle):not(.ui-btn-nobg):not(.ui-floatingactions-item)::before {
+  background-color: #200055;
+}
+.ui-floatingactions {
   background-color: #200055 !important;
+}
+.btn-fab {
+  background-color: #7B3F87 !important;
+}
+.btn-fab:hover {
+  background-color: #200055 !important;
+}
+.btn-fab:active {
+  background-color: #200055 !important;
+}
+.btn-fab::before {
+  background-color: #7B3F87 !important;
+}
+.ui-floatingactions .ui-floatingactions-item.ui-icon-floating-add::after {
+  left: 20px;
+}
+.ui-floatingactions .ui-floatingactions-item::before {
+  background-color: #7B3F87 !important;
 }
 .newevent .ui-header > .ui-header-btn.ui-header-btn-text {
   min-width: 0px;
@@ -401,6 +439,10 @@ button {
   background: url(../assets/images/person_icon.png);
   background-repeat: no-repeat;
   background-position: center;
+}
+.newevent .member-list {
+  list-style: none;
+  display: inline-flex;
 }
 .newevent .notification {
   display: flex;
