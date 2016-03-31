@@ -46,17 +46,17 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
 });
 
-app.run(function($rootScope){
-	$rootScope.$on('$stateChangeSuccess', 
-			function(event, toState, toParams, fromState, fromParams){ 
-				//if(toState.name != "login"){
-				loadJsFile('js/libs/tau/mobile/js/tau.js');
-				//}
-			});
-});
-
-function loadJsFile(url){
-    var fileref = document.createElement('script');
-    fileref.setAttribute("type","text/javascript");
-    fileref.setAttribute("src", url);
-}
+//app.run(function($rootScope){
+//	$rootScope.$on('$stateChangeSuccess', 
+//			function(event, toState, toParams, fromState, fromParams){ 
+//				//if(toState.name != "login"){
+//				loadJsFile('js/libs/tau/mobile/js/tau.js');
+//				//}
+//			});
+//});
+//
+//function loadJsFile(url){
+//    var fileref = document.createElement('script');
+//    fileref.setAttribute("type","text/javascript");
+//    fileref.setAttribute("src", url);
+//}

@@ -1,30 +1,31 @@
 <script type="text/javascript" src="js/libs/tau/mobile/js/tau.js"></script>
-<div id="newevent" class="ui-page ui-page-active">
-    <div class="ui-header" data-position="fixed">
-        <h2 class="ui-title">Location</h2>
-        <a class="ui-header-btn ui-header-btn-text ui-header-btn-left" ui-sref="newEvent">BACK</a>
-        <a class="ui-header-btn ui-header-btn-text ui-header-btn-right" ng-click="setLocation();setRecentSearch()">ADD</a>
-    </div>
-    <div class="ui-content">
-        <ul class="ui-listview  ui-colored-list">
-            <li class="ui-li-static">
-                <input id="pac-input" class="controls location-input" type="search" placeholder="Search" ng-click="getRecentSearchAgain()">
-            </li>
-            <li class="ui-li-static" ng-show="loadRecentPlaces">
-                <label>Recent Places</label>
-            </li>
-            <li class="ui-li-static" ng-show="loadRecentPlaces" ng-repeat="places in loadRecentPlaces | limitTo: 3">
-                <p>{{places.place}}</p>
-            </li>
-            <li class="ui-li-static" ng-show="!loadRecentPlaces">
-                <label>Recent Places</label>
-            </li>
-            <li class="ui-li-static" ng-show="!loadRecentPlaces">
-                <p>No recent places</p>
-            </li>
-        </ul>
-    </div>
-    <div class="ui-footer">
-        
+<div class="contentWrapper location-page">
+    <div id="newevent" class="ui-page ui-page-active">
+        <div class="ui-header" data-position="fixed">
+            <h2 class="ui-title">Location</h2>
+            <a class="ui-header-btn ui-header-btn-text ui-header-btn-left" ui-sref="newEvent">BACK</a>
+            <a class="ui-header-btn ui-header-btn-text ui-header-btn-right" ng-click="setLocation();setRecentSearch()">ADD</a>
+        </div>
+        <div class="ui-content">
+            <ul class="ui-listview  ui-colored-list">
+                <li class="ui-li-static">
+                    <input id="pac-input" class="controls location-input" type="search" placeholder="Search" ng-click="getRecentSearchAgain()">
+                </li>
+                <li class="ui-li-static" ng-show="loadRecentPlaces">
+                    <label>Recent Places</label>
+                </li>
+                <li class="ui-li-static" ng-show="loadRecentPlaces" ng-repeat="places in loadRecentPlaces | limitTo: 3">
+                    <p>{{places.place}}</p>
+                </li>
+                <li class="ui-li-static" ng-show="!loadRecentPlaces">
+                    <label>Recent Places</label>
+                </li>
+                <li class="ui-li-static" ng-show="!loadRecentPlaces">
+                    <p>No recent places</p>
+                </li>
+            </ul>
+        </div>
+        <div class="ui-footer">
+        </div>
     </div>
 </div>

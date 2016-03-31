@@ -1,35 +1,47 @@
 <script type="text/javascript" src="js/libs/tau/mobile/js/tau.js"></script>
 <!--Navigation page-->
-<div class="contentWrapper navigation">
+<div class="contentWrapper navigationPage">
     <div id="navigation" class="ui-page ui-page-active">
         <div class="ui-header" data-position="fixed">
             <h2 class="ui-title">{{selectedEvent.eventName}}</h2>
             <a class="ui-header-btn ui-header-btn-text ui-header-btn-left" ui-sref="home">BACK</a>
+        	<a class="ui-header-btn ui-header-btn-text ui-header-btn-right" ng-click="trackUsers()">START</a>
         </div>
-        <!-- <div class="container" ></div> -->
-        <div class="ui-content" id="map"></div>
-        <div class="ui-footer">
-            <div class="container arrivedPplWrapper">Reached People
-                <span class="arrivedPplItem" ng-repeat="person in arrivedPpl">{{ person.name }}</span>
-            </div>
-            <div>
-                <span ng-click="trackUsers()">Start Tracking</span>
-                <a ui-sref="home">back</a>
-            </div>
-            <div class="container eventDetailsWrapper">
-                <div class="dateTimeHolder">
-                    <span>{{ selectedEvent.eventDate }}</span>
-                    <span>{{ selectedEvent.eventTime }}</span>
-                </div>
-                <div class="eventDetailsHolder">
-                    <span>{{ selectedEvent.eventName }}</span>
-                    <span>{{ selectedEvent.eventLocation }}</span>
-                </div>
-            </div>
-            <div class="container attendeeList" ui-sref="inviteeList">
-                <!-- <span ng-repeat="invitee in selectedEvent.UsersInvited">{{invitee +" "}}</span> -->
-                <span>{{ customisedInviteeList }}</span>
-            </div>
+        <div class="ui-content">
+        	<div class="container" id="map"></div>
+        	
+        	<section>
+        		<ul class="ui-listview ">
+	        		<li class="ui-li-static {{selectedEvent.statusClass}}" ng-click="">
+	                    <div class="kg-event-list">
+	                        <div class="event-detail">
+	                            <div class="event-date ">
+	                                <div class="event-dd">{{selectedEvent.eventDate|date:"dd MMM"}}</div><span>{{selectedEvent.eventTime}}</span>
+	                            </div>
+	                            <div class="event-dtls ">
+	                                <div class="event-name">{{selectedEvent.eventName}}</div><span>{{selectedEvent.eventLocation}},{{selectedEvent.eventDescription}}</span>
+	                            </div>
+	                        </div>
+	                        <div class="event-member-list">
+                                <ul class="member-list">
+                                    <li ui-sref="inviteeList">{{ customisedInviteeList }}</li>
+                                </ul>
+	                        </div>
+	                        <div ng-if="selectedEvent.mystatus =='PENDING'">
+	                            <div class="pending-status">
+	                                <a class="ui-btn btn-fab" data-inline="true">Reject</a>
+	                                <a class="ui-btn btn-fab" data-inline="true">Accept</a>
+	                            </div>
+                         	</div> 
+                        	<div class="arrived-member-list">
+                        		<ul>Arrived People
+                        			<li class="arrived-member" ng-repeat="person in arrivedPpl">{{ person.name }}</li>
+            					</ul>
+            				</div>
+	                    </div>
+	               </li>
+        		</ul>
+        	</section>
         </div>
     </div>
 </div>

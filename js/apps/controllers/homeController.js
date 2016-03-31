@@ -2,8 +2,7 @@ app.controller('homeController', function($scope, $state, SharedDataService) {
     $scope.eventMemberList = function(inviteeList) {
         $scope.customisedInviteeList = "";
         $scope.arrivedPpl = [];
-        str = "";
-
+        var str = "";
         //doing this for customizing invitee list
         for (var i = 0; i < inviteeList.length; i++) {
             var invitee = inviteeList[i].name;

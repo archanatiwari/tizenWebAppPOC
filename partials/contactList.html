@@ -1,5 +1,5 @@
 <script type="text/javascript" src="js/libs/tau/mobile/js/tau.js"></script>
-<div class="contentWrapper homepage">
+<div class="contentWrapper contactlist">
     <div class="container">
         <div class="ui-page" id="searchInputPage">
             <div class="ui-header" data-position="fixed">
@@ -8,18 +8,16 @@
                 <a class="ui-header-btn ui-header-btn-text ui-header-btn-right" ng-click="addContacts()">ADD</a>
             </div>
             <div class="ui-content" id="search-input-content">
-                <div class="search-input-area">
-                    <input type="search" name="search" id="page-search-input" value=""/>
-                </div>
-                <ul id="searchList" class="ui-listview" ng-repeat="user in userContacts">
-<!--                     <li class="ui-li-static li-select-all li-check-all">
-                        <label>
-                            Select all
-                            <input type="checkbox" id="select-all" />
-                        </label>
-                    </li> -->
-                    <li data-filtertext="{{user.name}}" class="ui-li-static li-select-all"><label>{{user.name}}</label>
-                        <input type="checkbox" ng-model="user.checked" /></li>
+                <ul id="searchList" class="ui-listview">
+                    <li class="ui-li-static">
+                        <div class="search-input-area">
+                            <input type="search" ng-model="search.name" name="search" id="page-search-input" value="" />
+                        </div>
+                    </li>
+                    <li class="ui-li-static li-select-all" ng-repeat="user in userContacts | filter:search">
+                        <label class="user-name">{{user.name}}</label>
+                        <input class="check-box" type="checkbox" ng-model="user.checked" />
+                    </li>
                 </ul>
                 <div class="ui-popup" ng-show="popup">
                     <div class="ui-popup-header">Alert</div>

@@ -24,6 +24,8 @@ app.controller('contactListController', function($scope, $state, SharedFactory, 
         SharedDataService.setAddedUsers($scope.addedUsers);
         $state.go('newEvent');
     };
+
+    
     // $scope.time=  tizen.time.getCurrentDateTime().toDateString();
     // console.log($scope.time);
     //	var current_dt = tizen.time.getCurrentDateTime();
