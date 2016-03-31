@@ -329,11 +329,20 @@ button {
 .ui-listview.ui-colored-list .ui-li-static:active {
     background: @secondary-bg !important;
 }
+
 //to hide 'powered by Google' on search results
 /*.pac-container:after {
    background-image: none !important;
    height: 0px;
 }*/
+
+input.ui-text-input,
+    textarea.ui-text-input {
+        padding: 0px 32px 0px 0px !important;
+        background: @secondary-bg !important;
+        line-height: 20px !important;
+        font-size: 18px !important;
+    }
 
 // New Event
 .newevent {
@@ -345,10 +354,8 @@ button {
     .ui-header > .ui-header-btn:active::before {
         background: @secondary-bg !important;
     }
-    input.ui-text-input,
-    textarea.ui-text-input {
-        padding: 0px 0px 0px 0px;
-        background: @secondary-bg !important;
+    textarea.ui-text-input + .ui-text-input-textline {
+    top: 0.5px;
     }
     .ui-text-input-textline {
         background: #3EB9CB !important;
@@ -404,23 +411,25 @@ button {
         box-sizing: border-box;
         width: 30px;
         height: 30px;
-        margin-right: 12px;
+        margin-right: 3px;
         background: url(../assets/images/location_map_icon.png);
         background-repeat: no-repeat;
         background-position: center;
+        background-size: contain;
     }
     .people {
         display: block;
         float: right;
         position: relative;
-        top: -45px;
+        top: -46px;
         box-sizing: border-box;
         width: 30px;
         height: 30px;
-        margin-right: 12px;
+        /* margin-right: 12px; */
         background: url(../assets/images/person_icon.png);
         background-repeat: no-repeat;
         background-position: center;
+        background-size: contain;
     }
     .member-list {
         list-style: none;
@@ -510,5 +519,12 @@ button {
             margin: 0px 16px;
             text-align: center;
         }
+    }
+}
+//location page
+
+.location-page{
+    input{
+    backgraund : transparent;
     }
 }

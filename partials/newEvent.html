@@ -1,6 +1,6 @@
 <script type="text/javascript" src="js/libs/tau/mobile/js/tau.js"></script>
 <!--NewEvent page-->
-<div class="contentWrapper eventDetail">
+<div class="contentWrapper newevent">
     <div id="eventDetail" class="ui-page ui-page-active">
         <div class="ui-header" data-position="fixed">
             <h2 class="ui-title">New Event</h2>
@@ -11,28 +11,37 @@
             <ul class="ui-listview ui-colored-list">
                 <li class="ui-li-static">
                     <div class="textinput-box">
-                        <input type="text" name="eventName" id="eventName" placeholder="Event" ng-model="eventName" data-clear-btn="true" />
+                        <input type="text" name="eventName" id="eventName" placeholder="Event" data-clear-btn="true" ng-model="eventName" />
                     </div>
                 </li>
                 <li class="ui-li-static">
                     <div class="textinput-box" ui-sref="location">
-                        <!-- <input type="text" name="locationField" id="locationField" placeholder="Location" disabled="disabled" ng-model="location" /> -->
-                        <textarea name="locationField" id="locationField" placeholder="Location" disabled="disabled" ng-model="location"></textarea>
+                        <textarea type="text" name="locationField" id="locationField" placeholder="Location" disabled="disabled" ng-model="location" ></textarea>
+                        <!-- <textarea name="locationField" id="locationField" placeholder="Location" disabled="disabled" ng-model="location"></textarea> -->
+                        <span class="location"></span>
                     </div>
                 </li>
                 <li class="ui-li-static">
                     <div class="textinput-box">
+                        <div class="textinput-box">
                         <label for="DateTime">Date</label>
-                        <input type="date" name="dateField" id="dateField" ng-model="eventDate" />
-                        <input type="time" name="timeField" id="timeField" ng-model="eventDate"/>
+                        <input type="date" name="dateField" id="dateField" class="datepicker"  ng-model="eventDate" />
+                        <input type="time" name="timeField" id="timeField" class="timepicker" ng-model="eventDate" />
+                    </div>
+                        
+                </li>
+                <li class="ui-li-static">
+                    <div class="textinput-box" ui-sref="contactList">
+                        
                     </div>
                 </li>
                 <li class="ui-li-static">
                     <div class="textinput-box" ui-sref="contactList">
                         <input type="text" name="peopleField" id="peopleField" placeholder="People" disabled="disabled" />
+                        <span class="people"></span>
                     </div>
                 </li>
-                <li class="ui-li-static" >{{addedUsers}}</li>
+                <li class="ui-li-static" ></li>
             </ul>
         </div>
         <!-- Button not required - (direct from input field) -->

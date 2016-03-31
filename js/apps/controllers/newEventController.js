@@ -9,7 +9,7 @@ app.controller('newEventController', function($scope, SharedDataService) {
 
     var h = d.getHours();
     var m = (d.getMinutes() < 10 ? '0' : '') + d.getMinutes();
-    var ampm = h >= 12 ? 'p.m.' : 'a.m.s';
+    var ampm = h >= 12 ? 'p.m.' : 'a.m.';
     var hours = h >= 12 ? h - 12 : h;
     $scope.eventTime = hours + ':' + m + ' ' + ampm;
     $scope.eventDate = d;

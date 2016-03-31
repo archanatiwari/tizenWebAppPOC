@@ -391,6 +391,13 @@ button {
    background-image: none !important;
    height: 0px;
 }*/
+input.ui-text-input,
+textarea.ui-text-input {
+  padding: 0px 32px 0px 0px !important;
+  background: transparent !important;
+  line-height: 20px !important;
+  font-size: 18px !important;
+}
 .newevent .ui-header > .ui-header-btn.ui-header-btn-text {
   min-width: 0px;
   margin-left: 16px;
@@ -399,10 +406,8 @@ button {
 .newevent .ui-header > .ui-header-btn:active::before {
   background: transparent !important;
 }
-.newevent input.ui-text-input,
-.newevent textarea.ui-text-input {
-  padding: 0px 0px 0px 0px;
-  background: transparent !important;
+.newevent textarea.ui-text-input + .ui-text-input-textline {
+  top: 0.5px;
 }
 .newevent .ui-text-input-textline {
   background: #3EB9CB !important;
@@ -456,23 +461,25 @@ button {
   box-sizing: border-box;
   width: 30px;
   height: 30px;
-  margin-right: 12px;
+  margin-right: 3px;
   background: url(../assets/images/location_map_icon.png);
   background-repeat: no-repeat;
   background-position: center;
+  background-size: contain;
 }
 .newevent .people {
   display: block;
   float: right;
   position: relative;
-  top: -45px;
+  top: -46px;
   box-sizing: border-box;
   width: 30px;
   height: 30px;
-  margin-right: 12px;
+  /* margin-right: 12px; */
   background: url(../assets/images/person_icon.png);
   background-repeat: no-repeat;
   background-position: center;
+  background-size: contain;
 }
 .newevent .member-list {
   list-style: none;
@@ -556,4 +563,7 @@ button {
   padding: 16px;
   margin: 0px 16px;
   text-align: center;
+}
+.location-page input {
+  backgraund: transparent;
 }
