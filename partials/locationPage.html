@@ -1,18 +1,19 @@
 <script type="text/javascript" src="js/libs/tau/mobile/js/tau.js"></script>
-
-<div id="newevent" class="ui-page ui-page-active">
-    <div class="ui-header" data-position="fixed">
-        <h2 class="ui-title">Location</h2>
-        <a class="ui-header-btn ui-header-btn-text ui-header-btn-left" ui-sref="newEvent">BACK</a>
-        <a class="ui-header-btn ui-header-btn-text ui-header-btn-right" ng-click="setLocation()">ADD</a>
-    </div>
-    <div class="ui-content">
-    	<ul class="ui-listview ui-colored-list">
-    		<li class="ui-li-static">
-    			<input id="pac-input" class="controls location-input" type="text" ng-click="recentSearch()" placeholder="Search" >
-    			
-    		</li>
-    	</ul>
-        
+<div class="contentWrapper location-page">
+    <div id="newevent" class="ui-page ui-page-active">
+        <div class="ui-header" data-position="fixed">
+            <h2 class="ui-title">Location</h2>
+            <a class="ui-header-btn ui-header-btn-text ui-header-btn-left" ui-sref="newEvent">BACK</a>
+            <a class="ui-header-btn ui-header-btn-text ui-header-btn-right" ng-click="setLocation()">ADD</a>
+        </div>
+        <div class="ui-content">
+            <ul class="ui-listview ui-colored-list">
+                <li class="ui-li-static">
+                    <div class="textinput-box">
+                        <input id="pac-input" class="controls location-input" type="text" ng-click="recentSearch()" placeholder="Search">
+                    </div>
+                </li>
+            </ul>
+        </div>
     </div>
 </div>

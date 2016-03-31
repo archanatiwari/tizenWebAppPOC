@@ -6,8 +6,9 @@
             <h2 class="ui-title">{{selectedEvent.eventName}}</h2>
             <a class="ui-header-btn ui-header-btn-text ui-header-btn-left" ui-sref="home">BACK</a>
         </div>
-        <div class="container" id="map"></div>
+       
         <div class="ui-content">
+             <div class="container" id="map"></div>
             <div class="container arrivedPplWrapper">Reached People
                 <span class="arrivedPplItem" ng-repeat="person in arrivedPpl">{{ person.name }}</span>
             </div>
