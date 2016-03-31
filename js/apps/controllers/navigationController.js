@@ -37,8 +37,28 @@ app.controller('navigationController', function($scope, $interval, SharedFactory
     			break;
     		}
     	}
-    }
-
+    };
+    
+    $scope.updateSelectedEventStatus = function(){
+    	var selectedEvent = $scope.selectedEvent;
+    	if (selectedEvent.mystatus == "ACCEPTED") {
+    		selectedEvent.statusClass = "accepted";
+        } else if (selectedEvent.mystatus == "PENDING") {
+            selectedEvent.statusClass = "pending";
+        } else {
+            selectedEvent.statusClass = "rejected";
+        }
+        var date = new Date(selectedEvent.eventDate);
+        var curDate = new Date();
+        if (date.getDate() == curDate.getDate() && date.getMonth() == curDate.getMonth() && date.getFullYear() == curDate.getFullYear()) {
+            selectedEvent.eventDate = "Today";
+        } else {
+            selectedEvent.eventDate = date;
+        }
+    };
+    
+    $scope.updateSelectedEventStatus();
+    
     var onSuccess = function(response) {
         $scope.userList = response;
         $scope.currentUser =  SharedDataService.getCurrentUser(); //$scope.userList[0]; //assuming userId as "archit.soni@globant.com" 
@@ -127,14 +147,14 @@ app.controller('navigationController', function($scope, $interval, SharedFactory
             //url: "images/user_icon_g.png",
         };
     };
-
+    
     $scope.updateCurrentUserPosition = function(){
 	    //set current user position according to source
 	    curUserMarker = new MarkerWithLabel({
 	        position: $scope.currentUser.source,
 	        map: map,
 	        labelContent: "You",
-			labelAnchor: new google.maps.Point(28, 65),
+			labelAnchor: new google.maps.Point(10, 45),
 			labelClass: "labels",
 			labelInBackground: false,
 			icon: pinSymbol('#00387B')
@@ -196,27 +216,27 @@ app.controller('navigationController', function($scope, $interval, SharedFactory
 					person.marker.setPosition(newPoint);
 				}
 				else{
-					//var splittedName = person.name.split(' ');
-					//var labelName = (splittedName.length > 1 ) ? (splittedName[0].charAt(0) + splittedName[1].charAt(0)) : (splittedName[0].charAt(0));
-					
 					if(person.id == $scope.currentUser.id){
 						person.marker = new MarkerWithLabel({
 							position : newPoint,
 							map: map,
 							labelContent: "You",
-							labelAnchor: new google.maps.Point(28, 65),
+							labelAnchor: new google.maps.Point(10, 45),
 							labelClass: "labels",
 							labelInBackground: false,
 							icon: pinSymbol('#00387B'),
 						});
 					}
 					else{
+						var splittedName = person.name.split(' ');
+						var labelName = (splittedName.length > 1 ) ? (splittedName[0].charAt(0) + splittedName[1].charAt(0)) : (splittedName[0].charAt(0));
+						
 						person.marker = new MarkerWithLabel({
 							position : newPoint,
 							map: map,
 							//title: person.name,
-							labelContent: pictureLabel,//labelName,
-							labelAnchor: new google.maps.Point(28, 65),
+							labelContent: labelName,//pictureLabel,
+							labelAnchor: new google.maps.Point(10, 45),
 							labelClass: "labels",
 							labelInBackground: false,
 							//map_icon_label: '<span class="map-icon map-icon-male"></span>',
