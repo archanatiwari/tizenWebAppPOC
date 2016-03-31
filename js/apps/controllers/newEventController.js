@@ -1,8 +1,10 @@
 app.controller('newEventController', function($scope, SharedDataService) {
     $scope.users = SharedDataService.getAddedUsers;
     $scope.location = SharedDataService.getDestination();
+
+
     if ($scope.users.length != 0) {
-        $scope.addedUsers = $scope.users.join('/ ');
+        $scope.addedUsers = $scope.users.join(' / ');
     }
 
     var d = new Date();

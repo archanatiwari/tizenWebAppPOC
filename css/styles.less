@@ -247,6 +247,7 @@ button {
     }
     .pending {
         border-left: 4px solid @pending-bg;
+        border-bottom: none !important;
         padding: 0px !important;
     }
     .accepted {
@@ -256,6 +257,7 @@ button {
     }
     .rejected {
         border-left: 4px solid @rejected-bg;
+        border-bottom: none !important;
         padding: 0px !important;
     }
     .ui-btn {
@@ -322,13 +324,15 @@ button {
 .ui-listview.ui-colored-list .ui-li-static:active {
     background: @secondary-bg !important;
 }
+
 input.ui-text-input,
-    textarea.ui-text-input {
-        padding: 0px 32px 0px 0px !important;
-        background: @secondary-bg !important;
-        line-height: 20px !important;
-        font-size: 18px !important;
-    }
+textarea.ui-text-input {
+    padding: 0px 32px 0px 0px !important;
+    background: @secondary-bg !important;
+    line-height: 20px !important;
+    font-size: 18px !important;
+}
+
 // New Event
 .newevent {
     .ui-header > .ui-header-btn.ui-header-btn-text {
@@ -340,7 +344,7 @@ input.ui-text-input,
         background: @secondary-bg !important;
     }
     textarea.ui-text-input + .ui-text-input-textline {
-    top: 0.5px;
+        top: 0.5px;
     }
     .ui-text-input-textline {
         background: #3EB9CB !important;
@@ -460,6 +464,7 @@ input.ui-text-input,
 .invitee-list {
     .pending {
         border-left: 4px solid @pending-bg !important;
+        border-bottom: none !important;
         padding: 0px !important;
     }
     .accepted {
@@ -469,6 +474,7 @@ input.ui-text-input,
     }
     .rejected {
         border-left: 4px solid @rejected-bg !important;
+        border-bottom: none !important;
         padding: 0px !important;
     }
     .textinput-box {
@@ -506,10 +512,23 @@ input.ui-text-input,
         }
     }
 }
-//location page
 
-.location-page{
-    input{
-    backgraund : transparent;
+//location page
+.location-page {
+    input {
+        backgraund: transparent;
+    }
+}
+
+//contactlist page
+.contactlist {
+    .ui-li-static {
+        border-bottom: none !important;
+        .user-name {
+            font-weight: 600;
+        }
+        .check-box {
+            float: right;
+        }
     }
 }

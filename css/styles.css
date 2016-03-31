@@ -303,6 +303,7 @@ button {
 }
 .homepage .pending {
   border-left: 4px solid #FECA15;
+  border-bottom: none !important;
   padding: 0px !important;
 }
 .homepage .accepted {
@@ -312,6 +313,7 @@ button {
 }
 .homepage .rejected {
   border-left: 4px solid #FF0000;
+  border-bottom: none !important;
   padding: 0px !important;
 }
 .homepage .ui-btn {
@@ -496,6 +498,7 @@ textarea.ui-text-input {
 }
 .invitee-list .pending {
   border-left: 4px solid #FECA15 !important;
+  border-bottom: none !important;
   padding: 0px !important;
 }
 .invitee-list .accepted {
@@ -505,6 +508,7 @@ textarea.ui-text-input {
 }
 .invitee-list .rejected {
   border-left: 4px solid #FF0000 !important;
+  border-bottom: none !important;
   padding: 0px !important;
 }
 .invitee-list .textinput-box {
@@ -541,4 +545,13 @@ textarea.ui-text-input {
 }
 .location-page input {
   backgraund: transparent;
+}
+.contactlist .ui-li-static {
+  border-bottom: none !important;
+}
+.contactlist .ui-li-static .user-name {
+  font-weight: 600;
+}
+.contactlist .ui-li-static .check-box {
+  float: right;
 }
