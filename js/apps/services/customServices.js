@@ -76,4 +76,13 @@ app.service('SharedDataService', function($http, $timeout) {
     this.getAddedUsers = function() {
         return this.getAddedUsers;
     };
+
+    this.setRecentlySearchedData = function(recentSearched) {
+        this.getRecentSearches = recentSearched;
+    };
+    
+    this.getRecentlySearchedData = function() {
+        return this.getRecentSearches;
+    };
+    
 });

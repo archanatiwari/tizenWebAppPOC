@@ -8,7 +8,7 @@ h2,
 h3,
 h4,
 h5,
-h6,
+.ui-header h6,
 button {
     font-family: 'SOne-F200_v20'!important;
 }
@@ -287,6 +287,17 @@ button {
 
 .ui-floatingactions {
     background-color: #200055 !important;
+    -webkit-border-radius: 30px !important;
+    -moz-border-radius: 30px !important;
+    border-radius: 30px !important;
+}
+
+.ui-floatingactions .ui-floatingactions-item:last-child {
+    margin-right: 0px !important;
+}
+
+.ui-floatingactions .ui-floatingactions-item:first-child {
+    margin-left: 0px !important;
 }
 
 .btn-fab {
@@ -315,6 +326,17 @@ button {
 
 .ui-header > .ui-header-btn:active::before {
     background-color: @primary-bg !important;
+}
+
+.ui-header > .ui-header-btn:focus {
+    border: none !important;
+}
+
+input.ui-text-input.ui-text-input-disabled,
+textarea.ui-text-input.ui-text-input-disabled,
+input.ui-text-input:disabled,
+textarea.ui-text-input:disabled {
+    text-shadow: 0 0 0 rgba(0, 0, 0, 1) !important;
 }
 
 .ui-listview.ui-colored-list .ui-li.ui-li-anchor:active,

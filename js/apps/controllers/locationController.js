@@ -3,6 +3,9 @@ app.controller('locationController', function($scope, $state, $interval, SharedD
     $scope.inputText = document.getElementById('pac-input');
     $scope.searchBox = new google.maps.places.SearchBox($scope.inputText);
     $scope.location = "";
+    // $scope.targetName = [];
+    $scope.recentSearchedPlaces = [];
+    $scope.searchedData = [];
 
     // Listen for the event fired when the user selects a prediction and retrieve
     // more details for that place.
@@ -25,4 +28,13 @@ app.controller('locationController', function($scope, $state, $interval, SharedD
         SharedDataService.setDestination($scope.location);
         $state.go('newEvent');
     }
+    $scope.setRecentSearch = function() {
+        $scope.recentSearchedPlaces.push({ 'place': $scope.targetName });
+        $scope.searchedData = $scope.searchedData.concat($scope.recentSearchedPlaces)
+        SharedDataService.setRecentlySearchedData($scope.searchedData);
+    };
+    $scope.getRecentSearchAgain = function() {
+        $scope.loadRecentPlaces = SharedDataService.getRecentlySearchedData();
+    };
+    $scope.getRecentSearchAgain();
 });
