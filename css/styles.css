@@ -214,6 +214,7 @@ button {
   font-size: 25px;
   color: #fff;
   padding: 20px 10px 0px 10px;
+  opacity: 1 !important;
 }
 .arrivedPplWrapper {
   height: 50px;
@@ -522,8 +523,12 @@ button {
   text-align: center;
   padding: 12px 0 !important;
 }
-.invitee-list .accepted-status {
-  margin: 0 auto;
+.invitee-list .pending-status .ui-btn {
+  padding: 13px 49px;
+}
+.invitee-list .accepted-status .ui-btn {
+  display: inherit;
+  padding: 16px;
+  margin: 0px 16px;
   text-align: center;
-  padding: 12px 0;
 }

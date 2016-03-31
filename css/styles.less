@@ -146,6 +146,7 @@ button {
         font-size: 25px;
         color: #fff;
         padding: 20px 10px 0px 10px;
+        opacity: 1 !important;
     }
 }
 
@@ -315,7 +316,10 @@ button {
 .ui-header > .ui-header-btn:active::before {
     background-color: @primary-bg !important;
 }
-.ui-listview.ui-colored-list .ui-li.ui-li-anchor:active, .ui-listview.ui-colored-list .ui-li.ui-btn:active, .ui-listview.ui-colored-list .ui-li-static:active {
+
+.ui-listview.ui-colored-list .ui-li.ui-li-anchor:active,
+.ui-listview.ui-colored-list .ui-li.ui-btn:active,
+.ui-listview.ui-colored-list .ui-li-static:active {
     background: @secondary-bg !important;
 }
 
@@ -477,16 +481,22 @@ button {
     .status-text {
         font-family: 'SOne-F600_v20' !important;
         font-size: 20px;
-        text-align:center;
+        text-align: center;
     }
     .pending-status {
         margin: 0 auto !important;
         text-align: center;
         padding: 12px 0 !important;
+        .ui-btn {
+            padding: 13px 49px;
+        }
     }
     .accepted-status {
-        margin: 0 auto;
-        text-align: center;
-        padding: 12px 0;
+        .ui-btn {
+            display: inherit;
+            padding: 16px;
+            margin: 0px 16px;
+            text-align: center;
+        }
     }
 }
