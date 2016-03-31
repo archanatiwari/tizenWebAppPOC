@@ -211,9 +211,8 @@ button {
   height: 32px;
   text-align: center;
   font-family: 'SOne-F300_v20';
-  font-size: 25px;
+  font-size: 16px;
   color: #fff;
-  padding: 20px 10px 0px 10px;
   opacity: 1 !important;
 }
 #map .gmnoprint a,
@@ -342,6 +341,7 @@ button {
   height: 76px;
 }
 .navigationPage .kg-event-list .arrived-member-list {
+  height: 76px;
   font-size: 16px;
 }
 .navigationPage .kg-event-list .arrived-member-list .arrived-member {

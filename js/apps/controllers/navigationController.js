@@ -45,7 +45,6 @@ app.controller('navigationController', function($scope, $interval, SharedFactory
     		selectedEvent.statusClass = "accepted";
         } else if (selectedEvent.mystatus == "PENDING") {
             selectedEvent.statusClass = "pending";
-            //selectedEvent.customisedInviteeList = $scope.eventMemberList(selectedEvent.inviteeList);
         } else {
             selectedEvent.statusClass = "rejected";
         }
@@ -155,7 +154,7 @@ app.controller('navigationController', function($scope, $interval, SharedFactory
 	        position: $scope.currentUser.source,
 	        map: map,
 	        labelContent: "You",
-			labelAnchor: new google.maps.Point(28, 65),
+			labelAnchor: new google.maps.Point(10, 45),
 			labelClass: "labels",
 			labelInBackground: false,
 			icon: pinSymbol('#00387B')
@@ -222,7 +221,7 @@ app.controller('navigationController', function($scope, $interval, SharedFactory
 							position : newPoint,
 							map: map,
 							labelContent: "You",
-							labelAnchor: new google.maps.Point(28, 65),
+							labelAnchor: new google.maps.Point(10, 45),
 							labelClass: "labels",
 							labelInBackground: false,
 							icon: pinSymbol('#00387B'),
@@ -237,7 +236,7 @@ app.controller('navigationController', function($scope, $interval, SharedFactory
 							map: map,
 							//title: person.name,
 							labelContent: labelName,//pictureLabel,
-							labelAnchor: new google.maps.Point(28, 65),
+							labelAnchor: new google.maps.Point(10, 45),
 							labelClass: "labels",
 							labelInBackground: false,
 							//map_icon_label: '<span class="map-icon map-icon-male"></span>',
