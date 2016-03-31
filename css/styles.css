@@ -216,6 +216,15 @@ button {
   padding: 20px 10px 0px 10px;
   opacity: 1 !important;
 }
+#map .gmnoprint a,
+#map .gmnoprint span,
+#map .gmnoprint div {
+  display: none;
+}
+#map img[src="https://maps.gstatic.com/mapfiles/api-3/images/google4_hdpi.png"],
+#map a[href^="https://maps.google.com/maps"] {
+  display: none !important;
+}
 .arrivedPplWrapper {
   height: 50px;
 }
