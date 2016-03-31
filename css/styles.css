@@ -202,7 +202,7 @@ button {
 }
 #map {
   width: 100%;
-  height: 70%;
+  height: 334px;
   background: #ccc;
 }
 #map .labels {
@@ -225,45 +225,32 @@ button {
 #map a[href^="https://maps.google.com/maps"] {
   display: none !important;
 }
-.arrivedPplWrapper {
-  height: 50px;
-}
-.arrivedPplWrapper .arrivedPplItem {
-  background-color: #493073;
-  color: white;
-  border: 1px solid;
-  border-radius: 3px;
-  margin-right: 5px;
-}
-.eventDetailsWrapper .dateTimeHolder {
-  float: left;
-  width: 40%;
-}
-.eventDetailsWrapper .eventDetailsHolder {
-  float: right;
-  width: 60%;
-}
-.homepage .kg-event-list .event-detail {
+.homepage .kg-event-list .event-detail,
+.navigationPage .kg-event-list .event-detail {
   width: 100%;
   position: relative;
   box-sizing: border-box;
   display: inline-block;
 }
-.homepage .kg-event-list .event-detail .event-date {
+.homepage .kg-event-list .event-detail .event-date,
+.navigationPage .kg-event-list .event-detail .event-date {
   float: left;
   border-right: 1px solid #CACACA;
   padding: 0px 14px;
   display: block;
 }
-.homepage .kg-event-list .event-detail .event-date .event-dd {
+.homepage .kg-event-list .event-detail .event-date .event-dd,
+.navigationPage .kg-event-list .event-detail .event-date .event-dd {
   font-size: 20px;
   padding: 8px 0;
   font-family: 'SOne-F400_v21';
 }
-.homepage .kg-event-list .event-detail .event-date span {
+.homepage .kg-event-list .event-detail .event-date span,
+.navigationPage .kg-event-list .event-detail .event-date span {
   font-size: 16px;
 }
-.homepage .kg-event-list .event-detail .event-dtls {
+.homepage .kg-event-list .event-detail .event-dtls,
+.navigationPage .kg-event-list .event-detail .event-dtls {
   padding-left: 20px;
   width: 66%;
   float: left;
@@ -271,64 +258,69 @@ button {
   position: relative;
   box-sizing: border-box;
 }
-.homepage .kg-event-list .event-detail .event-dtls .event-name {
+.homepage .kg-event-list .event-detail .event-dtls .event-name,
+.navigationPage .kg-event-list .event-detail .event-dtls .event-name {
   font-size: 20px;
   font-weight: bold;
   padding: 8px 0;
 }
-.homepage .kg-event-list .event-detail .event-dtls span {
+.homepage .kg-event-list .event-detail .event-dtls span,
+.navigationPage .kg-event-list .event-detail .event-dtls span {
   font-size: 16px;
 }
-.homepage .kg-event-list .event-member-list {
+.homepage .kg-event-list .event-member-list,
+.navigationPage .kg-event-list .event-member-list {
   margin-left: -24px !important;
 }
-.homepage .kg-event-list .event-member-list .member-list {
+.homepage .kg-event-list .event-member-list .member-list,
+.navigationPage .kg-event-list .event-member-list .member-list {
   list-style: none;
   display: inline-flex;
 }
-.homepage .kg-event-list .eventDetailsWrapper .dateTimeHolder {
-  float: left;
-  width: 40%;
-}
-.homepage .kg-event-list .eventDetailsWrapper .eventDetailsHolder {
-  float: right;
-  width: 60%;
-}
-.homepage .kg-event-list .pending-status {
+.homepage .kg-event-list .pending-status,
+.navigationPage .kg-event-list .pending-status {
   margin: 0 auto;
   text-align: center;
   padding: 12px 0;
 }
-.homepage .ui-tabbar a {
+.homepage .ui-tabbar a,
+.navigationPage .ui-tabbar a {
   font-family: 'SOne-F400c_v21';
   color: rgba(255, 255, 255, 0.7);
 }
-.homepage .ui-listview li {
+.homepage .ui-listview li,
+.navigationPage .ui-listview li {
   font-size: 16px;
   font-weight: 600;
 }
-.homepage .ui-tabbar li:active {
+.homepage .ui-tabbar li:active,
+.navigationPage .ui-tabbar li:active {
   background-color: #e75480 !important;
 }
-.homepage .pending {
+.homepage .pending,
+.navigationPage .pending {
   border-left: 4px solid #FECA15;
   padding: 0px !important;
 }
-.homepage .accepted {
+.homepage .accepted,
+.navigationPage .accepted {
   border-left: 4px solid #41C555;
   border-bottom: none !important;
   padding: 0px !important;
 }
-.homepage .rejected {
+.homepage .rejected,
+.navigationPage .rejected {
   border-left: 4px solid #FF0000;
   padding: 0px !important;
 }
-.homepage .ui-btn {
+.homepage .ui-btn,
+.navigationPage .ui-btn {
   background-color: #7B3F87;
   padding: 13px 49px;
   margin: 0 8px;
 }
-.homepage .event-members {
+.homepage .event-members,
+.navigationPage .event-members {
   background: #fff;
   padding: 11px 18px;
   margin-top: -3px;
@@ -339,6 +331,26 @@ button {
   opacity: 50%;
   color: #000;
   font-family: 'SOne-F400c_v21' !important;
+}
+.navigationPage .kg-event-list .event-detail {
+  height: 115px;
+}
+.navigationPage .kg-event-list .event-member-list {
+  height: 60px;
+}
+.navigationPage .kg-event-list .pending-status {
+  height: 76px;
+}
+.navigationPage .kg-event-list .arrived-member-list {
+  font-size: 16px;
+}
+.navigationPage .kg-event-list .arrived-member-list .arrived-member {
+  display: inline-block;
+  background-color: #493073;
+  color: white;
+  border: 1px solid;
+  border-radius: 3px;
+  margin-right: 5px;
 }
 .ui-btn:not(.ui-btn-circle):not(.ui-btn-nobg):not(.ui-floatingactions-item) {
   background-color: #7B3F87;
@@ -375,6 +387,10 @@ button {
 .ui-listview.ui-colored-list .ui-li-static:active {
   background: transparent !important;
 }
+/*.pac-container:after {
+   background-image: none !important;
+   height: 0px;
+}*/
 .newevent .ui-header > .ui-header-btn.ui-header-btn-text {
   min-width: 0px;
   margin-left: 16px;
