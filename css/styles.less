@@ -56,6 +56,11 @@ button {
     }
     .ui-page {
         background-image: url(../assets/images/loginbg.png) !important;
+        width: 100% !important;
+        height: 100% !important;
+        background-repeat: no-repeat !important;
+        background-position: 0px 0px !important;
+        background-size: cover !important;
     }
     .ui-btn:not(.ui-btn-circle):not(.ui-btn-nobg):not(.ui-floatingactions-item) {
         background-color: #e75480 !important;
@@ -299,6 +304,9 @@ button {
 
 .ui-floatingactions .ui-floatingactions-item.ui-icon-floating-add::after {
     left: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 1) !important;
 }
 
 .ui-floatingactions .ui-floatingactions-item::before {
@@ -394,7 +402,10 @@ textarea.ui-text-input {
     font-size: 18px !important;
 }
 
-input.ui-text-input.ui-text-input-disabled, textarea.ui-text-input.ui-text-input-disabled, input.ui-text-input:disabled, textarea.ui-text-input:disabled {
+input.ui-text-input.ui-text-input-disabled,
+textarea.ui-text-input.ui-text-input-disabled,
+input.ui-text-input:disabled,
+textarea.ui-text-input:disabled {
     text-shadow: 0 0 0 rgb(0, 0, 0) !important;
 }
 

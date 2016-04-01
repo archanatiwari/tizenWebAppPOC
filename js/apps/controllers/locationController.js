@@ -4,8 +4,16 @@ app.controller('locationController', function($scope, $state, $interval, SharedD
     $scope.searchBox = new google.maps.places.SearchBox($scope.inputText);
     $scope.location = "";
     // $scope.targetName = [];
-    $scope.recentSearchedPlaces = [];
-    $scope.searchedData = [];
+    $scope.recentSearchedPlaces = SharedDataService.getRecentlySearchedData();
+
+    if ($scope.recentSearchedPlaces) {
+
+        $scope.recentSearchedPlaces ;
+    } else {
+        $scope.recentSearchedPlaces= [];
+    }
+
+
 
     // Listen for the event fired when the user selects a prediction and retrieve
     // more details for that place.
@@ -29,12 +37,12 @@ app.controller('locationController', function($scope, $state, $interval, SharedD
         $state.go('newEvent');
     }
     $scope.setRecentSearch = function() {
-        $scope.recentSearchedPlaces.push({ 'place': $scope.targetName });
-        $scope.searchedData = $scope.searchedData.concat($scope.recentSearchedPlaces)
-        SharedDataService.setRecentlySearchedData($scope.searchedData);
+        $scope.recentSearchedPlaces.push($scope.targetName);
+        // $scope.searchedData = $scope.searchedData.concat($scope.recentSearchedPlaces)
+        SharedDataService.setRecentlySearchedData($scope.recentSearchedPlaces);
     };
-    $scope.getRecentSearchAgain = function() {
-        $scope.loadRecentPlaces = SharedDataService.getRecentlySearchedData();
-    };
-    $scope.getRecentSearchAgain();
+    // $scope.getRecentSearchAgain = function() {
+    //     $scope.loadRecentPlaces = SharedDataService.getRecentlySearchedData();
+    // };
+    // $scope.getRecentSearchAgain();
 });

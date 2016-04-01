@@ -130,6 +130,11 @@ button {
 }
 .loginpage .ui-page {
   background-image: url(../assets/images/loginbg.png) !important;
+  width: 100% !important;
+  height: 100% !important;
+  background-repeat: no-repeat !important;
+  background-position: 0px 0px !important;
+  background-size: cover !important;
 }
 .loginpage .ui-btn:not(.ui-btn-circle):not(.ui-btn-nobg):not(.ui-floatingactions-item) {
   background-color: #e75480 !important;
@@ -355,6 +360,9 @@ button {
 }
 .ui-floatingactions .ui-floatingactions-item.ui-icon-floating-add::after {
   left: 20px;
+  width: 40px;
+  height: 40px;
+  background-color: #ffffff !important;
 }
 .ui-floatingactions .ui-floatingactions-item::before {
   background-color: #7B3F87 !important;

@@ -11,16 +11,16 @@
                 <li class="ui-li-static">
                     <input id="pac-input" class="controls location-input" type="search" placeholder="Search" ng-click="getRecentSearchAgain()">
                 </li>
-                <li class="ui-li-static" ng-show="loadRecentPlaces">
+                <!-- <li class="ui-li-static" ng-show="recentSearchedPlaces">
+                    <label>Recent Places</label>
+                </li> -->
+                <li class="ui-li-static">
                     <label>Recent Places</label>
                 </li>
-                <li class="ui-li-static" ng-show="loadRecentPlaces" ng-repeat="places in loadRecentPlaces | limitTo: 3">
-                    <p>{{places.place}}</p>
+                <li class="ui-li-static" ng-show="recentSearchedPlaces" ng-repeat="places in recentSearchedPlaces | orderBy: '-' ">
+                    <p>{{places}}</p>
                 </li>
-                <li class="ui-li-static" ng-show="!loadRecentPlaces">
-                    <label>Recent Places</label>
-                </li>
-                <li class="ui-li-static" ng-show="!loadRecentPlaces">
+                <li class="ui-li-static" ng-if="!recentSearchedPlaces.length">
                     <p>No recent places</p>
                 </li>
             </ul>
