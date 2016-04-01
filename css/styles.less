@@ -443,7 +443,6 @@ textarea.ui-text-input:disabled {
         display: inline-block;
         width: 160px;
         background-color: #7b3f87 !important;
-        padding: 4px 20px;
         border-radius: 26px;
         position: relative;
         min-height: 39px;
@@ -454,12 +453,18 @@ textarea.ui-text-input:disabled {
         cursor: pointer;
         box-sizing: border-box;
         border: none;
+        -webkit-appearance: textfield !important;
+        padding: 1px !important;
+        border: 2px inset !important;
+        border-image: initial !important;
+        -webkit-rtl-ordering: logical !important;
+        -webkit-user-select: text !important;
+        cursor: auto !important;
     }
     .timepicker {
         display: inline-block;
         width: 120px;
         background-color: #7b3f87 !important;
-        padding: 4px 10px;
         border-radius: 26px;
         position: relative;
         min-height: 39px;
@@ -470,6 +475,13 @@ textarea.ui-text-input:disabled {
         box-sizing: border-box;
         border: none;
         float: right;
+        -webkit-appearance: textfield !important;
+        padding: 1px !important;
+        border: 2px inset !important;
+        border-image: initial !important;
+        -webkit-rtl-ordering: logical !important;
+        -webkit-user-select: text !important;
+        cursor: auto !important;
     }
     .location {
         display: block;
