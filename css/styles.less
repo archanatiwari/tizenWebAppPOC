@@ -48,51 +48,20 @@ button {
     background-repeat: no-repeat;
     background-position: 0px 0px;
     background-size: cover;
-    .login_wrapper {
-        position: absolute;
-        bottom: 20px;
-        width: 92%;
-        .form-input {
-            padding-top: 20px;
-            .tbx-login {
-                position: relative;
-                display: block;
-                padding: 4px 12px;
-                min-height: 39px;
-                vertical-align: middle;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                text-align: center;
-                color: rgba(255, 255, 255, 1);
-                font-size: 20px;
-                white-space: nowrap;
-                cursor: pointer;
-                background-color: rgba(61, 57, 61, 0.95);
-                box-sizing: border-box;
-                border-radius: 26px;
-                width: 100%;
-                border: none;
-                font-family: 'SOne-F200_v20';
-            }
-            .btn-login {
-                background-color: @loginbtn-bg !important;
-            }
-            .btn-login:hover {
-                background-color: @login-bg-active !important;
-            }
-            .btn-login:active {
-                background-color: @login-bg-active !important;
-            }
-            .btn-login::before {
-                background-color: @loginbtn-bg !important;
-            }
-        }
+    .login-content {
+        padding-top: 350px;
     }
     .ui-header-login {
         background: @secondary-bg !important;
-        .ui-header-btn {
-            margin-right: 16px;
-        }
+    }
+    .ui-page {
+        background-image: url(../assets/images/loginbg.png) !important;
+    }
+    .ui-btn:not(.ui-btn-circle):not(.ui-btn-nobg):not(.ui-floatingactions-item) {
+        background-color: #e75480 !important;
+    }
+    .ui-btn:not(.ui-btn-circle):not(.ui-btn-nobg):not(.ui-floatingactions-item)::before {
+        background-color: #A72A6D !important;
     }
 }
 
@@ -148,21 +117,24 @@ button {
         //padding: 20px 10px 0px 10px;
         opacity: 1 !important;
     }
-     //to hide "terms of use" on map
-    .gmnoprint{
-		a, span, div {
-	    	display:none;
-	    }
-	}
-  
-	//to hide "google logo" on map
-	img[src="https://maps.gstatic.com/mapfiles/api-3/images/google4_hdpi.png"], a[href^="https://maps.google.com/maps"]{
-	    display:none !important;
-	}
+    //to hide "terms of use" on map
+    .gmnoprint {
+        a,
+        span,
+        div {
+            display: none;
+        }
+    }
+    //to hide "google logo" on map
+    img[src="https://maps.gstatic.com/mapfiles/api-3/images/google4_hdpi.png"],
+    a[href^="https://maps.google.com/maps"] {
+        display: none !important;
+    }
 }
 
 // home page page style 
-.homepage, .navigationPage{
+.homepage,
+.navigationPage {
     .kg-event-list {
         .event-detail {
             width: 100%;
@@ -222,7 +194,7 @@ button {
         font-weight: 600;
     }
     .ui-tabbar li:active {
-        background-color: @loginbtn-bg !important;
+        background-color: @primary-bg !important;
     }
     .pending {
         border-left: 4px solid @pending-bg;
@@ -259,39 +231,39 @@ button {
 }
 
 //navigation page specific styles
-.navigationPage{
-	 .kg-event-list {
+.navigationPage {
+    .kg-event-list {
         .event-detail {
             height: 115px;
         }
-        .event-member-list{
-           height: 60px;
-           //font-size: 16px;
+        .event-member-list {
+            height: 60px;
+            //font-size: 16px;
         }
-        .pending-status{
-        	height: 76px;
+        .pending-status {
+            height: 76px;
         }
         .arrived-member-list {
-		    height: 76px;
-		    font-size: 16px;
-		    .arrived-member{
-        		display: inline-block;
-		        background-color: #493073;
-		        color: white;
-		        border: 1px solid;
-		        border-radius: 3px;
-		        margin-right: 5px;
-		    }
-		}
+            height: 76px;
+            font-size: 16px;
+            .arrived-member {
+                display: inline-block;
+                background-color: #493073;
+                color: white;
+                border: 1px solid;
+                border-radius: 3px;
+                margin-right: 5px;
+            }
+        }
     }
 }
 
 .ui-btn:not(.ui-btn-circle):not(.ui-btn-nobg):not(.ui-floatingactions-item) {
-    background-color: #7B3F87;
+    background-color: #7B3F87 !important;
 }
 
 .ui-btn:not(.ui-btn-circle):not(.ui-btn-nobg):not(.ui-floatingactions-item)::before {
-    background-color: #200055;
+    background-color: #200055 !important;
 }
 
 .ui-floatingactions {
@@ -341,11 +313,64 @@ button {
     border: none !important;
 }
 
-input.ui-text-input.ui-text-input-disabled,
-textarea.ui-text-input.ui-text-input-disabled,
-input.ui-text-input:disabled,
-textarea.ui-text-input:disabled {
+.form-input > input.ui-text-input,
+.form-input > textarea.ui-text-input {
+    color: rgb(0, 0, 0) !important;
+    background: rgba(197, 180, 180, 0.35) !important;
+    -webkit-text-fill-color: inherit !important;
+    line-height: 20px !important;
+    font-size: 18px !important;
+    margin-top: 15px !important;
+    text-align: center !important;
+    border-radius: 30px !important;
+    padding: 0px !important;
+}
+
+.form-input > input.ui-text-input.ui-text-input-disabled,
+.form-input > textarea.ui-text-input.ui-text-input-disabled,
+.form-input > input.ui-text-input:disabled,
+.form-input > textarea.ui-text-input:disabled {
     text-shadow: 0 0 0 rgba(0, 0, 0, 1) !important;
+}
+
+.form-input > input.ui-text-input + .ui-text-input-textline,
+.form-input > textarea.ui-text-input + .ui-text-input-textline {
+    background: transparent !important;
+    height: 0px !important;
+    position: inherit !important;
+    display: none !important;
+    box-sizing: inherit !important;
+    margin: 0px !important;
+}
+
+.form-input > input.ui-text-input + .ui-text-input-textline {
+    top: 0px !important;
+}
+
+*::-webkit-input-placeholder {
+    /* WebKit, Blink, Edge */
+    color: #7C797C;
+}
+
+*:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color: #7C797C;
+    opacity: 1;
+}
+
+*::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color: #7C797C;
+    opacity: 1;
+}
+
+*:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #7C797C;
+}
+
+.form-input {
+    margin: 0px 12px 0px 12px;
 }
 
 .ui-listview.ui-colored-list .ui-li.ui-li-anchor:active,
@@ -354,21 +379,24 @@ textarea.ui-text-input:disabled {
     background: @secondary-bg !important;
 }
 
-
 //to hide 'powered by Google' on search results
+
 /*.pac-container:after {
    background-image: none !important;
    height: 0px;
 }*/
 
 input.ui-text-input,
-    textarea.ui-text-input {
-        padding: 0px 32px 0px 0px !important;
-        background: @secondary-bg !important;
-        line-height: 20px !important;
-        font-size: 18px !important;
-    }
+textarea.ui-text-input {
+    padding: 0px 32px 0px 0px !important;
+    background: @secondary-bg !important;
+    line-height: 20px !important;
+    font-size: 18px !important;
+}
 
+input.ui-text-input.ui-text-input-disabled, textarea.ui-text-input.ui-text-input-disabled, input.ui-text-input:disabled, textarea.ui-text-input:disabled {
+    text-shadow: 0 0 0 rgb(0, 0, 0) !important;
+}
 
 // New Event
 .newevent {
@@ -555,6 +583,14 @@ input.ui-text-input,
     input {
         backgraund: transparent;
     }
+}
+
+//to hide "powered by Google" on autosearch list
+.pac-container:after {
+    background-image: none !important;
+    height: 0px;
+    padding: 0;
+    margin: 0;
 }
 
 //contactlist page
