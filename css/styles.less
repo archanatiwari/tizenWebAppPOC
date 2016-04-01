@@ -303,14 +303,17 @@ button {
 }
 
 .ui-floatingactions .ui-floatingactions-item.ui-icon-floating-add::after {
-    left: 20px;
-    width: 40px;
-    height: 40px;
+    left: 20px !important;
+    width: 40px !important;
+    height: 40px !important;
     background-color: rgba(255, 255, 255, 1) !important;
 }
 
 .ui-floatingactions .ui-floatingactions-item::before {
     background-color: @primary-bg !important;
+    -webkit-transform: none !important;
+    -webkit-transition-duration: 0s !important;
+    -webkit-transition-timing-function: ease !important;
 }
 
 .ui-header > .ui-header-btn:active::before {

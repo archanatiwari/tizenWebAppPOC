@@ -11,11 +11,11 @@
             <ul class="ui-listview ui-colored-list">
                 <li class="ui-li-static">
                     <div class="textinput-box">
-                        <input type="text" name="eventName" id="eventName" placeholder="Event" data-clear-btn="true" ng-model="eventName" />
+                        <input type="text" name="eventName" id="eventName" placeholder="Event" data-clear-btn="true" ng-model="eventName" required />
                     </div>
                 </li>
                 <li class="ui-li-static">
-                    <div class="textinput-box" ui-sref="location">
+                    <div class="textinput-box" ui-sref="location" ng-click="setName()">
                         <textarea type="text" name="locationField" id="locationField" placeholder="Location" disabled="disabled" ng-model="location"></textarea>
                         <!-- <textarea name="locationField" id="locationField" placeholder="Location" disabled="disabled" ng-model="location"></textarea> -->
                         <span class="location"></span>

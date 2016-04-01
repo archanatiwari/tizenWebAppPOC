@@ -3,6 +3,8 @@ app.controller('locationController', function($scope, $state, $interval, SharedD
     $scope.inputText = document.getElementById('pac-input');
     $scope.searchBox = new google.maps.places.SearchBox($scope.inputText);
     $scope.location = "";
+    $scope.newEventName = SharedDataService.getEventName();
+    
     // $scope.targetName = [];
     $scope.recentSearchedPlaces = SharedDataService.getRecentlySearchedData();
 
