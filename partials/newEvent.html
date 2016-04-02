@@ -17,21 +17,16 @@
                 <li class="ui-li-static">
                     <div class="textinput-box" ui-sref="location" ng-click="setName()">
                         <textarea type="text" name="locationField" id="locationField" placeholder="Location" disabled="disabled" ng-model="location"></textarea>
-                        <!-- <textarea name="locationField" id="locationField" placeholder="Location" disabled="disabled" ng-model="location"></textarea> -->
                         <span class="location"></span>
                     </div>
                 </li>
                 <li class="ui-li-static">
-                    <!-- <div class="textinput-box"> -->
                         <div class="textinput-box">
                             <label for="DateTime">Date</label>
                             <input type="date" name="dateField" id="dateField" class="datepicker" ng-model="eventDate" />
                             <input type="time" name="timeField" id="timeField" class="timepicker" ng-model="eventDate" />
                         </div>
                 </li>
-                <!-- <li class="ui-li-static">
-                    <span  ng-repeat="user in users">{{user}}</span>
-                </li> -->
                 <li class="ui-li-static">
                     <div class="textinput-box" ui-sref="contactList">
                         <span>{{addedUsers}} </span>
@@ -39,15 +34,12 @@
                         <span class="people"></span>
                     </div>
                 </li>
-                <li class="ui-li-static"></li>
+                <li class="ui-li-static">
+                    <span>Icon1</span>
+                    <span>Icon2</span>
+                </li>
+                <li class="ui-li-static" style="height: 300px;"></li>
             </ul>
             </div>
-            <!-- Button not required - (direct from input field) -->
-            <!-- Add People input field (direct to ContactList) -->
-            <!--             <div class="ui-footer">
-            </div> -->
-            <!-- Reminder + End Time -->
         </div>
-        <!--         <div class="container">
-        </div> -->
     </div>
