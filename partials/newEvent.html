@@ -11,7 +11,7 @@
             <ul class="ui-listview ui-colored-list">
                 <li class="ui-li-static">
                     <div class="textinput-box">
-                        <input type="text" name="eventName" id="eventName" placeholder="Event" data-clear-btn="true" ng-model="eventName" required />
+                        <input type="text" id="eventName" placeholder="Event" data-clear-btn="true" ng-model="eventName" ng-change="updateEventName()" ng-model-options="{ debounce: 1000 }" />
                     </div>
                 </li>
                 <li class="ui-li-static">
@@ -21,11 +21,11 @@
                     </div>
                 </li>
                 <li class="ui-li-static">
-                        <div class="textinput-box">
-                            <label for="DateTime">Date</label>
-                            <input type="date" name="dateField" id="dateField" class="datepicker" ng-model="eventDate" />
-                            <input type="time" name="timeField" id="timeField" class="timepicker" ng-model="eventDate" />
-                        </div>
+                    <div class="textinput-box">
+                        <label for="DateTime">Date</label>
+                        <input type="date" name="dateField" id="dateField" class="datepicker" ng-model="eventDate" />
+                        <input type="time" name="timeField" id="timeField" class="timepicker" ng-model="eventDate" />
+                    </div>
                 </li>
                 <li class="ui-li-static">
                     <div class="textinput-box" ui-sref="contactList">
@@ -40,6 +40,6 @@
                 </li>
                 <li class="ui-li-static" style="height: 300px;"></li>
             </ul>
-            </div>
         </div>
     </div>
+</div>
