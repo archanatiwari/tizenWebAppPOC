@@ -1,7 +1,18 @@
-app.controller('newEventController', function($scope, SharedDataService) {
+app.controller('newEventController', function($scope,$timeout, SharedDataService) {
+
     $scope.users = SharedDataService.getAddedUsers;
     $scope.location = SharedDataService.getDestination();
 
+    $scope.eventName = SharedDataService.getEventName();
+    if ($scope.eventName) {
+        $scope.eventName;
+    }else{
+        $scope.eventName = "";
+    }
+
+    $scope.updateEventName = function() {
+        SharedDataService.setEventName($scope.eventName);
+    }
 
     if ($scope.users.length != 0) {
         $scope.addedUsers = $scope.users.join(' / ');
@@ -15,6 +26,9 @@ app.controller('newEventController', function($scope, SharedDataService) {
     var hours = h >= 12 ? h - 12 : h;
     $scope.eventTime = hours + ':' + m + ' ' + ampm;
     $scope.eventDate = d;
+
+
+
 
 
 });

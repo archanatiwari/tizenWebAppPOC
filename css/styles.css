@@ -343,7 +343,8 @@ button {
   height: 76px;
 }
 .navigationPage .kg-event-list .arrived-member-list {
-  height: 76px;
+  min-height: 76px;
+  height: auto;
   font-size: 16px;
 }
 .navigationPage .kg-event-list .arrived-member-list .arrived-member {
@@ -354,7 +355,7 @@ button {
   border-radius: 3px;
   margin-right: 5px;
 }
-.ui-btn:not(.ui-btn-circle):not(.ui-btn-nobg):not(.ui-floatingactions-item) {
+.ui-btn:not(.ui-btn-circle):not(.ui-btn-nobg):not(.ui-floatinfgactions-item) {
   background-color: #7B3F87;
 }
 .ui-btn:not(.ui-btn-circle):not(.ui-btn-nobg):not(.ui-floatingactions-item)::before {

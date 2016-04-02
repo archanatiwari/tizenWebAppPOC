@@ -11,7 +11,7 @@
             <ul class="ui-listview ui-colored-list">
                 <li class="ui-li-static">
                     <div class="textinput-box">
-                        <input type="text" name="eventName" id="eventName" placeholder="Event" data-clear-btn="true" ng-model="eventName" />
+                        <input type="text"  id="eventName" placeholder="Event" data-clear-btn="true" ng-model="eventName" ng-change="updateEventName()" ng-model-options="{ debounce: 1000 }"/>
                     </div>
                 </li>
                 <li class="ui-li-static">
