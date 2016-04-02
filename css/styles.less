@@ -8,7 +8,7 @@ h2,
 h3,
 h4,
 h5,
-h6,
+.ui-header h6,
 button {
     font-family: 'SOne-F200_v20'!important;
 }
@@ -48,51 +48,25 @@ button {
     background-repeat: no-repeat;
     background-position: 0px 0px;
     background-size: cover;
-    .login_wrapper {
-        position: absolute;
-        bottom: 20px;
-        width: 92%;
-        .form-input {
-            padding-top: 20px;
-            .tbx-login {
-                position: relative;
-                display: block;
-                padding: 4px 12px;
-                min-height: 39px;
-                vertical-align: middle;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                text-align: center;
-                color: rgba(255, 255, 255, 1);
-                font-size: 20px;
-                white-space: nowrap;
-                cursor: pointer;
-                background-color: rgba(61, 57, 61, 0.95);
-                box-sizing: border-box;
-                border-radius: 26px;
-                width: 100%;
-                border: none;
-                font-family: 'SOne-F200_v20';
-            }
-            .btn-login {
-                background-color: @loginbtn-bg !important;
-            }
-            .btn-login:hover {
-                background-color: @login-bg-active !important;
-            }
-            .btn-login:active {
-                background-color: @login-bg-active !important;
-            }
-            .btn-login::before {
-                background-color: @loginbtn-bg !important;
-            }
-        }
+    .login-content {
+        padding-top: 350px;
     }
     .ui-header-login {
         background: @secondary-bg !important;
-        .ui-header-btn {
-            margin-right: 16px;
-        }
+    }
+    .ui-page {
+        background-image: url(../assets/images/loginbg.png) !important;
+        width: 100% !important;
+        height: 100% !important;
+        background-repeat: no-repeat !important;
+        background-position: 0px 0px !important;
+        background-size: cover !important;
+    }
+    .ui-btn:not(.ui-btn-circle):not(.ui-btn-nobg):not(.ui-floatingactions-item) {
+        background-color: #e75480 !important;
+    }
+    .ui-btn:not(.ui-btn-circle):not(.ui-btn-nobg):not(.ui-floatingactions-item)::before {
+        background-color: #A72A6D !important;
     }
 }
 
@@ -148,21 +122,24 @@ button {
         //padding: 20px 10px 0px 10px;
         opacity: 1 !important;
     }
-     //to hide "terms of use" on map
-    .gmnoprint{
-		a, span, div {
-	    	display:none;
-	    }
-	}
-  
-	//to hide "google logo" on map
-	img[src="https://maps.gstatic.com/mapfiles/api-3/images/google4_hdpi.png"], a[href^="https://maps.google.com/maps"]{
-	    display:none !important;
-	}
+    //to hide "terms of use" on map
+    .gmnoprint {
+        a,
+        span,
+        div {
+            display: none;
+        }
+    }
+    //to hide "google logo" on map
+    img[src="https://maps.gstatic.com/mapfiles/api-3/images/google4_hdpi.png"],
+    a[href^="https://maps.google.com/maps"] {
+        display: none !important;
+    }
 }
 
 // home page page style 
-.homepage, .navigationPage{
+.homepage,
+.navigationPage {
     .kg-event-list {
         .event-detail {
             width: 100%;
@@ -222,7 +199,7 @@ button {
         font-weight: 600;
     }
     .ui-tabbar li:active {
-        background-color: @loginbtn-bg !important;
+        background-color: @primary-bg !important;
     }
     .pending {
         border-left: 4px solid @pending-bg;
@@ -259,44 +236,56 @@ button {
 }
 
 //navigation page specific styles
-.navigationPage{
-	 .kg-event-list {
+.navigationPage {
+    .kg-event-list {
         .event-detail {
             height: 115px;
         }
-        .event-member-list{
-           height: 60px;
-           //font-size: 16px;
+        .event-member-list {
+            height: 60px;
+            //font-size: 16px;
         }
-        .pending-status{
-        	height: 76px;
+        .pending-status {
+            height: 76px;
         }
         .arrived-member-list {
-		    min-height: 76px;
-            height: auto;
-		    font-size: 16px;
-		    .arrived-member{
-        		display: inline-block;
-		        background-color: #493073;
-		        color: white;
-		        border: 1px solid;
-		        border-radius: 3px;
-		        margin-right: 5px;
-		    }
-		}
+
+            height: 76px;
+            font-size: 16px;
+            .arrived-member {
+                display: inline-block;
+                background-color: #493073;
+                color: white;
+                border: 1px solid;
+                border-radius: 3px;
+                margin-right: 5px;
+            }
+        }
     }
 }
 
-.ui-btn:not(.ui-btn-circle):not(.ui-btn-nobg):not(.ui-floatinfgactions-item) {
-    background-color: #7B3F87;
+.ui-btn:not(.ui-btn-circle):not(.ui-btn-nobg):not(.ui-floatingactions-item) {
+    background-color: #7B3F87 !important;
+
 }
 
 .ui-btn:not(.ui-btn-circle):not(.ui-btn-nobg):not(.ui-floatingactions-item)::before {
-    background-color: #200055;
+    background-color: #200055 !important;
 }
 
 .ui-floatingactions {
     background-color: #200055 !important;
+    -webkit-border-radius: 30px !important;
+    -moz-border-radius: 30px !important;
+    border-radius: 30px !important;
+}
+
+.ui-floatingactions .ui-floatingactions-item:last-child {
+    margin-right: 0px !important;
+}
+
+.ui-floatingactions .ui-floatingactions-item:first-child {
+    margin-left: 0px !important;
 }
 
 .btn-fab {
@@ -316,15 +305,85 @@ button {
 }
 
 .ui-floatingactions .ui-floatingactions-item.ui-icon-floating-add::after {
-    left: 20px;
+    left: 20px !important;
+    width: 40px !important;
+    height: 40px !important;
+    background-color: rgba(255, 255, 255, 1) !important;
 }
 
 .ui-floatingactions .ui-floatingactions-item::before {
     background-color: @primary-bg !important;
+    -webkit-transform: none !important;
+    -webkit-transition-duration: 0s !important;
+    -webkit-transition-timing-function: ease !important;
 }
 
 .ui-header > .ui-header-btn:active::before {
     background-color: @primary-bg !important;
+}
+
+.ui-header > .ui-header-btn:focus {
+    border: none !important;
+}
+
+.form-input > input.ui-text-input,
+.form-input > textarea.ui-text-input {
+    color: rgb(0, 0, 0) !important;
+    background: rgba(197, 180, 180, 0.35) !important;
+    -webkit-text-fill-color: inherit !important;
+    line-height: 20px !important;
+    font-size: 18px !important;
+    margin-top: 15px !important;
+    text-align: center !important;
+    border-radius: 30px !important;
+    padding: 0px !important;
+}
+
+.form-input > input.ui-text-input.ui-text-input-disabled,
+.form-input > textarea.ui-text-input.ui-text-input-disabled,
+.form-input > input.ui-text-input:disabled,
+.form-input > textarea.ui-text-input:disabled {
+    text-shadow: 0 0 0 rgba(0, 0, 0, 1) !important;
+}
+
+.form-input > input.ui-text-input + .ui-text-input-textline,
+.form-input > textarea.ui-text-input + .ui-text-input-textline {
+    background: transparent !important;
+    height: 0px !important;
+    position: inherit !important;
+    display: none !important;
+    box-sizing: inherit !important;
+    margin: 0px !important;
+}
+
+.form-input > input.ui-text-input + .ui-text-input-textline {
+    top: 0px !important;
+}
+
+*::-webkit-input-placeholder {
+    /* WebKit, Blink, Edge */
+    color: #7C797C;
+}
+
+*:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color: #7C797C;
+    opacity: 1;
+}
+
+*::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color: #7C797C;
+    opacity: 1;
+}
+
+*:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #7C797C;
+}
+
+.form-input {
+    margin: 0px 12px 0px 12px;
 }
 
 .ui-listview.ui-colored-list .ui-li.ui-li-anchor:active,
@@ -333,21 +392,27 @@ button {
     background: @secondary-bg !important;
 }
 
-
 //to hide 'powered by Google' on search results
+
 /*.pac-container:after {
    background-image: none !important;
    height: 0px;
 }*/
 
 input.ui-text-input,
-    textarea.ui-text-input {
-        padding: 0px 32px 0px 0px !important;
-        background: @secondary-bg !important;
-        line-height: 20px !important;
-        font-size: 18px !important;
-    }
+textarea.ui-text-input {
+    padding: 0px 32px 0px 0px !important;
+    background: @secondary-bg !important;
+    line-height: 20px !important;
+    font-size: 18px !important;
+}
 
+input.ui-text-input.ui-text-input-disabled,
+textarea.ui-text-input.ui-text-input-disabled,
+input.ui-text-input:disabled,
+textarea.ui-text-input:disabled {
+    text-shadow: 0 0 0 rgb(0, 0, 0) !important;
+}
 
 // New Event
 .newevent {
@@ -380,7 +445,6 @@ input.ui-text-input,
         display: inline-block;
         width: 160px;
         background-color: #7b3f87 !important;
-        padding: 4px 20px;
         border-radius: 26px;
         position: relative;
         min-height: 39px;
@@ -391,12 +455,18 @@ input.ui-text-input,
         cursor: pointer;
         box-sizing: border-box;
         border: none;
+        -webkit-appearance: textfield !important;
+        padding: 1px !important;
+        border: 2px inset !important;
+        border-image: initial !important;
+        -webkit-rtl-ordering: logical !important;
+        -webkit-user-select: text !important;
+        cursor: auto !important;
     }
     .timepicker {
         display: inline-block;
         width: 120px;
         background-color: #7b3f87 !important;
-        padding: 4px 10px;
         border-radius: 26px;
         position: relative;
         min-height: 39px;
@@ -407,6 +477,13 @@ input.ui-text-input,
         box-sizing: border-box;
         border: none;
         float: right;
+        -webkit-appearance: textfield !important;
+        padding: 1px !important;
+        border: 2px inset !important;
+        border-image: initial !important;
+        -webkit-rtl-ordering: logical !important;
+        -webkit-user-select: text !important;
+        cursor: auto !important;
     }
     .location {
         display: block;
@@ -534,6 +611,14 @@ input.ui-text-input,
     input {
         backgraund: transparent;
     }
+}
+
+//to hide "powered by Google" on autosearch list
+.pac-container:after {
+    background-image: none !important;
+    height: 0px;
+    padding: 0;
+    margin: 0;
 }
 
 //contactlist page

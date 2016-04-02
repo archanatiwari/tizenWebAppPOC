@@ -14,6 +14,7 @@ app.controller('newEventController', function($scope,$timeout, SharedDataService
         SharedDataService.setEventName($scope.eventName);
     }
 
+
     if ($scope.users.length != 0) {
         $scope.addedUsers = $scope.users.join(' / ');
     }
@@ -27,8 +28,5 @@ app.controller('newEventController', function($scope,$timeout, SharedDataService
     $scope.eventTime = hours + ':' + m + ' ' + ampm;
     $scope.eventDate = d;
 
-
-
-
-
 });
+

@@ -1,32 +1,31 @@
+<script type="text/javascript" src="js/libs/tau/mobile/js/tau.js"></script>
 <div class="loginpage">
-    <div class="login-container">
-        <div class="login_wrapper">
-            <div class="ui-header ui-header-login">
-                <button class="ui-header-btn ui-header-btn-text  ui-header-btn-right ui-btn-nobg">SIGN UP</button>
-            </div>
-            <div ng-form="userForm" novalidate>
+    <div id="loginpage" class="ui-page ui-page-active">
+        <div class="ui-header ui-header-login">
+            <button class="ui-header-btn ui-header-btn-text  ui-header-btn-right ui-btn-nobg">SIGN UP</button>
+        </div>
+        <div class="ui-content">
+            <div class="login-content" ng-form="userForm" novalidate>
                 <div class="form-input">
-                    <input type="text" id="username" name="username" class="tbx-login" placeholder="Username" ng-model="email">
-                    <div ng-show="userForm.$submitted || userForm.username.$touched">
-                        <div ng-show="userForm.username.$error.required" id="popup_toast" data-role="popup" class="ui-popup ui-popup-toast text-danger">
-                            <div class="ui-popup-content">
-                                Enter the valid username
-                            </div>
+                    <input type="text" id="username" name="username" class="tbx-login" placeholder="Username" ng-model="email" ng-required="true" />
+                    <!-- <div ng-show="userForm.$submitted || userForm.username.$touched">
+                        <div ng-show="userForm.username.$error.required" class="text-danger">
+                            Enter the valid username
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="form-input">
-                    <input type="password" id="password" name="password" class="tbx-login" placeholder="Password" ng-model="password">
-                    <div ng-show="userForm.password.$error.required" id="popup_toast" data-role="popup" class="ui-popup ui-popup-toast text-danger">
-                        <div class="ui-popup-content">
+                    <input type="password" id="password" name="password" class="tbx-login" placeholder="Password" ng-model="password" ng-required="true" />
+                    <!-- <div ng-show="userForm.$submitted || userForm.password.$touched">
+                        <div ng-show="userForm.password.$error.required" class="text-danger">
                             Enter the valid password
                         </div>
-                    </div>
-                </div>
-                <div class="form-input">
-                    <button data-inline="true" class="ui-btn btn-login" ng-click="login()">Log in</button>
+                    </div> -->
                 </div>
             </div>
+        </div>
+        <div class="ui-footer">
+            <button data-inline="true" class="ui-btn btn-login" ng-click="login()">Log in</button>
         </div>
     </div>
 </div>
