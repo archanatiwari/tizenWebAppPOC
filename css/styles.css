@@ -376,9 +376,9 @@ button {
   display: block;
 }
 .navigationPage .kg-event-list .all-members-meet {
-  min-height: 76px;
   height: auto;
   font-size: 16px;
+  padding-top: 5px;
 }
 .navigationPage .kg-event-list .all-members-meet .animate-text {
   position: relative;
