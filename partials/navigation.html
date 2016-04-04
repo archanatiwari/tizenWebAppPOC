@@ -5,15 +5,28 @@
         <div class="ui-header" data-position="fixed">
             <h2 class="ui-title">{{selectedEvent.eventName}}</h2>
             <a class="ui-header-btn ui-header-btn-text ui-header-btn-left" ui-sref="home">BACK</a>
-        	<a class="ui-header-btn ui-header-btn-text ui-header-btn-right" ng-click="trackUsers()">START</a>
+        	<a class="ui-header-btn ui-header-btn-text ui-header-btn-right" ng-show="enableTrackBtn" ng-click="trackUsers()">START</a>
         </div>
         <div class="ui-content">
         	<div class="container" id="map"></div>
         	
         	<section>
         		<ul class="ui-listview ">
-	        		<li class="ui-li-static {{selectedEvent.statusClass}}" ng-click="">
+	        		<li class="ui-li-static">
 	                    <div class="kg-event-list">
+	                    	<div class="arrived-member-list" ng-show="trackingMode">
+                        		<ul>Arrived People
+                        		<!-- ng-mouseover="showPopover=true;" ng-mouseleave="showPopover=false;" -->
+                        			<li class="arrived-member" ng-repeat="person in arrivedPpl" ng-click="togglePopUpWindow()">{{ person.label }}
+<!--                         				<div class="popUp-window" ng-show="showPopover"> -->
+<!--                         					<span class="popUp-window-item">{{ person.name }}</span> -->
+<!--                         				</div> -->
+                        			</li>
+            					</ul>
+            				</div>
+            				<div class="all-members-meet" ng-show="showAnimation">
+            					<div class="animate-text">Everyone Reached...!!!</div>
+            				</div>
 	                        <div class="event-detail">
 	                            <div class="event-date ">
 	                                <div class="event-dd">{{selectedEvent.eventDate|date:"dd MMM"}}</div><span>{{selectedEvent.eventTime}}</span>
@@ -22,24 +35,11 @@
 	                                <div class="event-name">{{selectedEvent.eventName}}</div><span>{{selectedEvent.eventLocation}},{{selectedEvent.eventDescription}}</span>
 	                            </div>
 	                        </div>
-	                        <div class="event-member-list">
+	                        <div class="event-member-list vertical-align-text">
                                 <ul class="member-list">
                                     <li ui-sref="inviteeList">{{ customisedInviteeList }}</li>
                                 </ul>
 	                        </div>
-	                        <div class="arrived-member-list" ng-show="trackingMode">
-                        		<ul>Arrived People
-                        		<!-- ng-mouseover="showPopover=true;" ng-mouseleave="showPopover=false;" -->
-                        			<li class="arrived-member" ng-repeat="person in arrivedPpl" ng-click="togglePopUpWindow()">{{ person.label }}
-                        				<div class="popUp-window" ng-show="showPopover">
-                        					<span class="popUp-window-item">{{ person.name }}</span>
-                        				</div>
-                        			</li>
-            					</ul>
-            				</div>
-            				<div class="all-members-meet" ng-show="showAnimation">
-            					<div class="animate-text">Everyone Reached...!!!</div>
-            				</div>
 	                        <div ng-if="selectedEvent.mystatus =='PENDING'">
 	                            <div class="pending-status">
 	                                <a class="ui-btn btn-fab" data-inline="true">Reject</a>

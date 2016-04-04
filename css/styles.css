@@ -218,7 +218,6 @@ button {
 .homepage .kg-event-list .event-detail .event-date,
 .navigationPage .kg-event-list .event-detail .event-date {
   float: left;
-  border-right: 1px solid #CACACA;
   padding: 0px 14px;
   display: block;
 }
@@ -240,6 +239,7 @@ button {
   display: block;
   position: relative;
   box-sizing: border-box;
+  border-left: 1px solid #CACACA;
 }
 .homepage .kg-event-list .event-detail .event-dtls .event-name,
 .navigationPage .kg-event-list .event-detail .event-dtls .event-name {
@@ -317,6 +317,20 @@ button {
   color: #000;
   font-family: 'SOne-F400c_v21' !important;
 }
+.vertical-align-text {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.navigationPage .ui-listview li {
+  padding: 0px;
+}
 .navigationPage .kg-event-list .event-detail {
   height: 115px;
 }
@@ -335,9 +349,12 @@ button {
   padding: 13px 49px;
 }
 .navigationPage .kg-event-list .arrived-member-list {
-  min-height: 76px;
   height: auto;
   font-size: 16px;
+  padding-top: 5px;
+}
+.navigationPage .kg-event-list .arrived-member-list ul {
+  padding-left: 16px;
 }
 .navigationPage .kg-event-list .arrived-member-list .arrived-member {
   display: inline-block;

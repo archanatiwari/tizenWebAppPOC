@@ -2,7 +2,8 @@ app.controller('navigationController', function($scope, $interval, SharedFactory
 	var next = -1, totalPplReached = 0, tracker;
     $scope.selectedEvent = SharedDataService.getEventData();
     $scope.targetLocation = $scope.selectedEvent.destination;
-   
+    $scope.enableTrackBtn = ($scope.selectedEvent.mystatus == "ACCEPTED") ? true : false; 
+    
     $scope.customisedInviteeList = "", $scope.arrivedPpl = [];
     $scope.showAnimation = false, $scope.showPopover = false, $scope.trackingMode = false;
     

@@ -16,7 +16,7 @@
 			"eventList": [{
 					"eventId": "1459318575416",
 					"eventName": "Birthday Party",
-					"eventDate": "Mar 29 2016",
+					"eventDate": "Apr 09 2016",
 					"eventTime": "06.00 PM",
 					"eventDescription": "Sarjapur",
 					"eventLocation": "BigBrewsky",
@@ -25,7 +25,7 @@
 						"lng": 77.683131
 					},
 					"organiser": "charan",
-					"mystatus": "ACCEPTED",
+					"mystatus": "PENDING",
 					"inviteeList": [{
 							"name": "Archit",
 							"email": "archit.soni@globant.com",
