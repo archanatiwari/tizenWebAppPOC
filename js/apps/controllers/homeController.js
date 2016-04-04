@@ -58,9 +58,9 @@ app.controller('homeController', function($scope, $state, SharedDataService) {
     for (var i = 0; i < $scope.currentUser.eventList.length; i++) {
         var date = new Date($scope.currentUser.eventList[i].eventDate);
         if (date.getDate() == new Date().getDate() && date.getMonth() == new Date().getMonth() && date.getFullYear() == new Date().getFullYear()) {
-            $scope.currentUser.eventList[i].eventDate = "Today";
+            $scope.currentUser.eventList[i].displayDate = "Today";
         } else {
-            $scope.currentUser.eventList[i].eventDate = date;
+            $scope.currentUser.eventList[i].displayDate = date;
         }
     };
 

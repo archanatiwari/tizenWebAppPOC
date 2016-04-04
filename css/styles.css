@@ -535,7 +535,6 @@ textarea.ui-text-input:disabled {
   border: none;
   -webkit-appearance: textfield !important;
   padding: 1px !important;
-  border: 2px inset !important;
   border-image: initial !important;
   -webkit-rtl-ordering: logical !important;
   -webkit-user-select: text !important;
@@ -557,7 +556,6 @@ textarea.ui-text-input:disabled {
   float: right;
   -webkit-appearance: textfield !important;
   padding: 1px !important;
-  border: 2px inset !important;
   border-image: initial !important;
   -webkit-rtl-ordering: logical !important;
   -webkit-user-select: text !important;
