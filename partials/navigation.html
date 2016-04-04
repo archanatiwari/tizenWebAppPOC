@@ -2,10 +2,11 @@
 <!--Navigation page-->
 <div class="contentWrapper navigationPage">
     <div id="navigation" class="ui-page ui-page-active">
-        <div class="ui-header" data-position="fixed">
+        <div class="ui-header ui-has-more" data-position="fixed">
             <h2 class="ui-title">{{selectedEvent.eventName}}</h2>
             <a class="ui-header-btn ui-header-btn-text ui-header-btn-left" ui-sref="home">BACK</a>
-        	<a class="ui-header-btn ui-header-btn-text ui-header-btn-right" ng-click="trackUsers()">START</a>
+        	<a ng-show="toggleButton" class="ui-header-btn ui-header-btn-text ui-header-btn-right" ng-click="trackUsers()">START</a>
+            <a ng-show="!toggleButton" class="ui-header-btn ui-header-btn-text ui-header-btn-right" ui-sref="home">STOP</a>
         </div>
         <div class="ui-content">
         	<div class="container" id="map"></div>

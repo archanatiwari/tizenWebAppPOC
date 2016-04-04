@@ -2,7 +2,7 @@ app.controller('navigationController', function($scope, $interval, SharedFactory
 	var next = -1, totalPplReached = 0, tracker;
     $scope.selectedEvent = SharedDataService.getEventData();
     $scope.targetLocation = $scope.selectedEvent.destination;
-   
+   	$scope.toggleButton = true;
     $scope.customisedInviteeList = "", $scope.arrivedPpl = [];
     $scope.showAnimation = false, $scope.showPopover = false, $scope.trackingMode = false;
     
@@ -104,11 +104,10 @@ app.controller('navigationController', function($scope, $interval, SharedFactory
     //to show Directions button on map
     var directionBtn = document.createElement('div');
     directionBtn.style.padding = "0px 0px 20px 0px";
-    //directionBtn.style.right = "10px !important";
     var directopnControl =  new createCustomBtn(directionBtn, map);
     //directopnControl .index = 1;
     
-    map.controls[google.maps.ControlPosition.BOTTOM_RIGHT].push(directionBtn);
+    map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(directionBtn);
     
     function createCustomBtn(controlDiv, map) {
 	  // Set CSS for the control border.
@@ -117,6 +116,7 @@ app.controller('navigationController', function($scope, $interval, SharedFactory
 	  controlUI.style.backgroundColor = '#493073';
 	  controlUI.style.border = '2px solid #493073';
 	  controlUI.style.borderRadius = '10px';
+	  controlUI.style.marginRight = '12px';
 	  controlUI.style.textAlign = 'center';
 	  controlDiv.appendChild(controlUI);
 
@@ -125,7 +125,7 @@ app.controller('navigationController', function($scope, $interval, SharedFactory
 	  controlText.style.color = 'white';
 	  //controlText.style.fontFamily = 'Roboto,Arial,sans-serif';
 	  controlText.style.fontSize = '16px';
-	  controlText.style.lineHeight = '32px';
+	  // controlText.style.lineHeight = '32px';
 	  controlText.style.paddingLeft = '5px';
 	  controlText.style.paddingRight = '5px';
 	  controlText.innerHTML = 'Directions';
@@ -292,6 +292,7 @@ app.controller('navigationController', function($scope, $interval, SharedFactory
     	curUserMarker.setMap(null);
     	
     	$scope.trackingMode = true;
+    	$scope.toggleButton = false;
     	
     };
     
