@@ -3,6 +3,7 @@ app.controller('navigationController', function($scope, $interval, SharedFactory
     $scope.selectedEvent = SharedDataService.getEventData();
     $scope.targetLocation = $scope.selectedEvent.destination;
    	$scope.toggleButton = true;
+    // $scope.enableTrackBtn = ($scope.selectedEvent.mystatus == "ACCEPTED") ? true : false; 
     $scope.customisedInviteeList = "", $scope.arrivedPpl = [];
     $scope.showAnimation = false, $scope.showPopover = false, $scope.trackingMode = false;
     
