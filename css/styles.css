@@ -375,18 +375,6 @@ button {
 .navigationPage .kg-event-list .pending-status {
   height: 76px;
 }
-.navigationPage .kg-event-list .arrived-member-list {
-  height: 76px;
-  font-size: 16px;
-}
-.navigationPage .kg-event-list .arrived-member-list .arrived-member {
-  display: inline-block;
-  background-color: #493073;
-  color: white;
-  border: 1px solid;
-  border-radius: 3px;
-  margin-right: 5px;
-}
 .ui-btn:not(.ui-btn-circle):not(.ui-btn-nobg):not(.ui-floatingactions-item) {
   background-color: #7B3F87 !important;
 }
