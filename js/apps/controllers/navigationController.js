@@ -4,6 +4,7 @@ app.controller('navigationController', function($scope, $interval, SharedFactory
     $scope.targetLocation = $scope.selectedEvent.destination;
    
     $scope.customisedInviteeList = "", $scope.arrivedPpl = [];
+    $scope.showAnimation = false, $scope.showPopover = false, $scope.trackingMode = false;
     
     var inviteeList = $scope.selectedEvent.inviteeList, str = "";
     
@@ -254,11 +255,16 @@ app.controller('navigationController', function($scope, $interval, SharedFactory
 				if ((target.lat === person.destination.lat && target.lng === person.destination.lng) && (!person.reached)) {
 						person.reached = true;
 						totalPplReached++;
-						var personName = {name: person.name};
+						
+						var splittedName = person.name.split(' ');
+						var labelName = (splittedName.length > 1 ) ? (splittedName[0].charAt(0) + splittedName[1].charAt(0)) : (splittedName[0].charAt(0));
+						var personName = {name: person.name, label: labelName};
 						$scope.arrivedPpl.push(personName);
 						person.marker.setMap(null);
 						//all people reached destinamtion;
 						if(totalPplReached == userList.length){
+							$scope.showAnimation = true;
+							$scope.trackingMode = false;
 							next = -1;
 							$interval.cancel(tracker);
 						}
@@ -285,10 +291,15 @@ app.controller('navigationController', function($scope, $interval, SharedFactory
     	directionsDisplay.setMap(null);
     	curUserMarker.setMap(null);
     	
+    	$scope.trackingMode = true;
+    	
     };
     
     $scope.getDirections = function(){
     	directionsDisplay.setDirections($scope.currentUser.route);
     };
     
+    $scope.togglePopUpWindow = function(){
+    	$scope.showPopover = !$scope.showPopover;
+    };     
 });

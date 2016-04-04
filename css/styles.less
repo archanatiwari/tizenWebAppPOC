@@ -2,6 +2,15 @@
 @import 'less/overides';
 @import 'less/mixins';
 @import 'less/variable';
+
+@-webkit-fadeInAnimate{
+	from { opacity: 0; } 
+}
+
+@keyframes fadeInAnimate{
+	from { opacity: 0; } 
+}
+
 span,
 h1,
 h2,
@@ -268,20 +277,54 @@ button {
            height: 60px;
            //font-size: 16px;
         }
-        .pending-status{
+        .pending-status, .accepted-status {
         	height: 76px;
-        }
+	        margin: 0 auto !important;
+	        text-align: center;
+	        padding: 12px 0 !important;
+	        .ui-btn {
+	            padding: 13px 49px;
+	        }
+    	}
         .arrived-member-list {
-		    height: 76px;
+        	min-height: 76px;
+		    height: auto;
 		    font-size: 16px;
 		    .arrived-member{
         		display: inline-block;
 		        background-color: #493073;
 		        color: white;
 		        border: 1px solid;
-		        border-radius: 3px;
+		        border-radius: 50%;
 		        margin-right: 5px;
+		        width: 30px;
+    			text-align: center;
+    			
+    			.popUp-window{
+    				position: absolute;
+				    left: 100%;
+				    top: 0;
+				    display: block;
+				    
+				    .popUp-window-item{
+				    	display: block;
+				    }
+    			}
 		    }
+		}
+		.all-members-meet{
+			min-height: 76px;
+		    height: auto;
+		    font-size: 16px;
+			.animate-text{
+				position: relative;
+			  	color: #555;
+			  	text-align: center;
+			  	-webkit-animation: fadeInAnimate 5s infinite alternate;
+			  	-webkit-animation-iteration-count: 12;
+			  	animation: fadeInAnimate 5s infinite alternate;
+			  	animation-iteration-count: 12;
+			}
 		}
     }
 }
