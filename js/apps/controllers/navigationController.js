@@ -291,6 +291,7 @@ app.controller('navigationController', function($scope, $interval, $state, Share
 			val.reached = null;
 		});
 		
+		totalPplReached = 0;
 		$scope.showAnimation = false;
 		$scope.trackingMode = false;
 		$scope.arrivedPpl = [];
