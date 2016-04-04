@@ -288,6 +288,7 @@ app.controller('navigationController', function($scope, $interval, $state, Share
 		$scope.userList.forEach(function(val,index){
 			val.marker.setMap(null);
 			val.marker = null;
+			val.reached = null;
 		});
 		
 		$scope.showAnimation = false;
