@@ -5,8 +5,8 @@
         <div class="ui-header ui-has-more" data-position="fixed">
             <h2 class="ui-title">{{selectedEvent.eventName}}</h2>
             <a class="ui-header-btn ui-header-btn-text ui-header-btn-left" ui-sref="home">BACK</a>
-        	<a ng-show="toggleButton" class="ui-header-btn ui-header-btn-text ui-header-btn-right" ng-click="trackUsers()">START</a>
-            <a ng-show="!toggleButton" class="ui-header-btn ui-header-btn-text ui-header-btn-right" ui-sref="home">STOP</a>
+        	<a ng-show="(enableTrackBtn && toggleStartBtn)" class="ui-header-btn ui-header-btn-text ui-header-btn-right" ng-click="trackUsers()">START</a>
+            <a ng-show="(enableTrackBtn && !toggleStartBtn)" class="ui-header-btn ui-header-btn-text ui-header-btn-right" ng-click="stopTracking()">STOP</a>
         </div>
         <div class="ui-content">
         	<div class="container" id="map"></div>
@@ -18,7 +18,7 @@
 	                    	<div class="arrived-member-list" ng-show="trackingMode">
                         		<ul>Arrived People
                         		<!-- ng-mouseover="showPopover=true;" ng-mouseleave="showPopover=false;" -->
-                        			<li class="arrived-member" ng-repeat="person in arrivedPpl" ng-click="togglePopUpWindow()">{{ person.label }}
+                        			<li class="arrived-member" ng-repeat="person in arrivedPpl">{{ person.label }}
 <!--                         				<div class="popUp-window" ng-show="showPopover"> -->
 <!--                         					<span class="popUp-window-item">{{ person.name }}</span> -->
 <!--                         				</div> -->

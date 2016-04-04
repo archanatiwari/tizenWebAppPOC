@@ -1,11 +1,11 @@
-app.controller('navigationController', function($scope, $interval, SharedFactory, SharedDataService) {
+app.controller('navigationController', function($scope, $interval, $state, SharedFactory, SharedDataService) {
 	var next = -1, totalPplReached = 0, tracker;
     $scope.selectedEvent = SharedDataService.getEventData();
     $scope.targetLocation = $scope.selectedEvent.destination;
-   	$scope.toggleButton = true;
-    // $scope.enableTrackBtn = ($scope.selectedEvent.mystatus == "ACCEPTED") ? true : false; 
+   	$scope.toggleStartBtn = true;
+    $scope.enableTrackBtn = ($scope.selectedEvent.mystatus == "ACCEPTED") ? true : false; 
     $scope.customisedInviteeList = "", $scope.arrivedPpl = [];
-    $scope.showAnimation = false, $scope.showPopover = false, $scope.trackingMode = false;
+    $scope.showAnimation = false, $scope.trackingMode = false;
     
     var inviteeList = $scope.selectedEvent.inviteeList, str = "";
     
@@ -63,7 +63,7 @@ app.controller('navigationController', function($scope, $interval, SharedFactory
     
     var onSuccess = function(response) {
         $scope.userList = response;
-        $scope.currentUser =  SharedDataService.getCurrentUser(); //$scope.userList[0]; //assuming userId as "archit.soni@globant.com" 
+        $scope.currentUser =  SharedDataService.getCurrentUser();
         $scope.updateCurrentUserPosition();
         
         $scope.getCoordinates();
@@ -82,11 +82,10 @@ app.controller('navigationController', function($scope, $interval, SharedFactory
 //        $scope.getCoordinates();
 //	});
     
-    var bangalore = { lat: 12.9715987, lng: 77.5945627 };
     var curUserMarker, directionsDisplay, directionsService;
     
-    var pictureLabel = document.createElement("img");
-	pictureLabel.src = "images/user_icon_g.png";
+//    var pictureLabel = document.createElement("img");
+//	pictureLabel.src = "images/user_icon_g.png";
 
     var map = new google.maps.Map(document.getElementById('map'), {
         center: $scope.targetLocation,
@@ -266,6 +265,7 @@ app.controller('navigationController', function($scope, $interval, SharedFactory
 						if(totalPplReached == userList.length){
 							$scope.showAnimation = true;
 							$scope.trackingMode = false;
+							$scope.enableTrackBtn = false;
 							next = -1;
 							$interval.cancel(tracker);
 						}
@@ -281,19 +281,36 @@ app.controller('navigationController', function($scope, $interval, SharedFactory
 		},1000);
     };
     
+    $scope.stopTracking = function(){
+    	next = -1;
+		$interval.cancel(tracker);
+		//$state.go('home');
+		$scope.userList.forEach(function(val,index){
+			val.marker.setMap(null);
+			val.marker = null;
+		});
+		
+		$scope.showAnimation = false;
+		$scope.trackingMode = false;
+		$scope.arrivedPpl = [];
+		$scope.toggleStartBtn = true;
+		
+		$scope.updateCurrentUserPosition();
+    };
+    
     $scope.trackUsers = function(){
     	var el = document.getElementById("mapdirectionBtn");
     	if(el){
     		el.style.display = "none";
     	}
-    	$scope.trackUserPosition();
-    	
     	//reset current user direction and marker
     	directionsDisplay.setMap(null);
     	curUserMarker.setMap(null);
     	
     	$scope.trackingMode = true;
-    	$scope.toggleButton = false;
+    	$scope.toggleStartBtn = false;
+    	
+    	$scope.trackUserPosition();
     	
     };
     
@@ -301,7 +318,4 @@ app.controller('navigationController', function($scope, $interval, SharedFactory
     	directionsDisplay.setDirections($scope.currentUser.route);
     };
     
-    $scope.togglePopUpWindow = function(){
-    	$scope.showPopover = !$scope.showPopover;
-    };     
 });
