@@ -132,51 +132,25 @@ button {
   background-position: 0px 0px;
   background-size: cover;
 }
-.loginpage .login_wrapper {
-  position: absolute;
-  bottom: 20px;
-  width: 92%;
-}
-.loginpage .login_wrapper .form-input {
-  padding-top: 20px;
-}
-.loginpage .login_wrapper .form-input .tbx-login {
-  position: relative;
-  display: block;
-  padding: 4px 12px;
-  min-height: 39px;
-  vertical-align: middle;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  text-align: center;
-  color: #ffffff;
-  font-size: 20px;
-  white-space: nowrap;
-  cursor: pointer;
-  background-color: rgba(61, 57, 61, 0.95);
-  box-sizing: border-box;
-  border-radius: 26px;
-  width: 100%;
-  border: none;
-  font-family: 'SOne-F200_v20';
-}
-.loginpage .login_wrapper .form-input .btn-login {
-  background-color: #e75480 !important;
-}
-.loginpage .login_wrapper .form-input .btn-login:hover {
-  background-color: #A72A6D !important;
-}
-.loginpage .login_wrapper .form-input .btn-login:active {
-  background-color: #A72A6D !important;
-}
-.loginpage .login_wrapper .form-input .btn-login::before {
-  background-color: #e75480 !important;
+.loginpage .login-content {
+  padding-top: 350px;
 }
 .loginpage .ui-header-login {
   background: transparent !important;
 }
-.loginpage .ui-header-login .ui-header-btn {
-  margin-right: 16px;
+.loginpage .ui-page {
+  background-image: url(../assets/images/loginbg.png) !important;
+  width: 100% !important;
+  height: 100% !important;
+  background-repeat: no-repeat !important;
+  background-position: 0px 0px !important;
+  background-size: cover !important;
+}
+.loginpage .ui-btn:not(.ui-btn-circle):not(.ui-btn-nobg):not(.ui-floatingactions-item) {
+  background-color: #e75480 !important;
+}
+.loginpage .ui-btn:not(.ui-btn-circle):not(.ui-btn-nobg):not(.ui-floatingactions-item)::before {
+  background-color: #A72A6D !important;
 }
 .header {
   background: none;
@@ -304,7 +278,7 @@ button {
 }
 .homepage .ui-tabbar li:active,
 .navigationPage .ui-tabbar li:active {
-  background-color: #e75480 !important;
+  background-color: transparent !important;
 }
 .homepage .pending,
 .navigationPage .pending {
@@ -398,11 +372,26 @@ button {
   animation: fadeInAnimate 5s infinite alternate;
   animation-iteration-count: 12;
 }
+.navigationPage .kg-event-list .pending-status {
+  height: 76px;
+}
+.navigationPage .kg-event-list .arrived-member-list {
+  height: 76px;
+  font-size: 16px;
+}
+.navigationPage .kg-event-list .arrived-member-list .arrived-member {
+  display: inline-block;
+  background-color: #493073;
+  color: white;
+  border: 1px solid;
+  border-radius: 3px;
+  margin-right: 5px;
+}
 .ui-btn:not(.ui-btn-circle):not(.ui-btn-nobg):not(.ui-floatingactions-item) {
-  background-color: #7B3F87;
+  background-color: #7B3F87 !important;
 }
 .ui-btn:not(.ui-btn-circle):not(.ui-btn-nobg):not(.ui-floatingactions-item)::before {
-  background-color: #200055;
+  background-color: #200055 !important;
 }
 .ui-floatingactions {
   background-color: #200055 !important;
@@ -429,10 +418,16 @@ button {
   background-color: #7B3F87 !important;
 }
 .ui-floatingactions .ui-floatingactions-item.ui-icon-floating-add::after {
-  left: 20px;
+  left: 20px !important;
+  width: 40px !important;
+  height: 40px !important;
+  background-color: #ffffff !important;
 }
 .ui-floatingactions .ui-floatingactions-item::before {
   background-color: #7B3F87 !important;
+  -webkit-transform: none !important;
+  -webkit-transition-duration: 0s !important;
+  -webkit-transition-timing-function: ease !important;
 }
 .ui-header > .ui-header-btn:active::before {
   background-color: #7B3F87 !important;
@@ -440,11 +435,56 @@ button {
 .ui-header > .ui-header-btn:focus {
   border: none !important;
 }
-input.ui-text-input.ui-text-input-disabled,
-textarea.ui-text-input.ui-text-input-disabled,
-input.ui-text-input:disabled,
-textarea.ui-text-input:disabled {
+.form-input > input.ui-text-input,
+.form-input > textarea.ui-text-input {
+  color: #000000 !important;
+  background: rgba(197, 180, 180, 0.35) !important;
+  -webkit-text-fill-color: inherit !important;
+  line-height: 20px !important;
+  font-size: 18px !important;
+  margin-top: 15px !important;
+  text-align: center !important;
+  border-radius: 30px !important;
+  padding: 0px !important;
+}
+.form-input > input.ui-text-input.ui-text-input-disabled,
+.form-input > textarea.ui-text-input.ui-text-input-disabled,
+.form-input > input.ui-text-input:disabled,
+.form-input > textarea.ui-text-input:disabled {
   text-shadow: 0 0 0 #000000 !important;
+}
+.form-input > input.ui-text-input + .ui-text-input-textline,
+.form-input > textarea.ui-text-input + .ui-text-input-textline {
+  background: transparent !important;
+  height: 0px !important;
+  position: inherit !important;
+  display: none !important;
+  box-sizing: inherit !important;
+  margin: 0px !important;
+}
+.form-input > input.ui-text-input + .ui-text-input-textline {
+  top: 0px !important;
+}
+*::-webkit-input-placeholder {
+  /* WebKit, Blink, Edge */
+  color: #7C797C;
+}
+*:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #7C797C;
+  opacity: 1;
+}
+*::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #7C797C;
+  opacity: 1;
+}
+*:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #7C797C;
+}
+.form-input {
+  margin: 0px 12px 0px 12px;
 }
 .ui-listview.ui-colored-list .ui-li.ui-li-anchor:active,
 .ui-listview.ui-colored-list .ui-li.ui-btn:active,
@@ -461,6 +501,12 @@ textarea.ui-text-input {
   background: transparent !important;
   line-height: 20px !important;
   font-size: 18px !important;
+}
+input.ui-text-input.ui-text-input-disabled,
+textarea.ui-text-input.ui-text-input-disabled,
+input.ui-text-input:disabled,
+textarea.ui-text-input:disabled {
+  text-shadow: 0 0 0 #000000 !important;
 }
 .newevent .ui-header > .ui-header-btn.ui-header-btn-text {
   min-width: 0px;
@@ -489,7 +535,6 @@ textarea.ui-text-input {
   display: inline-block;
   width: 160px;
   background-color: #7b3f87 !important;
-  padding: 4px 20px;
   border-radius: 26px;
   position: relative;
   min-height: 39px;
@@ -500,12 +545,18 @@ textarea.ui-text-input {
   cursor: pointer;
   box-sizing: border-box;
   border: none;
+  -webkit-appearance: textfield !important;
+  padding: 1px !important;
+  border: 2px inset !important;
+  border-image: initial !important;
+  -webkit-rtl-ordering: logical !important;
+  -webkit-user-select: text !important;
+  cursor: auto !important;
 }
 .newevent .timepicker {
   display: inline-block;
   width: 120px;
   background-color: #7b3f87 !important;
-  padding: 4px 10px;
   border-radius: 26px;
   position: relative;
   min-height: 39px;
@@ -516,6 +567,13 @@ textarea.ui-text-input {
   box-sizing: border-box;
   border: none;
   float: right;
+  -webkit-appearance: textfield !important;
+  padding: 1px !important;
+  border: 2px inset !important;
+  border-image: initial !important;
+  -webkit-rtl-ordering: logical !important;
+  -webkit-user-select: text !important;
+  cursor: auto !important;
 }
 .newevent .location {
   display: block;
@@ -561,6 +619,7 @@ textarea.ui-text-input {
   height: 50px;
   position: relative;
   text-align: center;
+  left: 25%;
 }
 .newevent .notification .reminder span {
   position: absolute;
@@ -576,6 +635,7 @@ textarea.ui-text-input {
   height: 50px;
   position: relative;
   text-align: center;
+  left: 25%;
 }
 .newevent .notification .endtime span {
   position: absolute;
@@ -632,6 +692,12 @@ textarea.ui-text-input {
 }
 .location-page input {
   backgraund: transparent;
+}
+.pac-container:after {
+  background-image: none !important;
+  height: 0px;
+  padding: 0;
+  margin: 0;
 }
 .contactlist .ui-li-static {
   border-bottom: none !important;
