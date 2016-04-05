@@ -1,6 +1,6 @@
 app.controller('loginController', function($scope, $http, $state, SharedFactory, SharedDataService) {
-    $scope.userContacts = [];
-    $scope.errorMsg = false;
+    $scope.userContacts = null;
+    // $scope.errorMsg = false;
     //  $http.get('data/user-data.json').success(function(data){
     //      $scope.userContacts = data.data;
     //
@@ -23,7 +23,8 @@ app.controller('loginController', function($scope, $http, $state, SharedFactory,
                 $state.go('home');
                 break;
             } else {
-                $scope.errorMsg = true;
+                console.log('Enter correct username and password');
+                // $scope.errorMsg = true;
             }
         }
     }

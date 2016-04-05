@@ -613,6 +613,7 @@ textarea.ui-text-input:disabled {
 .newevent .notification {
   display: flex;
   justify-content: center;
+  -webkit-justify-content: inherit;
 }
 .newevent .notification .reminder {
   background: url(../assets/images/reminder_icon.png);
