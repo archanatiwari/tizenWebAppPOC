@@ -9,25 +9,28 @@
         </div>
         <div class="ui-content">
             <ul class="ui-listview ui-colored-list">
-                <li class="ui-li-static">
+                <li class="ui-li-static event-name">
                     <div class="textinput-box">
                         <input type="text" id="eventName" placeholder="Event" data-clear-btn="true" ng-model="eventName" ng-change="updateEventName()" ng-model-options="{ debounce: 1000 }" />
                     </div>
                 </li>
-                <li class="ui-li-static">
-                    <div class="textinput-box" ui-sref="location" >
+                <li class="ui-li-static event-location">
+                    <div class="textinput-box" ui-sref="location">
                         <textarea type="text" name="locationField" id="locationField" placeholder="Location" disabled="disabled" ng-model="location"></textarea>
                         <span class="location"></span>
                     </div>
                 </li>
-                <li class="ui-li-static">
+                <li class="ui-li-static event-date">
                     <div class="textinput-box">
                         <label for="DateTime">Date</label>
-                        <input type="date" name="dateField" id="dateField" class="datepicker"  ng-model="eventDate" />
-                        <input type="time" name="timeField" id="timeField" class="timepicker" ng-model="eventDate" />
+                        <button name="dateField" id="dateField" class="datepicker" style="position: absolute;left: 16px;">{{eventDate | date: 'EEE, dd/MM/yyyy'}}</button>
+                        <input type="date" name="dateField" id="dateField" class="datepicker" ng-model="eventDate" />
+                       
+                        <button name="timeField" id="timeField" class="timepicker" style="position: absolute;left: 222px;">{{eventDate | date :'shortTime'}}</button>
+                         <input type="time" name="timeField" id="timeField" class="timepicker" ng-model="eventDate" />
                     </div>
                 </li>
-                <li class="ui-li-static">
+                <li class="ui-li-static event-member">
                     <div class="textinput-box" ui-sref="contactList">
                         <span>{{addedUsers}} </span>
                         <input type="text" name="peopleField" id="peopleField" placeholder="People" disabled="disabled" />
@@ -35,10 +38,11 @@
                     </div>
                 </li>
                 <li class="ui-li-static notification">
-                    <div class="reminder"><span>Reminder</span></span></div>
-                    <div class="endtime"><span>End Time</span></span></div>
+                    <div class="reminder"><span>Reminder</span></span>
+                    </div>
+                    <div class="endtime"><span>End Time</span></span>
+                    </div>
                 </li>
-                
             </ul>
         </div>
     </div>
