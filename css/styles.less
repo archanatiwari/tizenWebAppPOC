@@ -500,12 +500,29 @@ textarea.ui-text-input:disabled {
     .ui-listview.ui-colored-list .ui-li-static:active {
         background: @secondary-bg !important;
     }
+    .event-name {
+    padding:7px 16px !important;
+    }
+    .event-location{
+    padding:7px 16px !important;
+    }
     .textinput-box {
         label {
             display: block;
             font-weight: bold;
             padding-bottom: 5px;
         }
+    }
+    input[type="date"] {
+        opacity: 0;
+        margin-left: 8px;
+        padding-bottom: 15px;
+    }
+    input[type="time"] {
+        opacity: 0;
+        float: right;
+        margin-right: 0px;
+        padding-bottom: 15px;
     }
     .datepicker {
         display: inline-block;
@@ -518,6 +535,7 @@ textarea.ui-text-input:disabled {
         text-align: center;
         color: #ffffff;
         font-size: 20px;
+        font-family:'SOne-F400_v21' !important;
         cursor: pointer;
         box-sizing: border-box;
         border: none;
@@ -538,6 +556,7 @@ textarea.ui-text-input:disabled {
         text-align: center;
         color: #ffffff;
         font-size: 20px;
+        font-family:'SOne-F400_v21' !important;
         cursor: pointer;
         box-sizing: border-box;
         border: none;

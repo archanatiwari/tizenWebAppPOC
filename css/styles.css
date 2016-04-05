@@ -531,10 +531,27 @@ textarea.ui-text-input:disabled {
 .newevent .ui-listview.ui-colored-list .ui-li-static:active {
   background: transparent !important;
 }
+.newevent .event-name {
+  padding: 7px 16px !important;
+}
+.newevent .event-location {
+  padding: 7px 16px !important;
+}
 .newevent .textinput-box label {
   display: block;
   font-weight: bold;
   padding-bottom: 5px;
+}
+.newevent input[type="date"] {
+  opacity: 0;
+  margin-left: 8px;
+  padding-bottom: 15px;
+}
+.newevent input[type="time"] {
+  opacity: 0;
+  float: right;
+  margin-right: 0px;
+  padding-bottom: 15px;
 }
 .newevent .datepicker {
   display: inline-block;
@@ -547,6 +564,7 @@ textarea.ui-text-input:disabled {
   text-align: center;
   color: #ffffff;
   font-size: 20px;
+  font-family: 'SOne-F400_v21' !important;
   cursor: pointer;
   box-sizing: border-box;
   border: none;
@@ -567,6 +585,7 @@ textarea.ui-text-input:disabled {
   text-align: center;
   color: #ffffff;
   font-size: 20px;
+  font-family: 'SOne-F400_v21' !important;
   cursor: pointer;
   box-sizing: border-box;
   border: none;
