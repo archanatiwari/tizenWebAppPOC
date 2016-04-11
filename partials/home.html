@@ -24,7 +24,10 @@
                                                     <div class="event-dd">{{event.displayDate|date:"dd MMM"}}</div><span>{{event.eventTime}}</span>
                                                 </div>
                                                 <div class="event-dtls ">
-                                                    <div class="event-name">{{event.eventName}}</div><span>{{event.eventLocation}},{{event.eventDescription}}</span>
+                                                    <div class="event-name">{{event.eventName}}</div>
+<!--                                                     <span>{{event.eventDescription}}</span> -->
+<!--                                                     <br/> -->
+                                                    <span>{{event.city}}</span>
                                                 </div>
                                             </div>
                                             <div ng-if="event.mystatus =='PENDING'">
@@ -54,7 +57,10 @@
                                                     <div class="event-dd">{{event.displayDate|date:"dd MMM"}}</div><span>{{event.eventTime}}</span>
                                                 </div>
                                                 <div class="event-dtls ">
-                                                    <div class="event-name">{{event.eventName}}</div><span>{{event.eventLocation}},{{event.eventDescription}}</span>
+                                                    <div class="event-name">{{event.eventName}}</div>
+<!-- 													<span>{{event.eventDescription}}</span> -->
+<!--                                                     <br/> -->
+                                                    <span>{{event.city}}</span>
                                                 </div>
                                             </div>
                                             <div ng-if="event.mystatus =='PENDING'">

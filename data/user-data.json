@@ -16,16 +16,17 @@
 			"eventList": [{
 					"eventId": "1459318575416",
 					"eventName": "Birthday Party",
-					"eventDate": "Apr 09 2016",
+					"eventDate": "Apr 15 2016",
 					"eventTime": "06.00 PM",
-					"eventDescription": "Sarjapur",
-					"eventLocation": "BigBrewsky",
+					"eventDescription": "B'Day Party @ BigBrewsky",
+					"eventLocation": "Sarjapur Road, Behind MK Retail, Bengaluru, Karnataka 560035",
 					"destination": {
 						"lat": 12.912985,
 						"lng": 77.683131
 					},
+					"city" : "Sarjapur, Bengaluru",
 					"organiser": "charan",
-					"mystatus": "PENDING",
+					"mystatus": "ACCEPTED",
 					"inviteeList": [{
 							"name": "Archit",
 							"email": "archit.soni@globant.com",
@@ -63,14 +64,15 @@
 					]
 				}, {
 					"eventId": "1459318575417",
-					"eventName": "Party",
-					"eventDate": "Apr 05 2016",
-					"eventTime": "06.00 PM",
-					"eventDescription": "Sarjapur",
-					"eventLocation": "BigBrewsky",
+					"eventName": "Get Together",
+					"eventDate": "Apr 16 2016",
+					"eventTime": "11.00 AM",
+					"eventDescription": "Bangalore Central Mall",
+					"city" : "Ashok Nagar, Bengaluru",
+					"eventLocation": "Field Marshal Cariappa Rd, Ashok Nagar, Bengaluru, Karnataka 560001",
 					"destination": {
-						"lat": 12.912985,
-						"lng": 77.683131
+						"lat": 12.973584,
+						"lng": 77.611293
 					},
 					"organiser": "Archit",
 					"mystatus": "ACCEPTED",
@@ -111,17 +113,18 @@
 					]
 				}, {
 					"eventId": "1459318575418",
-					"eventName": "Booz",
-					"eventDate": "Apr 04 2016",
-					"eventTime": "06.00 PM",
-					"eventDescription": "Sarjapur",
-					"eventLocation": "BigPitchers",
+					"eventName": "Birhday Party",
+					"eventDate": "Apr 16 2016",
+					"eventTime": "08.00 PM",
+					"eventDescription": "B'day Party @ BigPitchers",
+					"city" : "Old Airport Road, Bengaluru",
+					"eventLocation": "4121/P, L R Arcade, Old Airport Road, HAL 3rd Stage, Bengaluru, Karnataka 560008",
 					"destination": {
 						"lat": 12.960198,
 						"lng": 77.646881
 					},
 					"organiser": "Archit",
-					"mystatus": "ACCEPTED",
+					"mystatus": "ACCEPT",
 					"inviteeList": [{
 							"name": "Archit",
 							"email": "archit.soni@globant.com",
@@ -160,16 +163,17 @@
 				}, {
 					"eventId": "1459318575419",
 					"eventName": "Movie",
-					"eventDate": "Apr 06 2016",
+					"eventDate": "Apr 14 2016",
 					"eventTime": "06.00 PM",
-					"eventDescription": "Sarjapur",
-					"eventLocation": "Bangalore Central Mall",
+					"eventDescription": "Bangalore Central Mall",
+					"city" : "Ashok Nagar, Bengaluru",
+					"eventLocation": "Field Marshal Cariappa Rd, Ashok Nagar, Bengaluru, Karnataka 560001",
 					"destination": {
-						"lat": 12.912985,
-						"lng": 77.683131
+						"lat": 12.973584,
+						"lng": 77.611293
 					},
 					"organiser": "Archit",
-					"mystatus": "ACCEPTED",
+					"mystatus": "PENDING",
 					"inviteeList": [{
 							"name": "Archit",
 							"email": "archit.soni@globant.com",
@@ -208,13 +212,14 @@
 				}, {
 					"eventId": "1459318575421",
 					"eventName": "Birthday Party",
-					"eventDate": "Apr 03 2016",
-					"eventTime": "06.00 PM",
-					"eventDescription": "Sarjapur",
-					"eventLocation": "BigPitchers",
+					"eventDate": "Apr 17 2016",
+					"eventTime": "12.30 PM",
+					"eventDescription": "@Mishmash Restobar ",
+					"city" : "HSR Layout, Bengaluru",
+					"eventLocation": "2321, 17th Cross Road, Sector 1, HSR Layout, Bengaluru, Karnataka 560102",
 					"destination": {
-						"lat": 12.960198,
-						"lng": 77.646881
+						"lat": 12.912226,
+						"lng": 77.651118
 					},
 					"organiser": "Kaushik",
 					"mystatus": "PENDING",
@@ -269,8 +274,8 @@
 			"email": "charan.adiga@globant.com",
 			"password": 1234,
 			"source": {
-				"lat": 12.902100,
-				"lng": 77.651865999999998
+				"lat": 12.92000,
+				"lng": 77.6518659
 			},
 			"eventList": [],
 			"id": "56e9454fd4d64dc915f48784",
@@ -286,8 +291,8 @@
 			"email": "sakshi@globant.com",
 			"password": 1234,
 			"source": {
-				"lat": 12.912298,
-				"lng": 77.651869000000005
+				"lat": 12.900298,
+				"lng": 77.651869
 			},
 			"eventList": [],
 			"id": "56e9454fd4d64dc915f48785",
@@ -462,8 +467,8 @@
 					"eventDescription": "Sarjapur",
 					"eventLocation": "Bangalore Central Mall",
 					"destination": {
-						"lat": 12.912985,
-						"lng": 77.683131
+						"lat": 12.973584,
+						"lng": 77.611293
 					},
 					"organiser": "Archit",
 					"mystatus": "PENDING",
@@ -600,7 +605,7 @@
 			"email": "abhinav.krishna@globant.com",
 			"password": 1234,
 			"source": {
-				"lat": 12.80246666,
+				"lat": 12.90246666,
 				"lng": 77.6315631
 			},
 			"eventList": [],
