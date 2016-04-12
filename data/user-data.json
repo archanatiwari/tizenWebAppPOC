@@ -124,7 +124,7 @@
 						"lng": 77.646881
 					},
 					"organiser": "Archit",
-					"mystatus": "ACCEPT",
+					"mystatus": "ACCEPTED",
 					"inviteeList": [{
 							"name": "Archit",
 							"email": "archit.soni@globant.com",
