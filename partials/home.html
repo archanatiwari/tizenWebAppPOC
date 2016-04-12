@@ -15,7 +15,7 @@
                         <div>
                             <!--Upcoming start  -->
                             
-                            <section>
+                            <section  style="background-color: white;">
                                 <ul class="ui-listview ">
                                     <li class="ui-li-static {{event.statusClass}}" ng-repeat="event in upcomingEvents | orderBy: 'eventDate'" ng-click="getEventDetails(event)">
                                         <div class="kg-event-list">
@@ -43,12 +43,12 @@
                                             </div>
                                         </div>
                                     </li>
-                                    <li class="ui-li-static" style="height: 600px;"></li>
+                                    <!-- <li class="ui-li-static" ></li> -->
                                 </ul>
                             </section>
                             <!--Upcoming end  -->
                             <!--All start  -->
-                            <section>
+                            <section style="background-color: white;">
                                 <ul class="ui-listview ">
                                     <li class="ui-li-static {{event.statusClass}}" ng-repeat="event in currentUser.eventList | orderBy: 'eventDate'" ng-click="getEventDetails(event)">
                                         <div class="kg-event-list">
@@ -76,7 +76,8 @@
                                             </div>
                                         </div>
                                     </li>
-                                    <li class="ui-li-static" style="height: 300px;"></li>
+                                    <li class="ui-li-static" ></li>
+                                    <li class="ui-li-static" ></li>
                                 </ul>
                             </section>
                             <!--All end  -->
