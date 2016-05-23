@@ -1,31 +1,10 @@
 <script type="text/javascript" src="js/libs/tau/mobile/js/tau.js"></script>
 <div class="loginpage">
     <div id="loginpage" class="ui-page ui-page-active">
-        <div class="ui-header ui-header-login">
-            <button class="ui-header-btn ui-header-btn-text  ui-header-btn-right ui-btn-nobg">SIGN UP</button>
-        </div>
-        <div class="ui-content">
-            <div class="login-content" ng-form="userForm" novalidate>
-                <div class="form-input">
-                    <input type="text" id="username" name="username" class="tbx-login" placeholder="Username" ng-model="email" ng-required="true" />
-                    <!-- <div ng-show="userForm.$submitted || userForm.username.$touched">
-                        <div ng-show="userForm.username.$error.required" class="text-danger">
-                            Enter the valid username
-                        </div>
-                    </div> -->
-                </div>
-                <div class="form-input">
-                    <input type="password" id="password" name="password" class="tbx-login" placeholder="Password" ng-model="password" ng-required="true" />
-                    <!-- <div ng-show="userForm.$submitted || userForm.password.$touched">
-                        <div ng-show="userForm.password.$error.required" class="text-danger">
-                            Enter the valid password
-                        </div>
-                    </div> -->
-                </div>
-            </div>
-        </div>
+        
         <div class="ui-footer">
-            <button data-inline="true" class="ui-btn btn-login" ng-click="login()">Log in</button>
+             <!-- <fb:login-button scope="public_profile,email,user_friends" onlogin="checkLoginState();"></fb:login-button> -->
+            <button data-inline="true" class="ui-btn btn-login" ng-click="login()"><span class="fa fa-facebook-official"></span>Login with Facebook</button>
         </div>
     </div>
 </div>
