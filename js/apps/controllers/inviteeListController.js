@@ -1,4 +1,4 @@
-app.controller('inviteeListController', function($scope, SharedDataService) {
+app.controller('inviteeListController', ['$scope', 'SharedDataService', function($scope, SharedDataService) {
     $scope.selectedEvent = SharedDataService.getEventData();
     $scope.inviteeList = $scope.selectedEvent.inviteeList;
     $scope.statusText;
@@ -28,4 +28,4 @@ app.controller('inviteeListController', function($scope, SharedDataService) {
     	$scope.mystatus = "rejected";
     }
 
-});
+}]);

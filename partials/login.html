@@ -1,10 +1,14 @@
-<script type="text/javascript" src="js/libs/tau/mobile/js/tau.js"></script>
+<!-- <script type="text/javascript" src="js/libs/tau/mobile/js/tau.js"></script> -->
 <div class="loginpage">
     <div id="loginpage" class="ui-page ui-page-active">
         
         <div class="ui-footer">
              <!-- <fb:login-button scope="public_profile,email,user_friends" onlogin="checkLoginState();"></fb:login-button> -->
-            <button data-inline="true" class="ui-btn btn-login" ng-click="login()"><span class="fa fa-facebook-official"></span>Login with Facebook</button>
+             <input type="text" name="username" class="tbx-login" placeholder="User Name" ng-model="userName">
+             
+             <input type="text" name="phoneNo" class="tbx-login" placeholder="Phone Number" ng-model="phoneNo">
+
+            <button data-inline="true" class="ui-btn btn-login" ng-click="doRegister()">Register</button>
         </div>
     </div>
 </div>

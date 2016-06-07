@@ -1,4 +1,4 @@
-app.controller('headerController',function($scope,SharedDataService){
+app.controller('headerController',['$scope', 'SharedDataService', function($scope, SharedDataService){
 
      
-});
+}]);

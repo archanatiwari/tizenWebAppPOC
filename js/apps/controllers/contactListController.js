@@ -1,4 +1,4 @@
-app.controller('contactListController', function($scope, $state, SharedFactory, SharedDataService) {
+app.controller('contactListController', ['$scope', '$state', 'SharedFactory', 'SharedDataService', function($scope, $state, SharedFactory, SharedDataService) {
 
     //	$http.get('data/user-data.json').success(function(data){
     //		$scope.userContacts = data.data;
@@ -31,4 +31,4 @@ app.controller('contactListController', function($scope, $state, SharedFactory, 
     //	var current_dt = tizen.time.getCurrentDateTime();
     // 	alert("current date / time is " + current_dt.toLocaleString());
 
-});
+}]);

@@ -15,5 +15,6 @@
     <tizen:privilege name="http://tizen.org/privilege/internet"/>
     <tizen:privilege name="http://tizen.org/privilege/location"/>
     <tizen:privilege name="http://developer.samsung.com/privilege/accessoryprotocol"/>
+    <tizen:privilege name="http://tizen.org/privilege/contact.read"/>
     <tizen:profile name="mobile"/>
 </widget>

@@ -1,7 +1,5 @@
-var app = angular.module('myApp', ['ui.router']);
-
-app.config(function($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise('/landing');
+app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+    $urlRouterProvider.otherwise('/login');
     $stateProvider
         .state('home', {
             url: '/home',
@@ -43,25 +41,4 @@ app.config(function($stateProvider, $urlRouterProvider) {
             templateUrl: 'partials/inviteeList.html',
             controller: 'inviteeListController'
         })
-        .state('landing', {
-            url: '/landing',
-            templateUrl: 'partials/landing.html',
-            controller: 'landingController'
-        })
-
-});
-
-//app.run(function($rootScope){
-//	$rootScope.$on('$stateChangeSuccess', 
-//			function(event, toState, toParams, fromState, fromParams){ 
-//				//if(toState.name != "login"){
-//				loadJsFile('js/libs/tau/mobile/js/tau.js');
-//				//}
-//			});
-//});
-//
-//function loadJsFile(url){
-//    var fileref = document.createElement('script');
-//    fileref.setAttribute("type","text/javascript");
-//    fileref.setAttribute("src", url);
-//}
+}]);

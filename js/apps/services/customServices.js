@@ -1,4 +1,4 @@
-app.factory('SharedFactory', function($http) {
+app.factory('SharedFactory', ['$http', function($http) {
 
     var getData = function() {
         return $http.get('data/user-data.json').then(function(response) {
@@ -12,12 +12,14 @@ app.factory('SharedFactory', function($http) {
     return {
         getData: getData
     };
-});
+}]);
 
-app.service('SharedDataService', function($http, $timeout) {
+app.service('SharedDataService', ['$http', '$timeout' ,function($http, $timeout) {
     this.jsonData = [];
     var self = this;
     var isRequestInProgress = false;
+    //this.apiDomain =  "http://192.168.2.68:8080";
+    this.apiDomain = "http://localhost:8080";
     (function() {
         isRequestInProgress = true;
         $http.get('data/user-data.json').then(function(response) {
@@ -39,6 +41,40 @@ app.service('SharedDataService', function($http, $timeout) {
             //return self.jsonData;
             callBackFn.apply(null, [self.jsonData])
         }
+    };
+
+    this.registerUser = function(request, successCB, failureCB){
+        var url = "/api/users";
+        self.doAjax(url, "POST", request, function(response){
+            var userObj = {userName : response.user_name, userId : response.user_id};
+            self.setCurrentUser(userObj);
+            successCB.call(null, response);
+        }, function(response){
+            self.setCurrentUser({});
+            failureCB.call(null, response);
+        });
+    };
+
+    this.getUserInfoFromDb = function(userId, successCB, failureCB){
+        var url = "/api/users/"+userId;
+        self.doAjax(url, "GET", {}, function(response){
+            var userObj = {userName : response.name, userId : response.user_id};
+            self.setCurrentUser(userObj);
+            successCB.call(null, response);
+        }, function(response){
+            self.setCurrentUser({});
+            failureCB.call(null, response);
+        });
+    };
+
+    this.addUserContacts = function(request, successCB, failureCB){
+        var url = "/api/contacts";
+        self.doAjax(url, "POST", request, successCB, failureCB);
+    };
+
+    this.getUserEvents = function(userId, successCB, failureCB){
+        var url = "/api/events/"+userId;
+        self.doAjax(url, "GET", {}, successCB, failureCB);
     };
 
     this.setTargetData = function(data) {
@@ -91,4 +127,22 @@ app.service('SharedDataService', function($http, $timeout) {
         return this.getRecentSearches;
     };
 
-});
+    this.doAjax = function(url, method, request, successCB, failureCB){
+        $.ajax({
+              type: method,
+              url: self.apiDomain + url,
+              data: request,
+              success : function (res, status) {
+                if((status == "success") && (!res.errmsg)){
+                    successCB.call(null,res);
+                }else{
+                    failureCB.call(null, res);
+                }
+              },
+              // error : function (res, req) {
+              //    console.log(res);
+              // },
+            });
+    }
+
+}]);

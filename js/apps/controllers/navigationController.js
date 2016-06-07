@@ -1,4 +1,4 @@
-app.controller('navigationController', function($scope, $interval, $state, SharedFactory, SharedDataService) {
+app.controller('navigationController', ['$scope', '$interval', '$state', 'SharedFactory', 'SharedDataService', function($scope, $interval, $state, SharedFactory, SharedDataService) {
 	var next = -1, totalPplReached = 0, tracker;
     $scope.selectedEvent = SharedDataService.getEventData();
     $scope.targetLocation = $scope.selectedEvent.destination;
@@ -320,4 +320,4 @@ app.controller('navigationController', function($scope, $interval, $state, Share
     	directionsDisplay.setDirections($scope.currentUser.route);
     };
     
-});
+}]);

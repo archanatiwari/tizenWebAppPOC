@@ -1,4 +1,4 @@
-app.controller('newEventController', function($scope,$timeout, SharedDataService) {
+app.controller('newEventController', ['$scope', 'SharedDataService', function($scope, SharedDataService) {
 
     $scope.users = SharedDataService.getAddedUsers;
     $scope.location = SharedDataService.getDestination();
@@ -28,5 +28,5 @@ app.controller('newEventController', function($scope,$timeout, SharedDataService
     $scope.eventTime = hours + ':' + m + ' ' + ampm;
     $scope.eventDate = d;
 
-});
+}]);
 

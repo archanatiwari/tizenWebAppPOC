@@ -17,20 +17,20 @@
                             
                             <section  style="background-color: white;">
                                 <ul class="ui-listview ">
-                                    <li class="ui-li-static {{event.statusClass}}" ng-repeat="event in upcomingEvents | orderBy: 'eventDate'" ng-click="getEventDetails(event)">
+                                    <li class="ui-li-static {{event.statusClass}}" ng-repeat="event in upcomingEvents | orderBy: 'event_date'" ng-click="getEventDetails(event)">
                                         <div class="kg-event-list">
                                             <div class="event-detail">
                                                 <div class="event-date ">
-                                                    <div class="event-dd">{{event.displayDate|date:"dd MMM"}}</div><span>{{event.eventTime}}</span>
+                                                    <div class="event-dd">{{event.displayDate|date:"dd MMM"}}</div><span>{{event.event_date}}</span>
                                                 </div>
                                                 <div class="event-dtls ">
-                                                    <div class="event-name">{{event.eventName}}</div>
+                                                    <div class="event-name">{{event.title}}</div>
 <!--                                                     <span>{{event.eventDescription}}</span> -->
 <!--                                                     <br/> -->
-                                                    <span>{{event.city}}</span>
+                                                    <span>{{event.location}}</span>
                                                 </div>
                                             </div>
-                                            <div ng-if="event.mystatus =='PENDING'">
+                                            <div ng-if="event.status =='PENDING'">
                                                 <div class="event-member-list">
                                                     <ul class="member-list">
                                                         <li>{{event.customisedInviteeList}} </li>
@@ -50,20 +50,20 @@
                             <!--All start  -->
                             <section style="background-color: white;">
                                 <ul class="ui-listview ">
-                                    <li class="ui-li-static {{event.statusClass}}" ng-repeat="event in currentUser.eventList | orderBy: 'eventDate'" ng-click="getEventDetails(event)">
+                                    <li class="ui-li-static {{event.statusClass}}" ng-repeat="event in allEvents | orderBy: 'event_date'" ng-click="getEventDetails(event)">
                                         <div class="kg-event-list">
                                             <div class="event-detail">
                                                 <div class="event-date ">
-                                                    <div class="event-dd">{{event.displayDate|date:"dd MMM"}}</div><span>{{event.eventTime}}</span>
+                                                    <div class="event-dd">{{event.displayDate|date:"dd MMM"}}</div><span>{{event.event_date}}</span>
                                                 </div>
                                                 <div class="event-dtls ">
-                                                    <div class="event-name">{{event.eventName}}</div>
+                                                    <div class="event-name">{{event.title}}</div>
 <!-- 													<span>{{event.eventDescription}}</span> -->
 <!--                                                     <br/> -->
-                                                    <span>{{event.city}}</span>
+                                                    <span>{{event.location}}</span>
                                                 </div>
                                             </div>
-                                            <div ng-if="event.mystatus =='PENDING'">
+                                            <div ng-if="event.status =='PENDING'">
                                                 <div class="event-member-list">
                                                     <ul class="member-list">
                                                         <li>{{event.customisedInviteeList}} </li>

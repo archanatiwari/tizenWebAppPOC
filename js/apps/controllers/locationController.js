@@ -1,4 +1,4 @@
-app.controller('locationController', function($scope, $state, $interval, SharedDataService) {
+app.controller('locationController', ['$scope', '$state', 'SharedDataService', function($scope, $state, SharedDataService) {
 
     $scope.inputText = document.getElementById('pac-input');
     $scope.searchBox = new google.maps.places.SearchBox($scope.inputText);
@@ -47,4 +47,4 @@ app.controller('locationController', function($scope, $state, $interval, SharedD
     //     $scope.loadRecentPlaces = SharedDataService.getRecentlySearchedData();
     // };
     // $scope.getRecentSearchAgain();
-});
+}]);
