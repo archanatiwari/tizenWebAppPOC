@@ -1,4 +1,4 @@
-app.controller('newEventController', ['$scope', 'SharedDataService', function($scope, SharedDataService) {
+app.controller('newEventController', ['$scope', '$state', 'SharedDataService', function($scope, $state, SharedDataService) {
 
     $scope.invitees = SharedDataService.getAddedUsers;
     $scope.location = SharedDataService.getDestination();
@@ -18,9 +18,6 @@ app.controller('newEventController', ['$scope', 'SharedDataService', function($s
         else
             $scope.addedUsers += invitee.name + " / ";
     });
-    // if ($scope.invitees.length > 0) {
-    //     $scope.addedUsers = $scope.invitees.join(' / ');
-    // }
 
     var d = new Date();
 
@@ -87,9 +84,9 @@ app.controller('newEventController', ['$scope', 'SharedDataService', function($s
                     eventReq.invitee_list = inviteeList;
                    
                     SharedDataService.addNewEvent(eventReq, function(response){
-
+                        $state.go('home');
                     }, function(response){
-
+                        alert("Failed to create event");
                     });
                 }
             });

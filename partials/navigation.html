@@ -3,7 +3,7 @@
 <div class="contentWrapper navigationPage">
     <div id="navigation" class="ui-page ui-page-active">
         <div class="ui-header ui-has-more" data-position="fixed">
-            <h2 class="ui-title">{{selectedEvent.eventName}}</h2>
+            <h2 class="ui-title">{{selectedEvent.title}}</h2>
             <a class="ui-header-btn ui-header-btn-text ui-header-btn-left" ui-sref="home">BACK</a>
         	<a ng-show="(enableTrackBtn && toggleStartBtn)" class="ui-header-btn ui-header-btn-text ui-header-btn-right" ng-click="trackUsers()">START</a>
             <a ng-show="(enableTrackBtn && !toggleStartBtn)" class="ui-header-btn ui-header-btn-text ui-header-btn-right" ng-click="stopTracking()">STOP</a>
@@ -30,13 +30,13 @@
             				</div>
 	                        <div class="event-detail">
 	                            <div class="event-date ">
-	                                <div class="event-dd">{{selectedEvent.eventDate|date:"dd MMM"}}</div><span>{{selectedEvent.eventTime}}</span>
+	                                <div class="event-dd">{{selectedEvent.event_date|date:"dd MMM"}}</div><span>{{selectedEvent.title}}</span>
 	                            </div>
 	                            <div class="event-dtls ">
-	                                <div class="event-name">{{selectedEvent.eventName}}</div>
-									<span>{{selectedEvent.eventDescription}}</span>
+	                                <div class="event-name">{{selectedEvent.title}}</div>
+									<span>{{selectedEvent.description}}</span>
                                      <br/>
-                                     <span>{{selectedEvent.eventLocation}}</span>
+                                     <span>{{selectedEvent.location}}</span>
 	                            </div>
 	                        </div>
 	                        <div class="event-member-list vertical-align-text">
@@ -44,13 +44,13 @@
                                     <li ui-sref="inviteeList">{{ customisedInviteeList }}</li>
                                 </ul>
 	                        </div>
-	                        <div ng-if="selectedEvent.mystatus =='PENDING'">
+	                        <div ng-if="selectedEvent.status =='pending'">
 	                            <div class="pending-status">
 	                                <a class="ui-btn btn-fab" data-inline="true">Reject</a>
 	                                <a class="ui-btn btn-fab" data-inline="true">Accept</a>
 	                            </div>
                          	</div>
-                         	<div ng-if="selectedEvent.mystatus=='ACCEPTED'">
+                         	<div ng-if="selectedEvent.status=='accepted'">
                     			<div class="accepted-status" >
                         			<a class="ui-btn btn-fab" data-inline="true">Opt out of the event</a>
                     			</div>

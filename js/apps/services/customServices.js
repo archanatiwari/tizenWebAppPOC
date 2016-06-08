@@ -17,31 +17,33 @@
 app.service('SharedDataService', ['$http', '$timeout' ,function($http, $timeout) {
     this.jsonData = [];
     var self = this;
-    //var isRequestInProgress = false;
     //this.apiDomain =  "http://192.168.2.68:8080";
     this.apiDomain = "http://localhost:8080";
-    // (function() {
-    //     isRequestInProgress = true;
-    //     $http.get('data/user-data.json').then(function(response) {
-    //         isRequestInProgress = false;
-    //         self.jsonData = response.data.data; //response.data --> refers actual data-json, response.data.data --> refers array in data.json
-    //     }, function(response) {
-    //         console.log('error in fetching' + response.status);
-    //         isRequestInProgress = false;
-    //         self.jsonData;
-    //     });
-    // })();
 
-    // this.getJsonData = function(callBackFn) {
-    //     if (isRequestInProgress) {
-    //         $timeout(function() {
-    //             self.getJsonData(callBackFn);
-    //         }, 50);
-    //     } else {
-    //         //return self.jsonData;
-    //         callBackFn.apply(null, [self.jsonData])
-    //     }
-    // };
+    this.doAjax = function(url, method, request, successCB, failureCB){
+        $.ajax({
+              type: method,
+              url: self.apiDomain + url,
+              data: request,
+              success : function (res, status) {
+                if((status == "success")){
+                    if(res == null){
+                        successCB.call(null, {"errMsg": "no results"});
+                    }
+                    else if(res.errors){
+                        successCB.call(null, {"errMsg":"error while getting results"});
+                    }
+                    else 
+                        successCB.call(null,res);
+                }else{
+                    failureCB.call(null, res);
+                }
+              },
+              // error : function (res, req) {
+              //    console.log(res);
+              // },
+            });
+    };
 
     this.registerUser = function(request, successCB, failureCB){
         var url = "/api/users";
@@ -108,11 +110,12 @@ app.service('SharedDataService', ['$http', '$timeout' ,function($http, $timeout)
         });
     };
 
-    this.getUserEvents = function(userId, successCB, failureCB){
+    this.getEventsFromDb = function(userId, successCB, failureCB){
         var url = "/api/events/"+userId;
         self.doAjax(url, "GET", {}, successCB, failureCB);
     };
 
+    //list of getters and settres
     this.setUserContacts = function(contacts){
         this.userContacts = JSON.parse(JSON.stringify(contacts));
     };
@@ -145,6 +148,7 @@ app.service('SharedDataService', ['$http', '$timeout' ,function($http, $timeout)
     this.setEventData = function(eventObj) {
         this.selectedEvent = JSON.parse(JSON.stringify(eventObj));
     };
+
     this.getEventData = function() {
         return this.selectedEvent;
     };
@@ -156,6 +160,7 @@ app.service('SharedDataService', ['$http', '$timeout' ,function($http, $timeout)
     this.getAddedUsers = function() {
         return this.getAddedUsers;
     };
+
     this.setEventName = function(eventName) {
         this.eventName = eventName;
     };
@@ -171,29 +176,6 @@ app.service('SharedDataService', ['$http', '$timeout' ,function($http, $timeout)
         return this.getRecentSearches;
     };
 
-    this.doAjax = function(url, method, request, successCB, failureCB){
-        $.ajax({
-              type: method,
-              url: self.apiDomain + url,
-              data: request,
-              success : function (res, status) {
-                if((status == "success")){
-                    if(res == null){
-                        successCB.call(null, {"errMsg": "no results"});
-                    }
-                    else if(res.errors){
-                        successCB.call(null, {"errMsg":"error while getting results"});
-                    }
-                    else 
-                        successCB.call(null,res);
-                }else{
-                    failureCB.call(null, res);
-                }
-              },
-              // error : function (res, req) {
-              //    console.log(res);
-              // },
-            });
-    }
+    
 
 }]);

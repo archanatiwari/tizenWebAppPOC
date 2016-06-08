@@ -1,6 +1,6 @@
 app.controller('homeController', ['$scope', '$state', 'SharedDataService', function($scope, $state, SharedDataService) {
 
-    function getEventInviteeList(inviteeList){
+    function customiseInviteeList(inviteeList){
         var customInviteeList = "";
         var str = "";
         //doing this for customizing invitee list
@@ -36,12 +36,10 @@ app.controller('homeController', ['$scope', '$state', 'SharedDataService', funct
         return customInviteeList;
     };
 
-    //new implementation
     $scope.currentUser = SharedDataService.getCurrentUser();
-    //$scope.customisedInviteeList = "";
     $scope.upcomingEvents = [];
     $scope.allEvents = [];
-    SharedDataService.getUserEvents($scope.currentUser.user_id, function(response){
+    SharedDataService.getEventsFromDb($scope.currentUser.user_id, function(response){
        var userId = $scope.currentUser.user_id;
        var allEventList = [], upcomingEventList = [];
         angular.forEach(response, function(event, key){
@@ -49,12 +47,15 @@ app.controller('homeController', ['$scope', '$state', 'SharedDataService', funct
             for (var i=0; i<inviteeList.length; i++){
                 if(userId == inviteeList[i].user_id){
                      if (inviteeList[i].status == "ACCEPTED") {
-                        event.statusClass = "accepted";
+                        //event.statusClass = "accepted";
+                        event.status = "accepted";
                     } else if ($inviteeList[i].status == "PENDING") {
-                        event.statusClass = "pending";
-                        event.customisedInviteeList = getEventInviteeList(event.inviteeList);
+                        //event.statusClass = "pending";
+                        event.status = "pending";
+                        event.customisedInviteeList = customiseInviteeList(event.inviteeList);
                     } else {
-                        event.statusClass = "rejected";
+                        //event.statusClass = "rejected";
+                        event.status = "rejected";
                     }
                 }
             }
