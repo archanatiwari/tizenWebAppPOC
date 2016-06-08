@@ -1,52 +1,52 @@
-app.factory('SharedFactory', ['$http', function($http) {
+// app.factory('SharedFactory', ['$http', function($http) {
 
-    var getData = function() {
-        return $http.get('data/user-data.json').then(function(response) {
-            return response.data.data;
-        }, function(response) {
-            console.log('error in fetching' + response.status);
-            return [];
-        });
-    };
+//     var getData = function() {
+//         return $http.get('data/user-data.json').then(function(response) {
+//             return response.data.data;
+//         }, function(response) {
+//             console.log('error in fetching' + response.status);
+//             return [];
+//         });
+//     };
 
-    return {
-        getData: getData
-    };
-}]);
+//     return {
+//         getData: getData
+//     };
+// }]);
 
 app.service('SharedDataService', ['$http', '$timeout' ,function($http, $timeout) {
     this.jsonData = [];
     var self = this;
-    var isRequestInProgress = false;
+    //var isRequestInProgress = false;
     //this.apiDomain =  "http://192.168.2.68:8080";
     this.apiDomain = "http://localhost:8080";
-    (function() {
-        isRequestInProgress = true;
-        $http.get('data/user-data.json').then(function(response) {
-            isRequestInProgress = false;
-            self.jsonData = response.data.data; //response.data --> refers actual data-json, response.data.data --> refers array in data.json
-        }, function(response) {
-            console.log('error in fetching' + response.status);
-            isRequestInProgress = false;
-            self.jsonData;
-        });
-    })();
+    // (function() {
+    //     isRequestInProgress = true;
+    //     $http.get('data/user-data.json').then(function(response) {
+    //         isRequestInProgress = false;
+    //         self.jsonData = response.data.data; //response.data --> refers actual data-json, response.data.data --> refers array in data.json
+    //     }, function(response) {
+    //         console.log('error in fetching' + response.status);
+    //         isRequestInProgress = false;
+    //         self.jsonData;
+    //     });
+    // })();
 
-    this.getJsonData = function(callBackFn) {
-        if (isRequestInProgress) {
-            $timeout(function() {
-                self.getJsonData(callBackFn);
-            }, 50);
-        } else {
-            //return self.jsonData;
-            callBackFn.apply(null, [self.jsonData])
-        }
-    };
+    // this.getJsonData = function(callBackFn) {
+    //     if (isRequestInProgress) {
+    //         $timeout(function() {
+    //             self.getJsonData(callBackFn);
+    //         }, 50);
+    //     } else {
+    //         //return self.jsonData;
+    //         callBackFn.apply(null, [self.jsonData])
+    //     }
+    // };
 
     this.registerUser = function(request, successCB, failureCB){
         var url = "/api/users";
         self.doAjax(url, "POST", request, function(response){
-            var userObj = {userName : response.user_name, userId : response.user_id};
+            var userObj = {name : response.user_name, user_id : response.user_id};
             self.setCurrentUser(userObj);
             successCB.call(null, response);
         }, function(response){
@@ -58,8 +58,12 @@ app.service('SharedDataService', ['$http', '$timeout' ,function($http, $timeout)
     this.getUserInfoFromDb = function(userId, successCB, failureCB){
         var url = "/api/users/"+userId;
         self.doAjax(url, "GET", {}, function(response){
-            var userObj = {userName : response.name, userId : response.user_id};
-            self.setCurrentUser(userObj);
+            if(!response.errMsg){
+                var userObj = {name : response.name, user_id : response.user_id};
+                self.setCurrentUser(userObj);
+            }else{
+                self.setCurrentUser({});
+            }
             successCB.call(null, response);
         }, function(response){
             self.setCurrentUser({});
@@ -67,9 +71,41 @@ app.service('SharedDataService', ['$http', '$timeout' ,function($http, $timeout)
         });
     };
 
+    this.getContactsFromDb = function(userId, successCB, failureCB){
+        var url = "/api/contacts/"+userId;
+        self.doAjax(url, "GET", {}, function(response){
+            if(!response.errMsg)
+                self.setUserContacts(response.contact_list);
+            else
+                self.setUserContacts([]);
+            successCB.call(null, response);
+        }, function(response){
+            self.setUserContacts([]);
+            failureCB.call(null, response);
+        });
+    };
+
     this.addUserContacts = function(request, successCB, failureCB){
         var url = "/api/contacts";
-        self.doAjax(url, "POST", request, successCB, failureCB);
+        self.doAjax(url, "POST", request, function(response){
+            if(!response.errMsg)
+                self.setUserContacts(response.contact_list);
+            else
+                self.setUserContacts([]);
+            successCB.call(null, response);
+        }, function(response){
+            self.setUserContacts([]);
+            failureCB.call(null, response);
+        });
+    };
+
+    this.addNewEvent = function(request, successCB, failureCB){
+        var url = "/api/events";
+        self.doAjax(url, "POST", request, function(response){
+            successCB.call(null, response);
+        }, function(response){
+            failureCB.call(null, response);
+        });
     };
 
     this.getUserEvents = function(userId, successCB, failureCB){
@@ -77,36 +113,44 @@ app.service('SharedDataService', ['$http', '$timeout' ,function($http, $timeout)
         self.doAjax(url, "GET", {}, successCB, failureCB);
     };
 
+    this.setUserContacts = function(contacts){
+        this.userContacts = JSON.parse(JSON.stringify(contacts));
+    };
+
+    this.getUserContacts = function(){
+        return this.userContacts;
+    };
+
     this.setTargetData = function(data) {
-        return this.targetData = data;
+        return this.targetData = JSON.parse(JSON.stringify(data));
     };
     this.getTargetData = function() {
         return this.targetData;
     };
 
     this.setCurrentUser = function(data) {
-        return this.currentUser = data;
+        return this.currentUser = JSON.parse(JSON.stringify(data));
     };
     this.getCurrentUser = function() {
         return this.currentUser;
     };
 
     this.setDestination = function(data) {
-        return this.destination = data;
+        return this.destination = JSON.parse(JSON.stringify(data));
     };
     this.getDestination = function() {
         return this.destination;
     };
 
     this.setEventData = function(eventObj) {
-        this.selectedEvent = eventObj;
+        this.selectedEvent = JSON.parse(JSON.stringify(eventObj));
     };
     this.getEventData = function() {
         return this.selectedEvent;
     };
 
     this.setAddedUsers = function(addedUsers) {
-        this.getAddedUsers = addedUsers;
+        this.getAddedUsers = JSON.parse(JSON.stringify(addedUsers));
     };
     
     this.getAddedUsers = function() {
@@ -120,7 +164,7 @@ app.service('SharedDataService', ['$http', '$timeout' ,function($http, $timeout)
         return this.eventName;
     };
     this.setRecentlySearchedData = function(recentSearched) {
-        this.getRecentSearches = recentSearched;
+        this.getRecentSearches = JSON.parse(JSON.stringify(recentSearched));
     };
     
     this.getRecentlySearchedData = function() {
@@ -133,8 +177,15 @@ app.service('SharedDataService', ['$http', '$timeout' ,function($http, $timeout)
               url: self.apiDomain + url,
               data: request,
               success : function (res, status) {
-                if((status == "success") && (!res.errmsg)){
-                    successCB.call(null,res);
+                if((status == "success")){
+                    if(res == null){
+                        successCB.call(null, {"errMsg": "no results"});
+                    }
+                    else if(res.errors){
+                        successCB.call(null, {"errMsg":"error while getting results"});
+                    }
+                    else 
+                        successCB.call(null,res);
                 }else{
                     failureCB.call(null, res);
                 }
@@ -154,38 +205,40 @@ app.directive("headerTemplate",function(){
 		controller: 'headerController'
 	}
 })
-app.controller('contactListController', ['$scope', '$state', 'SharedFactory', 'SharedDataService', function($scope, $state, SharedFactory, SharedDataService) {
+app.controller('contactListController', ['$scope', '$state', 'SharedDataService', function($scope, $state, SharedDataService) {
 
-    //	$http.get('data/user-data.json').success(function(data){
-    //		$scope.userContacts = data.data;
-    //	});
+    //  $http.get('data/user-data.json').success(function(data){
+    //      $scope.userContacts = data.data;
+    //  });
 
-    SharedFactory.getData().then(function(response) {
-        $scope.userContacts = response;
-    }, function(response) {
-        $scope.userContacts = response;
-    });
+    // SharedFactory.getData().then(function(response) {
+    //     $scope.userContacts = response;
+    // }, function(response) {
+    //     $scope.userContacts = response;
+    // });
+
+    $scope.userContacts = SharedDataService.getUserContacts();
 
     $scope.previousPage = function() {
         $state.go('newEvent');
     };
     $scope.addedUsers = [];
+
     $scope.addContacts = function() {
         angular.forEach($scope.userContacts, function(checkedUser, key) {
             if (checkedUser.checked) {
-                $scope.addedUsers.push(checkedUser.name);
-                
+                $scope.addedUsers.push(checkedUser);
             }
-        })
+        });
         SharedDataService.setAddedUsers($scope.addedUsers);
         $state.go('newEvent');
     };
 
-    
+
     // $scope.time=  tizen.time.getCurrentDateTime().toDateString();
     // console.log($scope.time);
-    //	var current_dt = tizen.time.getCurrentDateTime();
-    // 	alert("current date / time is " + current_dt.toLocaleString());
+    //  var current_dt = tizen.time.getCurrentDateTime();
+    //  alert("current date / time is " + current_dt.toLocaleString());
 
 }]);
 
@@ -236,10 +289,10 @@ app.controller('homeController', ['$scope', '$state', 'SharedDataService', funct
     //$scope.customisedInviteeList = "";
     $scope.upcomingEvents = [];
     $scope.allEvents = [];
-    SharedDataService.getUserEvents($scope.currentUser.userId, function(response){
+    SharedDataService.getUserEvents($scope.currentUser.user_id, function(response){
        var userId = $scope.currentUser.user_id;
        var allEventList = [], upcomingEventList = [];
-        response.forEach(function(event, index){
+        angular.forEach(response, function(event, key){
             var inviteeList = event.invitee_list;
             for (var i=0; i<inviteeList.length; i++){
                 if(userId == inviteeList[i].user_id){
@@ -323,7 +376,11 @@ app.controller('landingController', ['$scope', '$state', 'SharedDataService', fu
 		if((localStorage) && (localStorage.getItem('registeredUser') != null)){
 			var userId = localStorage.getItem('registeredUser');
 			SharedDataService.getUserInfoFromDb(userId, function(response){
-                $state.go('home');
+                SharedDataService.getContactsFromDb(userId, function(res){
+                	 $state.go('home');
+                }, function(res){
+              	});
+               
             }, function(response){
                  localStorage.removeItem('registeredUser');
             });
@@ -340,19 +397,16 @@ app.controller('locationController', ['$scope', '$state', 'SharedDataService', f
     $scope.inputText = document.getElementById('pac-input');
     $scope.searchBox = new google.maps.places.SearchBox($scope.inputText);
     $scope.location = "";
-    $scope.newEventName = SharedDataService.getEventName();
+    //$scope.newEventName = SharedDataService.getEventName();
     
     // $scope.targetName = [];
     $scope.recentSearchedPlaces = SharedDataService.getRecentlySearchedData();
 
     if ($scope.recentSearchedPlaces) {
-
-        $scope.recentSearchedPlaces ;
+        $scope.recentSearchedPlaces;
     } else {
         $scope.recentSearchedPlaces= [];
     }
-
-
 
     // Listen for the event fired when the user selects a prediction and retrieve
     // more details for that place.
@@ -369,10 +423,10 @@ app.controller('locationController', ['$scope', '$state', 'SharedDataService', f
             SharedDataService.setTargetData($scope.targetLocation);
         });
     });
-    $scope.currentUser = SharedDataService.getCurrentUser();
-    //alert($scope.currentUser);
+
     $scope.setLocation = function() {
         SharedDataService.setDestination($scope.location);
+        $scope.setRecentSearch();
         $state.go('newEvent');
     }
     $scope.setRecentSearch = function() {
@@ -386,13 +440,13 @@ app.controller('locationController', ['$scope', '$state', 'SharedDataService', f
     // $scope.getRecentSearchAgain();
 }]);
 
-app.controller('loginController', ['$scope', '$state', 'SharedFactory', 'SharedDataService', function($scope, $state, SharedFactory, SharedDataService) {
+app.controller('loginController', ['$scope', '$state', 'SharedDataService', function($scope, $state, SharedDataService) {
     
     function getDeviceContacts(callBack){
         var contactArr = [], defaultAddressBook = [];
         if(typeof(tizen) !== "undefined"){
             function contactsFoundCB(contacts) {
-                contacts.forEach(function(contact, index){
+                angular.forEach(contacts, function(contact, key){
                     var obj = {};
                     obj.name = contact.name.firstName + (contact.name.lastName ? contact.name.lastName : ""); 
                     obj.contact_id = contact.phoneNumbers[0].number; //considering first number
@@ -457,7 +511,7 @@ app.controller('loginController', ['$scope', '$state', 'SharedFactory', 'SharedD
     };
 }]);
 
-app.controller('navigationController', ['$scope', '$interval', '$state', 'SharedFactory', 'SharedDataService', function($scope, $interval, $state, SharedFactory, SharedDataService) {
+app.controller('navigationController', ['$scope', '$interval', '$state', 'SharedDataService', function($scope, $interval, $state, SharedDataService) {
 	var next = -1, totalPplReached = 0, tracker;
     $scope.selectedEvent = SharedDataService.getEventData();
     $scope.targetLocation = $scope.selectedEvent.destination;
@@ -532,7 +586,7 @@ app.controller('navigationController', ['$scope', '$interval', '$state', 'Shared
         $scope.userList = response;
     }
 
-    SharedFactory.getData().then(onSuccess, onError);
+    //SharedFactory.getData().then(onSuccess, onError);
     
 //    SharedDataService.getJsonData(function(data){
 //   	 $scope.userList = data;
@@ -782,8 +836,10 @@ app.controller('navigationController', ['$scope', '$interval', '$state', 'Shared
 }]);
 app.controller('newEventController', ['$scope', 'SharedDataService', function($scope, SharedDataService) {
 
-    $scope.users = SharedDataService.getAddedUsers;
+    $scope.invitees = SharedDataService.getAddedUsers;
     $scope.location = SharedDataService.getDestination();
+    $scope.currentUser = SharedDataService.getCurrentUser();
+    $scope.addedUsers = "";
 
     $scope.eventName = SharedDataService.getEventName();
     if ($scope.eventName) {
@@ -792,14 +848,15 @@ app.controller('newEventController', ['$scope', 'SharedDataService', function($s
         $scope.eventName = "";
     }
 
-    $scope.updateEventName = function() {
-        SharedDataService.setEventName($scope.eventName);
-    }
-
-
-    if ($scope.users.length != 0) {
-        $scope.addedUsers = $scope.users.join(' / ');
-    }
+    angular.forEach($scope.invitees, function(invitee, index){
+        if(index == $scope.invitees.length-1)
+            $scope.addedUsers += invitee.name;
+        else
+            $scope.addedUsers += invitee.name + " / ";
+    });
+    // if ($scope.invitees.length > 0) {
+    //     $scope.addedUsers = $scope.invitees.join(' / ');
+    // }
 
     var d = new Date();
 
@@ -809,6 +866,74 @@ app.controller('newEventController', ['$scope', 'SharedDataService', function($s
     var hours = h >= 12 ? h - 12 : h;
     $scope.eventTime = hours + ':' + m + ' ' + ampm;
     $scope.eventDate = d;
+
+    function getCoordinates(address, callBackFn) {
+        var geocoder = new google.maps.Geocoder();
+        geocoder.geocode({ 'address': address }, function (results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                var coordinates = {
+                    lat : results[0].geometry.location.lat(),
+                    lng : results[0].geometry.location.lng()
+                };
+                callBackFn(coordinates);
+            } else {
+                callBackFn(null);
+            }
+        });
+    };
+
+    $scope.updateEventName = function() {
+        SharedDataService.setEventName($scope.eventName);
+    };
+
+    $scope.createNewEvent = function(){
+        //validate all input fields before making ajax;
+        if(!($scope.eventName == "") || ($scope.location == "") || ($scope.eventDate == "") || ($scope.eventTime = "") || ($scope.invitees.length == 0)){ 
+            //get the cocordinates of event location
+            getCoordinates($scope.location, function(coordinates){
+                if(!coordinates){
+                    alert("Unable to get location coordinates");
+                }
+                else{
+                    var eventReq = {};
+                    eventReq.title = $scope.eventName;
+                    eventReq.location = $scope.location;
+                    eventReq.coordinates = coordinates;
+
+                    //setting event date and time
+                    eventReq.event_date = $scope.eventDate.toDateString();
+                    eventReq.event_time = $scope.eventTime;
+
+                    var inviteeList = [];
+                    angular.forEach($scope.invitees, function(invitee){
+                        var obj = {};
+                        obj.name = invitee.name;
+                        obj.user_id = invitee.contact_id;
+                        obj.status = "PENDING";
+                        inviteeList.push(obj);
+                    });
+                    //keep event organiser in invitee list
+                    var organiser = {};
+                    organiser.name = $scope.currentUser.name;
+                    organiser.user_id = $scope.currentUser.user_id;
+                    organiser.status = "ACCEPTED"; // by default event status for organiser is  ACCEPTED;
+                    inviteeList.push(organiser);
+
+                    eventReq.user_id = $scope.currentUser.user_id;
+                    eventReq.invitee_list = inviteeList;
+                   
+                    SharedDataService.addNewEvent(eventReq, function(response){
+
+                    }, function(response){
+
+                    });
+                }
+            });
+        }
+        else{
+            alert("Please fill required fileds");
+        }
+    };
 
 }]);
 

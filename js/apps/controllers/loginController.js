@@ -1,10 +1,10 @@
-app.controller('loginController', ['$scope', '$state', 'SharedFactory', 'SharedDataService', function($scope, $state, SharedFactory, SharedDataService) {
+app.controller('loginController', ['$scope', '$state', 'SharedDataService', function($scope, $state, SharedDataService) {
     
     function getDeviceContacts(callBack){
         var contactArr = [], defaultAddressBook = [];
         if(typeof(tizen) !== "undefined"){
             function contactsFoundCB(contacts) {
-                contacts.forEach(function(contact, index){
+                angular.forEach(contacts, function(contact, key){
                     var obj = {};
                     obj.name = contact.name.firstName + (contact.name.lastName ? contact.name.lastName : ""); 
                     obj.contact_id = contact.phoneNumbers[0].number; //considering first number

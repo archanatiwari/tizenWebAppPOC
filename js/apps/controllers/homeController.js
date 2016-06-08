@@ -41,10 +41,10 @@ app.controller('homeController', ['$scope', '$state', 'SharedDataService', funct
     //$scope.customisedInviteeList = "";
     $scope.upcomingEvents = [];
     $scope.allEvents = [];
-    SharedDataService.getUserEvents($scope.currentUser.userId, function(response){
+    SharedDataService.getUserEvents($scope.currentUser.user_id, function(response){
        var userId = $scope.currentUser.user_id;
        var allEventList = [], upcomingEventList = [];
-        response.forEach(function(event, index){
+        angular.forEach(response, function(event, key){
             var inviteeList = event.invitee_list;
             for (var i=0; i<inviteeList.length; i++){
                 if(userId == inviteeList[i].user_id){

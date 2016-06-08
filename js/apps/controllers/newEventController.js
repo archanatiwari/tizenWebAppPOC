@@ -1,7 +1,9 @@
 app.controller('newEventController', ['$scope', 'SharedDataService', function($scope, SharedDataService) {
 
-    $scope.users = SharedDataService.getAddedUsers;
+    $scope.invitees = SharedDataService.getAddedUsers;
     $scope.location = SharedDataService.getDestination();
+    $scope.currentUser = SharedDataService.getCurrentUser();
+    $scope.addedUsers = "";
 
     $scope.eventName = SharedDataService.getEventName();
     if ($scope.eventName) {
@@ -10,14 +12,15 @@ app.controller('newEventController', ['$scope', 'SharedDataService', function($s
         $scope.eventName = "";
     }
 
-    $scope.updateEventName = function() {
-        SharedDataService.setEventName($scope.eventName);
-    }
-
-
-    if ($scope.users.length != 0) {
-        $scope.addedUsers = $scope.users.join(' / ');
-    }
+    angular.forEach($scope.invitees, function(invitee, index){
+        if(index == $scope.invitees.length-1)
+            $scope.addedUsers += invitee.name;
+        else
+            $scope.addedUsers += invitee.name + " / ";
+    });
+    // if ($scope.invitees.length > 0) {
+    //     $scope.addedUsers = $scope.invitees.join(' / ');
+    // }
 
     var d = new Date();
 
@@ -27,6 +30,74 @@ app.controller('newEventController', ['$scope', 'SharedDataService', function($s
     var hours = h >= 12 ? h - 12 : h;
     $scope.eventTime = hours + ':' + m + ' ' + ampm;
     $scope.eventDate = d;
+
+    function getCoordinates(address, callBackFn) {
+        var geocoder = new google.maps.Geocoder();
+        geocoder.geocode({ 'address': address }, function (results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                var coordinates = {
+                    lat : results[0].geometry.location.lat(),
+                    lng : results[0].geometry.location.lng()
+                };
+                callBackFn(coordinates);
+            } else {
+                callBackFn(null);
+            }
+        });
+    };
+
+    $scope.updateEventName = function() {
+        SharedDataService.setEventName($scope.eventName);
+    };
+
+    $scope.createNewEvent = function(){
+        //validate all input fields before making ajax;
+        if(!($scope.eventName == "") || ($scope.location == "") || ($scope.eventDate == "") || ($scope.eventTime = "") || ($scope.invitees.length == 0)){ 
+            //get the cocordinates of event location
+            getCoordinates($scope.location, function(coordinates){
+                if(!coordinates){
+                    alert("Unable to get location coordinates");
+                }
+                else{
+                    var eventReq = {};
+                    eventReq.title = $scope.eventName;
+                    eventReq.location = $scope.location;
+                    eventReq.coordinates = coordinates;
+
+                    //setting event date and time
+                    eventReq.event_date = $scope.eventDate.toDateString();
+                    eventReq.event_time = $scope.eventTime;
+
+                    var inviteeList = [];
+                    angular.forEach($scope.invitees, function(invitee){
+                        var obj = {};
+                        obj.name = invitee.name;
+                        obj.user_id = invitee.contact_id;
+                        obj.status = "PENDING";
+                        inviteeList.push(obj);
+                    });
+                    //keep event organiser in invitee list
+                    var organiser = {};
+                    organiser.name = $scope.currentUser.name;
+                    organiser.user_id = $scope.currentUser.user_id;
+                    organiser.status = "ACCEPTED"; // by default event status for organiser is  ACCEPTED;
+                    inviteeList.push(organiser);
+
+                    eventReq.user_id = $scope.currentUser.user_id;
+                    eventReq.invitee_list = inviteeList;
+                   
+                    SharedDataService.addNewEvent(eventReq, function(response){
+
+                    }, function(response){
+
+                    });
+                }
+            });
+        }
+        else{
+            alert("Please fill required fileds");
+        }
+    };
 
 }]);
 

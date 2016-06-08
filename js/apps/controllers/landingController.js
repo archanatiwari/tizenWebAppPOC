@@ -5,7 +5,11 @@ app.controller('landingController', ['$scope', '$state', 'SharedDataService', fu
 		if((localStorage) && (localStorage.getItem('registeredUser') != null)){
 			var userId = localStorage.getItem('registeredUser');
 			SharedDataService.getUserInfoFromDb(userId, function(response){
-                $state.go('home');
+                SharedDataService.getContactsFromDb(userId, function(res){
+                	 $state.go('home');
+                }, function(res){
+              	});
+               
             }, function(response){
                  localStorage.removeItem('registeredUser');
             });

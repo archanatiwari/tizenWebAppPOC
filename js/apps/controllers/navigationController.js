@@ -1,4 +1,4 @@
-app.controller('navigationController', ['$scope', '$interval', '$state', 'SharedFactory', 'SharedDataService', function($scope, $interval, $state, SharedFactory, SharedDataService) {
+app.controller('navigationController', ['$scope', '$interval', '$state', 'SharedDataService', function($scope, $interval, $state, SharedDataService) {
 	var next = -1, totalPplReached = 0, tracker;
     $scope.selectedEvent = SharedDataService.getEventData();
     $scope.targetLocation = $scope.selectedEvent.destination;
@@ -73,7 +73,7 @@ app.controller('navigationController', ['$scope', '$interval', '$state', 'Shared
         $scope.userList = response;
     }
 
-    SharedFactory.getData().then(onSuccess, onError);
+    //SharedFactory.getData().then(onSuccess, onError);
     
 //    SharedDataService.getJsonData(function(data){
 //   	 $scope.userList = data;
