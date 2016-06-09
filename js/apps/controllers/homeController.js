@@ -76,8 +76,10 @@ app.controller('homeController', ['$scope', '$state', 'SharedDataService', funct
             allEventList.push(event);   
         });
         //update the model
-        $scope.allEvents = allEventList;
-        $scope.upcomingEvents = upcomingEventList;
+         $scope.$apply(function(){
+            $scope.allEvents = allEventList;
+            $scope.upcomingEvents = upcomingEventList;
+        });
 
     }, function(response) {
         
