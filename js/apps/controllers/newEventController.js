@@ -1,16 +1,17 @@
 app.controller('newEventController', ['$scope', '$state', 'SharedDataService', function($scope, $state, SharedDataService) {
 
-    $scope.invitees = SharedDataService.getAddedUsers;
-    $scope.location = SharedDataService.getDestination();
+    $scope.invitees = SharedDataService.getAddedUsers();
+    $scope.location = SharedDataService.getDestAddress();
+    var destnationCoords = SharedDataService.getDestCoordinates();
     $scope.currentUser = SharedDataService.getCurrentUser();
     $scope.addedUsers = "";
 
-    $scope.eventName = SharedDataService.getEventName();
-    if ($scope.eventName) {
-        $scope.eventName;
-    }else{
-        $scope.eventName = "";
-    }
+    $scope.eventName = "";//SharedDataService.getEventName();
+    // if ($scope.eventName) {
+    //     $scope.eventName;
+    // }else{
+    //     $scope.eventName = "";
+    // }
 
     angular.forEach($scope.invitees, function(invitee, index){
         if(index == $scope.invitees.length-1)
@@ -44,14 +45,15 @@ app.controller('newEventController', ['$scope', '$state', 'SharedDataService', f
     };
 
     $scope.updateEventName = function() {
-        SharedDataService.setEventName($scope.eventName);
+        //SharedDataService.setEventName($scope.eventName);
     };
 
     $scope.createNewEvent = function(){
         //validate all input fields before making ajax;
-        if(!($scope.eventName == "") || ($scope.location == "") || ($scope.eventDate == "") || ($scope.eventTime = "") || ($scope.invitees.length == 0)){ 
+        if(($scope.eventName) && ($scope.location) && ($scope.eventDate) && ($scope.eventTime) && ($scope.invitees.length)){ 
             //get the cocordinates of event location
-            getCoordinates($scope.location, function(coordinates){
+            //getCoordinates($scope.location, function(coordinates){
+                var coordinates = destnationCoords;
                 if(!coordinates){
                     alert("Unable to get location coordinates");
                 }
@@ -89,7 +91,7 @@ app.controller('newEventController', ['$scope', '$state', 'SharedDataService', f
                         alert("Failed to create event");
                     });
                 }
-            });
+            //});
         }
         else{
             alert("Please fill required fileds");

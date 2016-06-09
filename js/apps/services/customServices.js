@@ -115,6 +115,10 @@ app.service('SharedDataService', ['$http', '$timeout' ,function($http, $timeout)
         self.doAjax(url, "GET", {}, successCB, failureCB);
     };
 
+    this.userContacts = [], this.eventInviteeList = [], this.recentSearches = [];
+    this.currentUser = {},  this.eventCoordinates = {}, this.selectedEvent = {};
+    this.eventName = "", this.eventAddress = "";
+
     //getter and setter methods
     this.setUserContacts = function(contacts){
         this.userContacts = JSON.parse(JSON.stringify(contacts));
@@ -124,25 +128,35 @@ app.service('SharedDataService', ['$http', '$timeout' ,function($http, $timeout)
         return this.userContacts;
     };
 
-    this.setTargetData = function(data) {
-        return this.targetData = JSON.parse(JSON.stringify(data));
-    };
-    this.getTargetData = function() {
-        return this.targetData;
-    };
+    // this.setTargetData = function(data) {
+    //     return this.targetData = JSON.parse(JSON.stringify(data));
+    // };
+    // this.getTargetData = function() {
+    //     return this.targetData;
+    // };
 
     this.setCurrentUser = function(data) {
-        return this.currentUser = JSON.parse(JSON.stringify(data));
+        this.currentUser = JSON.parse(JSON.stringify(data));
     };
+    
     this.getCurrentUser = function() {
         return this.currentUser;
     };
 
-    this.setDestination = function(data) {
-        return this.destination = JSON.parse(JSON.stringify(data));
+    this.getDestAddress = function() {
+        return this.eventAddress;
     };
-    this.getDestination = function() {
-        return this.destination;
+
+    this.setDestAddress = function(data) {
+        this.eventAddress = data;
+    };
+
+    this.getDestCoordinates = function(){
+        return this.eventCoordinates;
+    };
+
+    this.setDestCoordinates = function(data){
+        this.eventCoordinates = JSON.parse(JSON.stringify(data));
     };
 
     this.setEventData = function(eventObj) {
@@ -154,11 +168,11 @@ app.service('SharedDataService', ['$http', '$timeout' ,function($http, $timeout)
     };
 
     this.setAddedUsers = function(addedUsers) {
-        this.getAddedUsers = JSON.parse(JSON.stringify(addedUsers));
+        this.eventInviteeList = JSON.parse(JSON.stringify(addedUsers));
     };
     
     this.getAddedUsers = function() {
-        return this.getAddedUsers;
+        return this.eventInviteeList;
     };
 
     this.setEventName = function(eventName) {
@@ -168,12 +182,21 @@ app.service('SharedDataService', ['$http', '$timeout' ,function($http, $timeout)
     this.getEventName = function() {
         return this.eventName;
     };
-    this.setRecentlySearchedData = function(recentSearched) {
-        this.getRecentSearches = JSON.parse(JSON.stringify(recentSearched));
+    this.setRecentlySearchedData = function(recentSearch) {
+        var searchList= JSON.parse(JSON.stringify(recentSearch));
+        if(localStorage){
+            localStorage.setItem("recentLocations", (JSON.stringify(searchList)));
+        }        
+        //this.recentSearches = searchList;
     };
     
     this.getRecentlySearchedData = function() {
-        return this.getRecentSearches;
+        var recentLocations = localStorage.getItem("recentLocations");
+        if(recentLocations)
+            return JSON.parse(recentLocations);
+        else 
+            return [];
+
     };
 
 }]);

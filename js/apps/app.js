@@ -115,7 +115,11 @@ app.service('SharedDataService', ['$http', '$timeout' ,function($http, $timeout)
         self.doAjax(url, "GET", {}, successCB, failureCB);
     };
 
-    //list of getters and settres
+    this.userContacts = [], this.eventInviteeList = [], this.recentSearches = [];
+    this.currentUser = {},  this.eventCoordinates = {}, this.selectedEvent = {};
+    this.eventName = "", this.eventAddress = "";
+
+    //getter and setter methods
     this.setUserContacts = function(contacts){
         this.userContacts = JSON.parse(JSON.stringify(contacts));
     };
@@ -124,25 +128,35 @@ app.service('SharedDataService', ['$http', '$timeout' ,function($http, $timeout)
         return this.userContacts;
     };
 
-    this.setTargetData = function(data) {
-        return this.targetData = JSON.parse(JSON.stringify(data));
-    };
-    this.getTargetData = function() {
-        return this.targetData;
-    };
+    // this.setTargetData = function(data) {
+    //     return this.targetData = JSON.parse(JSON.stringify(data));
+    // };
+    // this.getTargetData = function() {
+    //     return this.targetData;
+    // };
 
     this.setCurrentUser = function(data) {
-        return this.currentUser = JSON.parse(JSON.stringify(data));
+        this.currentUser = JSON.parse(JSON.stringify(data));
     };
+    
     this.getCurrentUser = function() {
         return this.currentUser;
     };
 
-    this.setDestination = function(data) {
-        return this.destination = JSON.parse(JSON.stringify(data));
+    this.getDestAddress = function() {
+        return this.eventAddress;
     };
-    this.getDestination = function() {
-        return this.destination;
+
+    this.setDestAddress = function(data) {
+        this.eventAddress = data;
+    };
+
+    this.getDestCoordinates = function(){
+        return this.eventCoordinates;
+    };
+
+    this.setDestCoordinates = function(data){
+        this.eventCoordinates = JSON.parse(JSON.stringify(data));
     };
 
     this.setEventData = function(eventObj) {
@@ -154,11 +168,11 @@ app.service('SharedDataService', ['$http', '$timeout' ,function($http, $timeout)
     };
 
     this.setAddedUsers = function(addedUsers) {
-        this.getAddedUsers = JSON.parse(JSON.stringify(addedUsers));
+        this.eventInviteeList = JSON.parse(JSON.stringify(addedUsers));
     };
     
     this.getAddedUsers = function() {
-        return this.getAddedUsers;
+        return this.eventInviteeList;
     };
 
     this.setEventName = function(eventName) {
@@ -168,15 +182,22 @@ app.service('SharedDataService', ['$http', '$timeout' ,function($http, $timeout)
     this.getEventName = function() {
         return this.eventName;
     };
-    this.setRecentlySearchedData = function(recentSearched) {
-        this.getRecentSearches = JSON.parse(JSON.stringify(recentSearched));
+    this.setRecentlySearchedData = function(recentSearch) {
+        var searchList= JSON.parse(JSON.stringify(recentSearch));
+        if(localStorage){
+            localStorage.setItem("recentLocations", (JSON.stringify(searchList)));
+        }        
+        //this.recentSearches = searchList;
     };
     
     this.getRecentlySearchedData = function() {
-        return this.getRecentSearches;
-    };
+        var recentLocations = localStorage.getItem("recentLocations");
+        if(recentLocations)
+            return JSON.parse(recentLocations);
+        else 
+            return [];
 
-    
+    };
 
 }]);
 
@@ -367,50 +388,69 @@ app.controller('landingController', ['$scope', '$state', 'SharedDataService', fu
 }]);
 app.controller('locationController', ['$scope', '$state', 'SharedDataService', function($scope, $state, SharedDataService) {
 
-    $scope.inputText = document.getElementById('pac-input');
-    $scope.searchBox = new google.maps.places.SearchBox($scope.inputText);
-    $scope.location = "";
+    var inputText = document.getElementById('pac-input');
+    var searchBox = new google.maps.places.SearchBox(inputText);
+    var locationName, locationCoords;
     //$scope.newEventName = SharedDataService.getEventName();
+    $scope.eventLocation = "";
     
-    // $scope.targetName = [];
     $scope.recentSearchedPlaces = SharedDataService.getRecentlySearchedData();
 
-    if ($scope.recentSearchedPlaces) {
-        $scope.recentSearchedPlaces;
-    } else {
-        $scope.recentSearchedPlaces= [];
-    }
+    // if ($scope.recentSearchedPlaces) {
+    //     $scope.recentSearchedPlaces;
+    // } else {
+    //     $scope.recentSearchedPlaces= [];
+    // }
 
     // Listen for the event fired when the user selects a prediction and retrieve
     // more details for that place.
-    $scope.searchBox.addListener('places_changed', function() {
-        $scope.places = $scope.searchBox.getPlaces();
-        $scope.location = $scope.places[0].name + ", " + $scope.places[0].formatted_address;
-        if ($scope.places.length == 0) {
-            return;
+    searchBox.addListener('places_changed', function() {
+        var searchResults = searchBox.getPlaces();
+        if (searchResults.length > 0) {
+            var selectedPlace = searchResults[0];
+            $scope.eventLocation = selectedPlace.name + ", " + selectedPlace.formatted_address;
+            locationName = selectedPlace.name;
+            locationCoords = { lat: selectedPlace.geometry.location.lat(), lng: selectedPlace.geometry.location.lng() };
+            // For each place, get the name and location.
+            // searchResults.forEach(function(place) {
+            //     $scope.targetName = place.name;
+            //     $scope.targetLocation = { lat: place.geometry.location.lat(), lng: place.geometry.location.lng() };
+            //     //SharedDataService.setTargetData($scope.targetLocation);
+            // });
         }
-        // For each place, get the name and location.
-        $scope.places.forEach(function(place) {
-            $scope.targetName = place.name;
-            $scope.targetLocation = { lat: place.geometry.location.lat(), lng: place.geometry.location.lng() };
-            SharedDataService.setTargetData($scope.targetLocation);
-        });
     });
 
     $scope.setLocation = function() {
-        SharedDataService.setDestination($scope.location);
+        SharedDataService.setDestAddress($scope.eventLocation);
+        SharedDataService.setDestCoordinates(locationCoords);
         $scope.setRecentSearch();
         $state.go('newEvent');
-    }
+    };
+
     $scope.setRecentSearch = function() {
-        $scope.recentSearchedPlaces.push($scope.targetName);
-        // $scope.searchedData = $scope.searchedData.concat($scope.recentSearchedPlaces)
+        var obj = {
+            name : locationName,
+            address : $scope.eventLocation,
+            coordinates : locationCoords
+        };
+        //var recentSearches = $scope.recentSearchedPlaces;
+        // for(var i=0; i<recentSearches.length; i++){
+        //     if((recentSearches[i].coordinates.lat == locationCoords.lat) && (recentSearches[i].coordinates.lng == locationCoords.lng))
+        // }
+        if($scope.recentSearchedPlaces.length >= 5){
+            $scope.recentSearchedPlaces.pop();
+        }
+        $scope.recentSearchedPlaces.unshift(obj); //unshift will add at begining
         SharedDataService.setRecentlySearchedData($scope.recentSearchedPlaces);
     };
-    // $scope.getRecentSearchAgain = function() {
-    //     $scope.loadRecentPlaces = SharedDataService.getRecentlySearchedData();
-    // };
-    // $scope.getRecentSearchAgain();
+
+    $scope.chooseSelectedLocation = function(index){
+        var selectedLocation = $scope.recentSearchedPlaces[index]; 
+        $scope.eventLocation = selectedLocation.address;
+        locationName = selectedLocation.name;
+        locationCoords =selectedLocation.coordinates;
+    };
+   
 }]);
 
 app.controller('loginController', ['$scope', '$state', 'SharedDataService', function($scope, $state, SharedDataService) {
@@ -653,15 +693,7 @@ app.controller('navigationController', ['$scope', '$state', 'SharedDataService',
         directionsService = new google.maps.DirectionsService();
         directionsService.route(request, function(response, status) {
             if (status == google.maps.DirectionsStatus.OK) {
-                // Display the route on the map.
-                //directionsDisplay.setDirections(response);
-            	// saving this in currentUser to show directions, once he clicks 'Directions' btn
-            	//if((curUserPosition.lat == response.request.origin.lat) && (curUserPosition.lng == response.request.origin.lng))
             	userRoutes = response;
-                //userList[index].destination =  $scope.targetLocation;
-                //userList[index].positions = response.routes[0].overview_path; //gives intermediate coordinates to destination
-//	                if(index == (userList.length-1)) //call this method once every user's intermediate coordinates are available 
-//	                	$scope.trackUserPosition();
             }
         });
     };
@@ -682,17 +714,18 @@ app.controller('navigationController', ['$scope', '$state', 'SharedDataService',
 }]);
 app.controller('newEventController', ['$scope', '$state', 'SharedDataService', function($scope, $state, SharedDataService) {
 
-    $scope.invitees = SharedDataService.getAddedUsers;
-    $scope.location = SharedDataService.getDestination();
+    $scope.invitees = SharedDataService.getAddedUsers();
+    $scope.location = SharedDataService.getDestAddress();
+    var destnationCoords = SharedDataService.getDestCoordinates();
     $scope.currentUser = SharedDataService.getCurrentUser();
     $scope.addedUsers = "";
 
-    $scope.eventName = SharedDataService.getEventName();
-    if ($scope.eventName) {
-        $scope.eventName;
-    }else{
-        $scope.eventName = "";
-    }
+    $scope.eventName = "";//SharedDataService.getEventName();
+    // if ($scope.eventName) {
+    //     $scope.eventName;
+    // }else{
+    //     $scope.eventName = "";
+    // }
 
     angular.forEach($scope.invitees, function(invitee, index){
         if(index == $scope.invitees.length-1)
@@ -726,14 +759,15 @@ app.controller('newEventController', ['$scope', '$state', 'SharedDataService', f
     };
 
     $scope.updateEventName = function() {
-        SharedDataService.setEventName($scope.eventName);
+        //SharedDataService.setEventName($scope.eventName);
     };
 
     $scope.createNewEvent = function(){
         //validate all input fields before making ajax;
-        if(!($scope.eventName == "") || ($scope.location == "") || ($scope.eventDate == "") || ($scope.eventTime = "") || ($scope.invitees.length == 0)){ 
+        if(($scope.eventName) && ($scope.location) && ($scope.eventDate) && ($scope.eventTime) && ($scope.invitees.length)){ 
             //get the cocordinates of event location
-            getCoordinates($scope.location, function(coordinates){
+            //getCoordinates($scope.location, function(coordinates){
+                var coordinates = destnationCoords;
                 if(!coordinates){
                     alert("Unable to get location coordinates");
                 }
@@ -771,7 +805,7 @@ app.controller('newEventController', ['$scope', '$state', 'SharedDataService', f
                         alert("Failed to create event");
                     });
                 }
-            });
+            //});
         }
         else{
             alert("Please fill required fileds");
