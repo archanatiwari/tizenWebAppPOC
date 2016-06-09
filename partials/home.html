@@ -17,7 +17,7 @@
                             
                             <section  style="background-color: white;">
                                 <ul class="ui-listview ">
-                                    <li class="ui-li-static {{event.statusClass}}" ng-repeat="event in upcomingEvents | orderBy: 'event_date'" ng-click="getEventDetails(event)">
+                                    <li class="ui-li-static {{event.status}}" ng-repeat="event in upcomingEvents | orderBy: 'event_date'" ng-click="getEventDetails(event)">
                                         <div class="kg-event-list">
                                             <div class="event-detail">
                                                 <div class="event-date ">

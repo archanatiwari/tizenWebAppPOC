@@ -2,12 +2,12 @@ app.controller('inviteeListController', ['$scope', 'SharedDataService', function
     $scope.selectedEvent = SharedDataService.getEventData();
     $scope.inviteeList = $scope.selectedEvent.invitee_list;
     $scope.statusText;
-    $scope.mystatus= "";
+    $scope.status= "";
 
     for (var i = 0; i<$scope.inviteeList.length; i++) {
-        if ($scope.inviteeList[i].status == "accepted") {
+        if ($scope.inviteeList[i].status == "ACCEPTED") {
             $scope.inviteeList[i].statusClass = "accepted";
-        } else if ($scope.inviteeList[i].status == "pending") {
+        } else if ($scope.inviteeList[i].status == "PENDING") {
             $scope.inviteeList[i].statusClass = "pending";
         } else {
             $scope.inviteeList[i].statusClass = "rejected";

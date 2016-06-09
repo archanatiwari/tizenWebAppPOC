@@ -115,7 +115,7 @@ app.service('SharedDataService', ['$http', '$timeout' ,function($http, $timeout)
         self.doAjax(url, "GET", {}, successCB, failureCB);
     };
 
-    //list of getters and settres
+    //getter and setter methods
     this.setUserContacts = function(contacts){
         this.userContacts = JSON.parse(JSON.stringify(contacts));
     };
@@ -175,7 +175,5 @@ app.service('SharedDataService', ['$http', '$timeout' ,function($http, $timeout)
     this.getRecentlySearchedData = function() {
         return this.getRecentSearches;
     };
-
-    
 
 }]);

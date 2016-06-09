@@ -8,13 +8,13 @@ app.controller('navigationController', ['$scope', '$state', 'SharedDataService',
     
     $scope.targetLocation = $scope.selectedEvent.coordinates;
    	$scope.toggleStartBtn = true;
-    $scope.enableTrackBtn = ($scope.selectedEvent.mystatus == "ACCEPTED") ? true : false; 
+    $scope.enableTrackBtn = ($scope.selectedEvent.status == "ACCEPTED") ? true : false; 
     $scope.customisedInviteeList = "", $scope.arrivedPpl = [];
     $scope.showAnimation = false, $scope.trackingMode = false;
 
 	function customiseInviteeList(){
 	    //doing this for customizing invitee list
-	    var customInviteeList = "", str;
+	    var customInviteeList = "", str = "";
 	    var inviteeList = $scope.selectedEvent.invitee_list;
 	    for(var i=0; i<inviteeList.length; i++){
 	    	var invitee = inviteeList[i].name;
@@ -51,13 +51,13 @@ app.controller('navigationController', ['$scope', '$state', 'SharedDataService',
     
     $scope.updateSelectedEventStatus = function(){
     	var selectedEvent = $scope.selectedEvent;
-    	if (selectedEvent.mystatus == "ACCEPTED") {
-    		selectedEvent.statusClass = "accepted";
-        } else if (selectedEvent.mystatus == "PENDING") {
-            selectedEvent.statusClass = "pending";
-        } else {
-            selectedEvent.statusClass = "rejected";
-        }
+    	// if (selectedEvent.status == "ACCEPTED") {
+    	// 	selectedEvent.statusClass = "accepted";
+     //    } else if (selectedEvent.status == "PENDING") {
+     //        selectedEvent.statusClass = "pending";
+     //    } else {
+     //        selectedEvent.statusClass = "rejected";
+     //    }
         var date = new Date(selectedEvent.eventDate);
         var curDate = new Date();
         if (date.getDate() == curDate.getDate() && date.getMonth() == curDate.getMonth() && date.getFullYear() == curDate.getFullYear()) {
@@ -167,15 +167,7 @@ app.controller('navigationController', ['$scope', '$state', 'SharedDataService',
         directionsService = new google.maps.DirectionsService();
         directionsService.route(request, function(response, status) {
             if (status == google.maps.DirectionsStatus.OK) {
-                // Display the route on the map.
-                //directionsDisplay.setDirections(response);
-            	// saving this in currentUser to show directions, once he clicks 'Directions' btn
-            	//if((curUserPosition.lat == response.request.origin.lat) && (curUserPosition.lng == response.request.origin.lng))
             	userRoutes = response;
-                //userList[index].destination =  $scope.targetLocation;
-                //userList[index].positions = response.routes[0].overview_path; //gives intermediate coordinates to destination
-//	                if(index == (userList.length-1)) //call this method once every user's intermediate coordinates are available 
-//	                	$scope.trackUserPosition();
             }
         });
     };

@@ -47,14 +47,14 @@ app.controller('homeController', ['$scope', '$state', 'SharedDataService', funct
             for (var i=0; i<inviteeList.length; i++){
                 if(userId == inviteeList[i].user_id){
                      if (inviteeList[i].status == "ACCEPTED") {
-                        //event.statusClass = "accepted";
-                        event.status = "accepted";
+                        event.statusClass = "accepted";// this field is css class name
+                        event.status = "accepted"; 
                     } else if ($inviteeList[i].status == "PENDING") {
-                        //event.statusClass = "pending";
+                        event.statusClass = "pending";
                         event.status = "pending";
                         event.customisedInviteeList = customiseInviteeList(event.inviteeList);
                     } else {
-                        //event.statusClass = "rejected";
+                        event.statusClass = "rejected";
                         event.status = "rejected";
                     }
                 }

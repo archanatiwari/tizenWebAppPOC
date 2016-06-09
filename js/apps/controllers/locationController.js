@@ -5,7 +5,6 @@ app.controller('locationController', ['$scope', '$state', 'SharedDataService', f
     $scope.location = "";
     //$scope.newEventName = SharedDataService.getEventName();
     
-    // $scope.targetName = [];
     $scope.recentSearchedPlaces = SharedDataService.getRecentlySearchedData();
 
     if ($scope.recentSearchedPlaces) {

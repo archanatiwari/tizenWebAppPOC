@@ -267,14 +267,14 @@ app.controller('homeController', ['$scope', '$state', 'SharedDataService', funct
             for (var i=0; i<inviteeList.length; i++){
                 if(userId == inviteeList[i].user_id){
                      if (inviteeList[i].status == "ACCEPTED") {
-                        //event.statusClass = "accepted";
-                        event.status = "accepted";
+                        event.statusClass = "accepted";// this field is css class name
+                        event.status = "accepted"; 
                     } else if ($inviteeList[i].status == "PENDING") {
-                        //event.statusClass = "pending";
+                        event.statusClass = "pending";
                         event.status = "pending";
                         event.customisedInviteeList = customiseInviteeList(event.inviteeList);
                     } else {
-                        //event.statusClass = "rejected";
+                        event.statusClass = "rejected";
                         event.status = "rejected";
                     }
                 }
@@ -314,12 +314,12 @@ app.controller('inviteeListController', ['$scope', 'SharedDataService', function
     $scope.selectedEvent = SharedDataService.getEventData();
     $scope.inviteeList = $scope.selectedEvent.invitee_list;
     $scope.statusText;
-    $scope.mystatus= "";
+    $scope.status= "";
 
     for (var i = 0; i<$scope.inviteeList.length; i++) {
-        if ($scope.inviteeList[i].status == "accepted") {
+        if ($scope.inviteeList[i].status == "ACCEPTED") {
             $scope.inviteeList[i].statusClass = "accepted";
-        } else if ($scope.inviteeList[i].status == "pending") {
+        } else if ($scope.inviteeList[i].status == "PENDING") {
             $scope.inviteeList[i].statusClass = "pending";
         } else {
             $scope.inviteeList[i].statusClass = "rejected";
@@ -494,13 +494,13 @@ app.controller('navigationController', ['$scope', '$state', 'SharedDataService',
     
     $scope.targetLocation = $scope.selectedEvent.coordinates;
    	$scope.toggleStartBtn = true;
-    $scope.enableTrackBtn = ($scope.selectedEvent.mystatus == "ACCEPTED") ? true : false; 
+    $scope.enableTrackBtn = ($scope.selectedEvent.status == "ACCEPTED") ? true : false; 
     $scope.customisedInviteeList = "", $scope.arrivedPpl = [];
     $scope.showAnimation = false, $scope.trackingMode = false;
 
 	function customiseInviteeList(){
 	    //doing this for customizing invitee list
-	    var customInviteeList = "", str;
+	    var customInviteeList = "", str = "";
 	    var inviteeList = $scope.selectedEvent.invitee_list;
 	    for(var i=0; i<inviteeList.length; i++){
 	    	var invitee = inviteeList[i].name;
@@ -537,13 +537,13 @@ app.controller('navigationController', ['$scope', '$state', 'SharedDataService',
     
     $scope.updateSelectedEventStatus = function(){
     	var selectedEvent = $scope.selectedEvent;
-    	if (selectedEvent.mystatus == "ACCEPTED") {
-    		selectedEvent.statusClass = "accepted";
-        } else if (selectedEvent.mystatus == "PENDING") {
-            selectedEvent.statusClass = "pending";
-        } else {
-            selectedEvent.statusClass = "rejected";
-        }
+    	// if (selectedEvent.status == "ACCEPTED") {
+    	// 	selectedEvent.statusClass = "accepted";
+     //    } else if (selectedEvent.status == "PENDING") {
+     //        selectedEvent.statusClass = "pending";
+     //    } else {
+     //        selectedEvent.statusClass = "rejected";
+     //    }
         var date = new Date(selectedEvent.eventDate);
         var curDate = new Date();
         if (date.getDate() == curDate.getDate() && date.getMonth() == curDate.getMonth() && date.getFullYear() == curDate.getFullYear()) {
